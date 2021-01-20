@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: antiquewhite;
+}
+.pages {
+    color: #aa551f;
+    text-align: center;
+    font-size: 2rem;
+}
