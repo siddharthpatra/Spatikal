@@ -16,30 +16,28 @@ const Navbar = () => {
                     <NavLink exact to="/" className="nav-logo">
                      Spatikal
                     </NavLink>
-                    <div className="nav-search">
-                        <div className="nav-searchicon">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </div>
-                        <input className="nav-searchinput" placeholder="Search…"/>
-                    </div>
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
                         <li className="nav-item">
                             <NavLink exact to="/about" activeClassName="active" className="nav-links" onClick={handleClick}>
-                                About Us
+                                <span>About Us</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink exact to="/contact" activeClassName="active" className="nav-links" onClick={handleClick}>
-                                Contact Us
+                            <NavLink exact to="/blog" activeClassName="active" className="nav-links" onClick={handleClick}>
+                                <span>Blog</span>
                             </NavLink>
                         </li>
-                        <li className="nav-item"> 
+                        {/* <li className="nav-item"> 
                             <NavLink exact to="/login" activeClassName="active" className="nav-links" onClick={handleClick}>
                             <span>
                                 Login
                                 <i className="fa fa-sign-in" aria-hidden="true"></i>
                             </span>
                             </NavLink>
+                        </li> */}
+                        <li className="nav-search nav-item">
+                            <i className="fa fa-search" aria-hidden="true" onFocus={handleClick}></i>
+                            {click ? <input className="nav-searchinput" placeholder="Search…"/> : null}
                         </li>
                     </ul>
                     <div className="nav-icon" onClick={handleClick}>
