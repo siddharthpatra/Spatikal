@@ -14,7 +14,7 @@ const Navbar = () => {
             <nav className="navbar">
                 <div className="nav-container">
                     <NavLink exact to="/" className="nav-logo">
-                     Spatikal
+                     <h2>Spatikal</h2>
                     </NavLink>
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
                         <li className="nav-item">
