@@ -3,7 +3,7 @@ import React from 'react'
 import '../../resources/css/home.css'
 import Main from '../../resources/images/again.png'
 
-import Navbar from '../Navbar'
+import Navbar from '../header/Navbar'
 
 const About = () => {
     return (
