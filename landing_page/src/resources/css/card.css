@@ -1,0 +1,99 @@
+.card-container {
+    box-sizing: border-box;
+    margin: 2%;
+    width: 300px;
+    transition: 0.3s;
+    text-align: left;
+    animation: ease-in;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+}
+.card-container:hover {
+    box-shadow: 0px 0px 15px 0px;
+    transform: scale(1.1);
+}
+.image-container img {
+    overflow: hidden;
+    height: 200px;
+}
+.card-content {
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+h3,p {
+    margin: 0;
+    padding: 0;
+}
+.card-title {
+    margin-bottom: 0.5rem;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+}
+.btn button {
+    padding: 0.5rem;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+.btn button:hover {
+    background-color: rgba(27,156,252,0.1);
+    text-transform: scale(1.1);
+}
+.btn button a {
+    text-decoration: none;
+    color: #073657;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card-details {
+    font-size: 12px;
+    line-height: 16px;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    text-transform: capitalize
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ;
+}
+.card-details ul {
+    list-style: none;
+}
+.card-details ul li {
+    margin-bottom: 0.2rem;
+}
+.card-body {
+    font-size: 18px;
+    line-height: 24px;
+}
+.far {
+    margin-right: 0.5rem;
+}

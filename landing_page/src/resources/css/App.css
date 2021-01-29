@@ -1,12 +1,13 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 body {
     background-color: #afb0af;
 }
 .pages {
-    color: #aa551f;
+    color: #000;
     text-align: center;
     font-size: 2rem;
 }
