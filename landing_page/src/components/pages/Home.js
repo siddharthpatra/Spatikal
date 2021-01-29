@@ -17,34 +17,36 @@ const About = () => {
                 <div className="content">
                     <p><i>Recent Posts</i></p>
                 </div>
-                <Card 
-                title="Mount Abu"
-                imageurl={MountAbu}
-                author="sipun"
-                dateposted="January 20,2021"
-                category="Tour and Travels"
-                body="'The only hill station in the state of Rajasthan’"/>
-                <Card 
-                title="Mount Abu"
-                imageurl={MountAbu}
-                author="sipun"
-                dateposted="January 20,2021"
-                category="Tour and Travels"
-                body="'The only hill station in the state of Rajasthan’"/>
-                <Card 
-                title="Mount Abu"
-                imageurl={MountAbu}
-                author="sipun"
-                dateposted="January 20,2021"
-                category="Tour and Travels"
-                body="'The only hill station in the state of Rajasthan’"/>
-                <Card 
-                title="Mount Abu"
-                imageurl={MountAbu}
-                author="sipun"
-                dateposted="January 20,2021"
-                category="Tour and Travels"
-                body="'The only hill station in the state of Rajasthan’"/>
+                <div className="displayFlex">
+                    <Card 
+                    title="Mount Abu"
+                    imageurl={MountAbu}
+                    author="sipun"
+                    dateposted="January 20,2021"
+                    category="Tour and Travels"
+                    body="'The only hill station in the state of Rajasthan’"/>
+                    <Card 
+                    title="Mount Abu"
+                    imageurl={MountAbu}
+                    author="sipun"
+                    dateposted="January 20,2021"
+                    category="Tour and Travels"
+                    body="'The only hill station in the state of Rajasthan’"/>
+                    <Card 
+                    title="Mount Abu"
+                    imageurl={MountAbu}
+                    author="sipun"
+                    dateposted="January 20,2021"
+                    category="Tour and Travels"
+                    body="'The only hill station in the state of Rajasthan’"/>
+                    <Card 
+                    title="Mount Abu"
+                    imageurl={MountAbu}
+                    author="sipun"
+                    dateposted="January 20,2021"
+                    category="Tour and Travels"
+                    body="'The only hill station in the state of Rajasthan’"/>
+                </div>
             </div>
         </>
     )

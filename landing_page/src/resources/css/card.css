@@ -1,3 +1,6 @@
+.displayFlex {
+    display: flex;
+}
 .card-container {
     box-sizing: border-box;
     margin: 2%;
