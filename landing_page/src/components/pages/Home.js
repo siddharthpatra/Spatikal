@@ -47,6 +47,10 @@ const About = () => {
                     category="Tour and Travels"
                     body="'The only hill station in the state of Rajasthan’"/>
                 </div>
+                <div className="bordertop"></div>
+                <div className="content">
+                    <p><i>Collections</i></p>
+                </div>
             </div>
         </>
     )
