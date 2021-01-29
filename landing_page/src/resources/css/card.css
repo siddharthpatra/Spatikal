@@ -1,5 +1,6 @@
 .displayFlex {
     display: flex;
+    justify-content: center;
 }
 .card-container {
     box-sizing: border-box;
