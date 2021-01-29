@@ -26,7 +26,9 @@ const About = () => {
                     author="Dimple Nagpal"
                     dateposted="January 20,2021"
                     category="Tour and Travels"
-                    body="'The only hill station in the state of Rajasthan’"/>
+                    body="‘The only hill station in the state of Rajasthan’.
+
+                    What comes to your mind when you hear about Rajasthan? Sand and desert? Right? "/>
                     <Card 
                     title="Influence of processing of food on its nutritive value"
                     imageurl={Fibre}
