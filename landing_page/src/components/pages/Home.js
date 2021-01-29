@@ -28,8 +28,8 @@ const About = () => {
                     <Card 
                     title="Mount Abu"
                     imageurl={MountAbu}
-                    author="sipun"
-                    dateposted="January 20,2021"
+                    author=""
+                    dateposted="January 19,2021"
                     category="Tour and Travels"
                     body="'The only hill station in the state of Rajasthan’"/>
                     <Card 
