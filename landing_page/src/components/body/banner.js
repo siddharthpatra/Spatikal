@@ -5,7 +5,7 @@ import Main from '../../resources/images/again.png'
 const Banner = () => {
     return (
         <>
-            <div className="container">
+            <div className="container displayFlex">
                 <div className="row">
                     <div className="column first">
                         <img src={Main} alt="Main_Banner"/>

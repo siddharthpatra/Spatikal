@@ -13,6 +13,7 @@ img {
     margin: auto;
 }
 .column {
+    height: 400px;
     width: 49.8%;
 }
 .column.first {
@@ -24,7 +25,7 @@ img {
     float: right;
 }
 .column.second .row.end, .column.second .column {
-    height: 178px;
+    height: 199px;
     position: relative;
 }
 .column.second .row.end {
