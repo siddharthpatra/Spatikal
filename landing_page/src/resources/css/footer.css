@@ -16,6 +16,9 @@
     max-width: 99%;
     display: inline-flex;
 }
+.footer .column {
+    height: auto;
+}
 .footer li {
     font-size: 14px;
     line-height: 18px;

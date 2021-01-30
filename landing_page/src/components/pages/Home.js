@@ -9,6 +9,8 @@ import Banner from '../body/banner'
 import Card from '../body/card'
 import Navbar from '../header/Navbar'
 
+import '../../resources/css/mobile.css'
+
 const About = () => {
     return (
         <>
@@ -19,7 +21,7 @@ const About = () => {
                 <div className="content">
                     <p><i>Recent Posts</i></p>
                 </div>
-                <div className="displayFlex">
+                <div className="displayFlex mobileGrid">
                     <Card 
                     title="Mount Abu"
                     imageurl={MountAbu}

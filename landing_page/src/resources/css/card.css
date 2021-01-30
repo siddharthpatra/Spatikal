@@ -4,6 +4,7 @@
 }
 .card-container {
     box-sizing: border-box;
+    border: 1px solid #1a0117;
     margin: 2%;
     width: 300px;
     transition: 0.3s;
@@ -30,6 +31,7 @@ h3,p {
 }
 .card-title {
     margin-bottom: 0.5rem;
+    font-size: 2vw;
 }
 .btn {
     display: flex;
@@ -60,33 +62,7 @@ h3,p {
     box-sizing: border-box;
     margin: 0.2rem;
     padding: 0.2rem;
-    text-transform: capitalize
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ;
+    text-transform: capitalize;
 }
 .card-details ul {
     list-style: none;
@@ -95,7 +71,7 @@ h3,p {
     margin-bottom: 0.2rem;
 }
 .card-body {
-    font-size: 18px;
+    font-size: 1.5vw;
     line-height: 24px;
 }
 .far {
