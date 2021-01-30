@@ -5,7 +5,7 @@
 .card-container {
     box-sizing: border-box;
     border: 1px solid #1a0117;
-    margin: 2%;
+    margin: 5% 2%;
     width: 300px;
     transition: 0.3s;
     text-align: left;

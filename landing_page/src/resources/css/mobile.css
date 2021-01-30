@@ -2,4 +2,10 @@
     .mobileGrid {
         display: grid;
     }
+    .card-body {
+        font-size: 4.5vw;
+    }
+    .card-title {
+        font-size: 5vw;
+    }
 }
