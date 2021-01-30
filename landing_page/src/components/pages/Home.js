@@ -8,14 +8,17 @@ import Foodscontainingfibre from '../../resources/images/foods.jpg'
 import Banner from '../body/banner'
 import Card from '../body/card'
 import Navbar from '../header/Navbar'
+import Carousel from '../body/carousel'
 
 import '../../resources/css/mobile.css'
+import { SliderData } from '../body/slider'
 
 const About = () => {
     return (
         <>
             <Navbar/>
             <Banner/>
+            <Carousel/>
             <div className="container">
                 <div className="bordertop"></div>
                 <div className="content">
@@ -28,9 +31,7 @@ const About = () => {
                     author="Dimple Nagpal"
                     dateposted="January 20,2021"
                     category="Tour and Travels"
-                    body="‘The only hill station in the state of Rajasthan’.
-
-                    What comes to your mind when you hear about Rajasthan? Sand and desert? Right? "/>
+                    body="‘The only hill station in the state of Rajasthan’.What comes to your mind when you hear about Rajasthan? Sand and desert? Right? "/>
                     <Card 
                     title="Influence of processing of food on its nutritive value"
                     imageurl={Fibre}

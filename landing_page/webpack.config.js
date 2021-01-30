@@ -12,7 +12,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                loader:'babel-loader',
+                use: ['source-map-loader', 'babel-loader'],
                 exclude: /node_modules/
             },
             {

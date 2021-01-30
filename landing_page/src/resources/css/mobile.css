@@ -8,4 +8,10 @@
     .card-title {
         font-size: 5vw;
     }
+    .pages .desktopOnly {
+        display: none;
+    }
+    .pages .mobileOnly {
+        display: block;
+    }
 }

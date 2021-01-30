@@ -11,3 +11,9 @@ body {
     text-align: center;
     font-size: 2rem;
 }
+.desktopOnly {
+    display: block;
+}
+.mobileOnly {
+    display: none;
+}

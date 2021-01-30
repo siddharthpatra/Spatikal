@@ -24,7 +24,7 @@ const Card = (props)=> {
                         <p>{props.body}</p>
                     </div>
                 </div>
-                <div className="btn">
+                <div className="displayFlex">
                     <button>
                         <a>View More</a>
                     </button>
