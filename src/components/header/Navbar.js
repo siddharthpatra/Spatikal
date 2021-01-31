@@ -35,10 +35,10 @@ const Navbar = () => {
                             </span>
                             </NavLink>
                         </li> */}
-                        <li className="nav-search nav-item">
+                        {/* <li className="nav-search nav-item">
                             <i className="fa fa-search" aria-hidden="true" onFocus={handleClick}></i>
                             {click ? <input className="nav-searchinput" placeholder="Search…"/> : null}
-                        </li>
+                        </li> */}
                     </ul>
                     <div className="nav-icon" onClick={handleClick}>
                         <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
