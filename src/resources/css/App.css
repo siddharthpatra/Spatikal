@@ -6,6 +6,9 @@
 body {
     background-color: #afb0af;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 .pages {
     color: #1a0117;
     text-align: center;
