@@ -9,6 +9,10 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+.displayFlex {
+    display: flex;
+    justify-content: center;
+}
 .pages {
     color: #1a0117;
     text-align: center;
