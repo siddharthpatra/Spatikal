@@ -1,0 +1,20 @@
+@media only screen and (max-width: 600px) {
+    .displayFlex.mobileGrid {
+        display: grid;
+    }
+    .card-body {
+        font-size: 4.5vw;
+    }
+    .card-title {
+        font-size: 5vw;
+    }
+    .pages .desktopOnly {
+        display: none;
+    }
+    .pages .mobileOnly {
+        display: block;
+    }
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+}

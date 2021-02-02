@@ -1,0 +1,78 @@
+.card-container {
+    box-sizing: border-box;
+    border: 1px solid #1a0117;
+    margin: 5% 2%;
+    width: 300px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.3s;
+    text-align: left;
+    animation: ease-in;
+    background-color: #072154;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px 2px #1a0117;
+}
+.image-container {
+    box-shadow: 0px 0px 15px -5px;
+    margin: 2%;
+    box-sizing: border-box;
+    border: 0.2px solid #1a0117;
+}
+.card-container:hover {
+    box-shadow: 0px 0px 15px 0px;
+    transform: scale(1.1);
+}
+.image-container img {
+    overflow: hidden;
+    height: 200px;
+}
+.card-content {
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+h3,p {
+    margin: 0;
+    padding: 0;
+}
+.card-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5vw;
+}
+.displayFlex button {
+    padding: 0.5rem;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+.displayFlex button:hover {
+    background-color: rgba(255,255,255,0.1);
+    text-transform: scale(1.1);
+}
+.displayFlex button a {
+    text-decoration: none;
+    color: #e1e2e1;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card-details {
+    font-size: 12px;
+    line-height: 16px;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 1rem 0;
+    text-transform: capitalize;
+}
+.card-details ul {
+    list-style: none;
+}
+.card-details ul li {
+    margin-bottom: 0.2rem;
+}
+.card-body {
+    font-size: 1vw;
+    line-height: 24px;
+}
+.far {
+    margin-right: 0.5rem;
+}
