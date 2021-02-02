@@ -13,11 +13,11 @@ const Footer = () => {
                             <NavLink exact to ="/" className="nav-logo-footer">
                                 <h2>Spatikal</h2>
                             </NavLink>
-                            <ul className="list-unstyled">
+                            {/* <ul className="list-unstyled">
                                 <li>Shanti Nagar</li>
                                 <li>Bhilai</li>
                                 <li>Chattisgarh- 769850</li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </div>
                     <hr/>
