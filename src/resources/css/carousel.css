@@ -3,15 +3,47 @@
     height: 40vh;
     align-items: center;
 }
+
 .sliderImg {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1px;
+    transition: all 0.5s ease-in;
+}
+.image__container {
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px;
 }
+.image__container .image{
+    height: 10%;
+    width: 10%;
+}
+.image:first-child{
+    background: url(../images/again.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.image:nth-child(2){
+    background: url(../images/again.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.image:nth-child(3){
+    background: url(../images/foods.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
 .right-arrow, .left-arrow {
     position: absolute ;
     top: 50%;
-    font-size: 2rem;
+    font-size: 1rem;
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -33,3 +65,40 @@
     transition-duration: 1s;
     transform: scale(1.1);
 }
+{/*
+.nav__dots{
+    position: absolute;
+    bottom: 30px;
+    z-index: 9;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.dot{
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    margin: 0 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav__dots.nth__current #dot1{
+    background-color: blue;
+
+}
+.nav__dots.second__current #dot2{
+    background-color: blue;
+
+}
+.nav__dots.third__current #dot3{
+    background-color: blue;
+
+}
+.nav__dots.fourth__current #dot4{
+    background-color: blue;
+
+}
+*/}

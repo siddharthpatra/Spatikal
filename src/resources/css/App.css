@@ -4,7 +4,7 @@
     font-family: sans-serif;
 }
 body {
-    background-color: #afb0af;
+    background-color: white;
 }
 body::-webkit-scrollbar {
     display: none;

@@ -24,7 +24,7 @@ const Footer = () => {
                     <div className="row displayFlex details">
                         <div className="column">
                             <NavLink exact to ="/about" className="nav-logo-footer">
-                            <h3> About Us</h3>
+                            <h3> About Us </h3>
                             </NavLink>
                         </div>
                         <div className="column">
@@ -40,6 +40,9 @@ const Footer = () => {
                         </div>
                         <div className="column">
                             <i className="fab fa-instagram"></i>
+                        </div>
+                        <div className="column">
+                            <i className="fab fa-facebook"></i>
                         </div>
                     </div>
                     <hr/>

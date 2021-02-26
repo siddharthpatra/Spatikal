@@ -1,20 +1,22 @@
-import React from 'react'
+ import React from 'react'
 
 import Main from '../../resources/images/again.png'
+import '../../resources/css/banner.css'
 
 const Banner = () => {
     return (
         <>
             <div className="desktopOnly">
                 <div className="container displayFlex">
-                    <div className="row">
-                        <div className="column first">
+                    
+                    
                             <img src={Main} alt="Main_Banner"/>
-                        </div>
+                            
+                        
+                        {/*
                         <div className="column second">
                             <div className="row">
-                                
-                                <div className="column floatLeft">
+                                 <div className="column floatLeft">
                                     <img src={Main} alt="Main_Banner"/>
                                 </div>
                                 <div className="column floatRight">
@@ -24,12 +26,16 @@ const Banner = () => {
                             <div className="clear"></div>
                             <div className="row end">
                             <img src={Main} alt="Main_Banner"/>
-                            </div>
                         </div>
+                        </div>
+                        */}
+                        </div>
+                        
+                        
+                        
                     </div>
                     <div className="clear"></div>
-                </div>
-            </div>
+              
         </>
     )
 }

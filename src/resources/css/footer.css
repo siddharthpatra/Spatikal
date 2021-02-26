@@ -30,7 +30,7 @@
     text-align: center;
 }
 .footer .social .column {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 .footer li {
     font-size: 14px;
@@ -39,6 +39,7 @@
     list-style: none;
 }
 .terms {
+    
     font-size: 12px;
 }
 .footer h2 {
