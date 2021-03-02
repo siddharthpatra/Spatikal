@@ -7,8 +7,10 @@ import Matheran from '../../resources/images/matheran.jpg'
 import Foodscontainingfibre from '../../resources/images/foods.jpg'
 import Banner from '../body/banner'
 import Card from '../body/card'
+
 import Navbar from '../header/Navbar'
 import Carousel from '../body/carousel'
+import Content from './content'
 
 import { AiFillAndroid, AiOutlineBarChart} from "react-icons/ai";
 import { IoFastFoodSharp } from "react-icons/io5";
@@ -30,10 +32,13 @@ const About = () => {
             <Navbar/>
             <Banner/>
             <Carousel/>
+            
+            
             <div className="container">
                 <div className="bordertop"></div>
                 <div className="content">
                     <p><i>Recent Posts</i></p>
+                    
                 </div>
                 <div className="displayFlex mobileGrid">
                     <Card 
@@ -102,6 +107,7 @@ const About = () => {
                     body="Do you consume fibre on a daily basis? A complete balanced diet includes 7 nutrients I.e.,"/>
                     
             </div>
+            
             
             </div>
             <div className="bordertop"></div>
