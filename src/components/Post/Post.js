@@ -22,7 +22,8 @@ class Post extends Component {
                 content: '',
                 isPublished: false
             },
-            hasImage: false
+            hasImage: false,
+            uploaded: false
         }
     }
     modules = {
@@ -95,7 +96,18 @@ class Post extends Component {
         e.preventDefault()
         const article = this.state.article;
         db.collection("spatikal-db").add(article).then( res => {
-            window.location.reload();
+            this.setState({
+                uploaded:true,
+                hasImage: false,
+                article: {
+                    title: '',
+                    author: '',
+                    category: '',
+                    image: null,
+                    content: '',
+                    isPublished: false
+                },
+            })
             console.log(res)
         }).catch(err => console.log(err))
     }
@@ -104,6 +116,9 @@ class Post extends Component {
         return (
             <>
                 <Navbar/>
+                {
+                    this.state.uploaded ? <p>The post was successful</p> : ''
+                }
                 <form onSubmit={(e) => this.submitArticle(e)}>
 
                     <div className="titleInput">

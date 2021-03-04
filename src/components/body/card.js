@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import parse from 'html-react-parser'
 
 import '../../resources/css/card.css'
 export function dateCreated (dp) {
@@ -33,7 +34,7 @@ const Card = (props)=> {
                             <h3>{props.data.title}</h3>
                         </div>
                         <div className="card-body">
-                            <p>{props.data.content}</p>
+                            <p>{parse(props.data.content)}</p>
                         </div>
                 </div>
                 <div className="displayFlex">

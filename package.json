@@ -28,6 +28,7 @@
     "@material-ui/icons": "^4.11.2",
     "file-loader": "^6.2.0",
     "firebase": "^8.2.9",
+    "html-react-parser": "^1.2.4",
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "^17.0.1",
     "react-alice-carousel": "^2.3.0",

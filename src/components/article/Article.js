@@ -3,6 +3,8 @@ import firebase from '../../config/firebase'
 import {withRouter} from 'react-router-dom'
 import Navbar from '../header/Navbar';
 
+import parse from 'html-react-parser'
+
 const db = firebase.firestore();
 
 export function dateCreated (dp) {
@@ -59,7 +61,7 @@ const Article = (props) => {
                 <h6>{dateCreated(article.datePosted.seconds)}</h6>
                 <h6>{article.author}</h6>
                 <h6>{article.category}</h6>
-                <h3>{article.content}</h3>
+                <h3>{parse(article.content)}</h3>
             </>
         )
     }
