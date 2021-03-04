@@ -1,19 +1,25 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 
 module.exports = {
     mode: "development",
     entry: "./src/index.js",
     output: {
-        path : __dirname + "/dist",
-        filename: "./bundle.js"
+        path: path.resolve(__dirname, "build"),
+        filename: "bundle.js",
+        publicPath: "/"
     },
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                use: ['source-map-loader', 'babel-loader'],
-                exclude: /node_modules/
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                      plugins: ["@babel/plugin-transform-runtime"]
+                    }},
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/i,
@@ -29,10 +35,10 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new HtmlWebpackPlugin({template: './src/index.html'})
-    ],
     devServer: {
         historyApiFallback: true
-    },
+      },
+    plugins: [
+        new HtmlWebpackPlugin({template: './src/index.html'})
+    ]
 }

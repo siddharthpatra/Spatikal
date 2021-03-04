@@ -73,6 +73,12 @@ h3,p {
     font-size: 1vw;
     line-height: 24px;
 }
+.card-body p {
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
 .far {
     margin-right: 0.5rem;
 }

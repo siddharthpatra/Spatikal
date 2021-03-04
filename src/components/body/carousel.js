@@ -24,9 +24,9 @@ const Carousel = () => {
         <div className="container mobileOnly">
             
             <section className="slider displayFlex">
-           <div class="container">
-               <div class="image__container first__active">
-                   <div class="image"></div>
+           <div className="container">
+               <div className="image__container first__active">
+                   <div className="image"></div>
                    
                </div>
            </div>
