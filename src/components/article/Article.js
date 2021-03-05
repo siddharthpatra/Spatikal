@@ -2,7 +2,7 @@ import React, { useEffect, useState, Component } from 'react'
 import firebase from '../../config/firebase'
 import {withRouter} from 'react-router-dom'
 import Navbar from '../header/Navbar';
-
+import '../../resources/css/article.css'
 import parse from 'html-react-parser'
 
 const db = firebase.firestore();
@@ -83,6 +83,7 @@ class Article extends Component {
             article:{},
             isLoaded: false
         }
+        console.log(props)
     }
     componentDidMount() {
         if(typeof this.props.location.state !== 'undefined'){
@@ -121,11 +122,30 @@ class Article extends Component {
             return (
                 <>
                     <Navbar/>
-                    <h1>{this.state.article.title}</h1>
-                    <h6>{dateCreated(this.state.article.datePosted.seconds)}</h6>
-                    <h6>{this.state.article.author}</h6>
-                    <h6>{this.state.article.category}</h6>
-                    <h3>{parse(this.state.article.content)}</h3>
+                    <div className="container">
+                        <div className="articleDetails">
+                            <div className="articleBlog">
+                                <h3>Blog</h3>
+                            </div>
+                            <div className="articleImageContainer">
+                                <img src={this.state.article.image} alt="articleImage"/>
+                            </div>
+                            <div className="articleTitle">
+                                <h2>{this.state.article.title}</h2>
+                            </div>
+                            <div className="bordertop"></div>
+                            <div className="information">
+                                <ul className="displayFlex">
+                                    <li><i className="far fa-user">{this.state.article.author}</i></li>
+                                    <li><i className="far fa-calendar">{dateCreated(this.state.article.datePosted.seconds)}</i></li>
+                                    <li><i className="far fa-folder">{this.state.article.category}</i></li>
+                                </ul>
+                            </div>
+                            <div className="articleContent">
+                                {parse(this.state.article.content)}
+                            </div>
+                        </div>
+                    </div>
                 </>
             )
         }

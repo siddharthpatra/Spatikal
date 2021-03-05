@@ -8,7 +8,6 @@ import Card from '../body/card'
 
 import Navbar from '../header/Navbar'
 import Carousel from '../body/carousel'
-import Content from './content'
 
 import '../../resources/css/mobile.css'
 import '../../resources/css/footer.css'
@@ -102,24 +101,25 @@ const About = () => {
                     category="food and drinks|health and fitness"
                     body="Do you consume fibre on a daily basis? A complete balanced diet includes 7 nutrients I.e.,"/>*/}
                 </div>
-            </div>
-            <div className="bordertop"></div>
-                <div className="content">
-                    <p><i>Catogeries</i></p>
+                <div className="bordertop"></div>
+                    <div className="content">
+                        <p><i>Categories</i></p>
+                        
+                    </div>
+                    {/* <p><i>All the things to talk about!</i></p>
+                    <br></br>
                     
-                </div>
-                 {/* <p><i>All the things to talk about!</i></p>
-                <br></br>
-                
-                <p>
-                <AiFillAndroid/>Technology&nbsp;&nbsp;&nbsp;&nbsp;<IoFastFoodSharp/>Food & Drinks </p><br></br>
-                <p>                
-                <IoHeart/>Health&nbsp;&nbsp;&nbsp;&nbsp;
-                <VscRocket/>Science
-                </p><br></br>
-                <p>
-                <AiOutlineBarChart/>Business & Economy
-                  </p><br></br> */}
+                    <p>
+                    <AiFillAndroid/>Technology&nbsp;&nbsp;&nbsp;&nbsp;<IoFastFoodSharp/>Food & Drinks </p><br></br>
+                    <p>                
+                    <IoHeart/>Health&nbsp;&nbsp;&nbsp;&nbsp;
+                    <VscRocket/>Science
+                    </p><br></br>
+                    <p>
+                    <AiOutlineBarChart/>Business & Economy
+                    </p><br></br> */}
+
+            </div>
                 
 
                 
