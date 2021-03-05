@@ -98,12 +98,12 @@ const About = () => {
                     body="Do you consume fibre on a daily basis? A complete balanced diet includes 7 nutrients I.e.,"/> */}
                 </div>
             </div>
-            {/*<div className="bordertop"></div>
+            <div className="bordertop"></div>
                 <div className="content">
                     <p><i>Catogeries</i></p>
                     
                 </div>
-                 <p><i>All the things to talk about!</i></p>
+                 {/* <p><i>All the things to talk about!</i></p>
                 <br></br>
                 
                 <p>

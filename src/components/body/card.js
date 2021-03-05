@@ -34,7 +34,7 @@ const Card = (props)=> {
                             <h3>{props.data.title}</h3>
                         </div>
                         <div className="card-body">
-                            <p>{parse(props.data.content)}</p>
+                            {parse(props.data.content)}
                         </div>
                 </div>
                 <div className="displayFlex">
