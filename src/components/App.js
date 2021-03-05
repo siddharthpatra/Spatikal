@@ -15,6 +15,8 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import Article from './article/Article'
+import Post from './Post/Post'
 
 const App = () => {
     return (
@@ -27,6 +29,12 @@ const App = () => {
                         <Route path="/blog" component={Blog}/>
                         <Route path="/about" component={About}/>
                         {/* <Route path="/login" component={Login}/> */}
+                        <Route path="/article/:id">
+                            <Article/>
+                        </Route>
+                        <Route path="/post">
+                            <Post/>
+                        </Route>
                     </Switch>
                 </div>
                 <Footer/>

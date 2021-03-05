@@ -33,13 +33,6 @@
     background-repeat: no-repeat;
 
 }
-.image:nth-child(3){
-    background: url(../images/foods.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-}
 .right-arrow, .left-arrow {
     position: absolute ;
     top: 50%;
@@ -65,7 +58,7 @@
     transition-duration: 1s;
     transform: scale(1.1);
 }
-{/*
+/*
 .nav__dots{
     position: absolute;
     bottom: 30px;
@@ -101,4 +94,4 @@
     background-color: blue;
 
 }
-*/}
+*/
