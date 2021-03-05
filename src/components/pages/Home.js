@@ -3,26 +3,14 @@ import React from 'react'
 import firebase from "../../config/firebase"
 
 import '../../resources/css/home.css'
-import MountAbu from '../../resources/images/MountAbu.jpeg'
-import Fibre from '../../resources/images/fibre.png'
-import Matheran from '../../resources/images/matheran.jpg'
-import Foodscontainingfibre from '../../resources/images/foods.jpg'
 import Banner from '../body/banner'
 import Card from '../body/card'
 import Navbar from '../header/Navbar'
 import Carousel from '../body/carousel'
 
-import { AiFillAndroid, AiOutlineBarChart} from "react-icons/ai";
-import { IoFastFoodSharp } from "react-icons/io5";
-import { IoHeart } from "react-icons/io5";
-import { VscRocket } from "react-icons/vsc";
-
-
-
 import '../../resources/css/mobile.css'
 import '../../resources/css/footer.css'
 
-import { SliderData } from '../body/slider'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
