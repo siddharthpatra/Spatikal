@@ -20,7 +20,7 @@ export function dateCreated (dp) {
     return months[date.getMonth()]+ ' ' + date.getDate() + ', ' + date.getFullYear()
 }
 
-const Article = (props) => {
+/*const Article = (props) => {
 
     const[isLoaded,setIsLoaded] = useState(false)
     const [article,setArticle] = useState([])
@@ -29,12 +29,13 @@ const Article = (props) => {
         setIsLoaded(true)
     },[article])
 
-     const getArticleByID = (aid) => {
+     const getArticleByID = (id) => {
          db.collection('spatikal-db')
-         .doc(aid)
+         .doc(id)
          .get()
          .then(doc=> {
              if(doc.exists){
+                 console.log(doc.data())
                  setArticle(doc.data())
              }
              else {
@@ -47,8 +48,11 @@ const Article = (props) => {
         if(typeof props.location.state !== 'undefined'){
             if(props.location.state.hasOwnProperty('article'))
             setArticle(props.location.state.article)
+
+            console.log(props)
         }
          else {
+             console.log("reached")
              getArticleByID(props.match.params.id)
          }
     },[])
@@ -71,5 +75,66 @@ const Article = (props) => {
          Loading...
         </>
     )}
+}*/
+class Article extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            article:{},
+            isLoaded: false
+        }
+    }
+    componentDidMount() {
+        if(typeof this.props.location.state !== 'undefined'){
+            if(this.props.location.state.hasOwnProperty('article'))
+            this.setState({
+                article: this.props.location.state.article
+            }, () => {
+                this.setState({
+                    isLoaded: true
+                })
+            })
+        }
+         else {
+             this.getArticleByID(this.props.match.params.id)
+         }
+    }
+    getArticleByID = (id) => {
+        db.collection('spatikal-db')
+        .doc(id)
+        .get()
+        .then(doc=> {
+            if(doc.exists){
+                this.setState({
+                    article: doc.data()
+                }, () => this.setState({
+                    isLoaded: true
+                }))
+            }
+            else {
+                props.history.push({pathname:'/'})
+        }
+        })
+    }
+    render () {
+        if(this.state.isLoaded){
+            return (
+                <>
+                    <Navbar/>
+                    <h1>{this.state.article.title}</h1>
+                    <h6>{dateCreated(this.state.article.datePosted.seconds)}</h6>
+                    <h6>{this.state.article.author}</h6>
+                    <h6>{this.state.article.category}</h6>
+                    <h3>{parse(this.state.article.content)}</h3>
+                </>
+            )
+        }
+        else
+       { return (
+            <>
+             Loading...
+            </>
+        )}
+    }
 }
 export default withRouter(Article)
