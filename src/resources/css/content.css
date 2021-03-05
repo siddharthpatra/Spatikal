@@ -1,0 +1,36 @@
+
+
+.content-image-container {
+   
+    margin: 2%;
+    box-sizing: border-box;
+    border: 0.1px solid #1a0117;
+    height: 500px;
+   
+    
+}
+
+.far {
+    margin-right: 0.5rem;
+    font-size: 20px;
+}
+
+.card-font{
+    font-family: Arial;
+}
+
+.font-size{
+    font-size: 22px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.information{
+    font-size: 22px;
+    color: rgb(66, 65, 65);
+}
+.bordertop {
+    border-top: 3px solid #1a0117;
+    border-radius: 1px;
+    margin: 2% 0;
+}

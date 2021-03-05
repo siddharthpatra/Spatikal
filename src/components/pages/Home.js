@@ -5,8 +5,10 @@ import firebase from "../../config/firebase"
 import '../../resources/css/home.css'
 import Banner from '../body/banner'
 import Card from '../body/card'
+
 import Navbar from '../header/Navbar'
 import Carousel from '../body/carousel'
+import Content from './content'
 
 import '../../resources/css/mobile.css'
 import '../../resources/css/footer.css'
@@ -49,10 +51,13 @@ const About = () => {
             <Navbar/>
             <Banner/>
             <Carousel/>
+            
+            
             <div className="container">
             <div className="bordertop"></div>
                 <div className="content">
                     <p><i>Recent Posts</i></p>
+                    
                 </div>
                 <div className="bordertop"></div>
                 <div className="content">
@@ -95,7 +100,7 @@ const About = () => {
                     author="aditya deshmukh"
                     dateposted="January 11,2021"
                     category="food and drinks|health and fitness"
-                    body="Do you consume fibre on a daily basis? A complete balanced diet includes 7 nutrients I.e.,"/> */}
+                    body="Do you consume fibre on a daily basis? A complete balanced diet includes 7 nutrients I.e.,"/>*/}
                 </div>
             </div>
             <div className="bordertop"></div>
