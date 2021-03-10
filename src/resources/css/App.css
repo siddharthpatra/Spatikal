@@ -13,6 +13,12 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
 }
+.flexWrap {
+    flex-wrap: wrap;
+}
+.flexThree {
+    flex: 0 0 25%;
+}
 .pages {
     color: #1a0117;
     text-align: center;

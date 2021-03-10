@@ -18,7 +18,7 @@ export function dateCreated (dp) {
 const Card = (props)=> {
     return (
         <>
-            <div className="card-container">
+            <div className="card-container flexThree">
                     <div className="image-container">
                         <img src={props.data.image} alt="Blog_Image"/>
                     </div>

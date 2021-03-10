@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component } from 'react'
+import React, { Component } from 'react'
 import firebase from '../../config/firebase'
 import {withRouter} from 'react-router-dom'
 import Navbar from '../header/Navbar';
@@ -136,9 +136,9 @@ class Article extends Component {
                             <div className="bordertop"></div>
                             <div className="information">
                                 <ul className="displayFlex">
-                                    <li><i className="far fa-user">{this.state.article.author}</i></li>
-                                    <li><i className="far fa-calendar">{dateCreated(this.state.article.datePosted.seconds)}</i></li>
-                                    <li><i className="far fa-folder">{this.state.article.category}</i></li>
+                                    <li><i className="far fa-user"></i>{this.state.article.author}</li>
+                                    <li><i className="far fa-calendar"></i>{dateCreated(this.state.article.datePosted.seconds)}</li>
+                                    <li><i className="far fa-folder"></i>{this.state.article.category}</li>
                                 </ul>
                             </div>
                             <div className="articleContent">
