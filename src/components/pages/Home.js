@@ -92,6 +92,54 @@ const About = () => {
                     <div className="content">
                         <p><i>Categories</i></p>
                     </div>
+                    <div className="catogeries">
+                <p><i>All the things to talk about!</i></p>
+                
+                
+                <div className="row">
+                    <div className="column floatLeft"> <i class="fas fa-hamburger"></i></div>
+                    <div className="column floatRight"><i class="fas fa-dumbbell"></i></div>
+                </div>
+                <div className="row">
+                    <div className="column floatLeft"> Food and Drinks</div>
+                    <div className="column floatRight"> Health and Fitness</div>
+                </div>
+                <div className="row">
+                &nbsp;
+                </div>
+              
+                <br></br>
+                <div className="row">
+                    <div className="column floatLeft"><i class="fas fa-rocket"></i></div>
+                    <div className="column floatRight"><i class="fas fa-chart-bar"></i></div>
+                
+                </div>
+                <div className="row">
+                    <div className="column floatLeft"> Science and Technology</div>
+                    <div className="column floatRight"> Business and Economy</div>
+                </div>
+                <div className="row">
+                &nbsp;
+                </div>
+                
+                <br></br>
+                <div className="row">
+                    <div className="column floatLeft"><i class="fas fa-place-of-worship"></i></div>
+                    <div className="column floatRight"><i class="fas fa-dharmachakra"></i></div>
+                </div>
+                
+                <div className="row">
+                    
+                    <div className="column floatLeft">Tours and Travels</div>
+                    <div className="column floatRight"> Culture and Heritage</div>
+                      
+                </div>
+               <div className="row">
+                &nbsp;
+                </div>
+                
+               
+                </div>
             </div>
         </>
     )

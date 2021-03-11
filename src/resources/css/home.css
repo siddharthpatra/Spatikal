@@ -41,9 +41,10 @@ img {
     clear: both;
 }
 .bordertop {
-    border-top: 3px solid #1a0117;
+    border-top: 3px solid #e7e7e7;
     border-radius: 1px;
-    margin: 2% 0;
+    margin: 2% auto;
+    width: 50%;
 }
 .content {
     text-align: center;
@@ -56,4 +57,21 @@ img {
 }
 .icon-text {
     font-size: 80px;
+}
+.catogeries{
+    font-size: 20px;
+    color: #6EC1E4;
+    padding: auto;
+    height: auto;
+    
+}
+.catogeries .column{
+    height: auto;
+}
+.fas{
+    font-size: 60px;
+    padding-left: 40mm;
+    padding-right: 40mm;
+    
+    
 }
