@@ -44,7 +44,7 @@ img {
     border-top: 3px solid #e7e7e7;
     border-radius: 1px;
     margin: 2% auto;
-    width: 50%;
+    width: 75%;
 }
 .content {
     text-align: center;
@@ -58,14 +58,13 @@ img {
 .icon-text {
     font-size: 80px;
 }
-.catogeries{
+.catogeriesContent{
     font-size: 20px;
     color: #6EC1E4;
-    padding: auto;
     height: auto;
     
 }
-.catogeries .column{
+.catogeriesContent .column{
     height: auto;
 }
 .fas{

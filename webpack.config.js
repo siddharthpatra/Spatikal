@@ -5,6 +5,11 @@ const path = require("path");
 module.exports = {
     mode: "production",
     entry: "./src/index.js",
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     devtool: false,
     output: {
         path: path.join(__dirname, "build"),

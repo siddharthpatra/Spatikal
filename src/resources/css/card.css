@@ -1,7 +1,6 @@
 .card-container {
     box-sizing: border-box;
     border: 1px solid #1a0117;
-    margin: 5% 2%;
     width: 300px;
     color: rgba(255, 255, 255, 0.7);
     transition: 0.3s;

@@ -20,62 +20,6 @@ export function dateCreated (dp) {
     return months[date.getMonth()]+ ' ' + date.getDate() + ', ' + date.getFullYear()
 }
 
-/*const Article = (props) => {
-
-    const[isLoaded,setIsLoaded] = useState(false)
-    const [article,setArticle] = useState([])
-
-    useEffect(()=> {
-        setIsLoaded(true)
-    },[article])
-
-     const getArticleByID = (id) => {
-         db.collection('spatikal-db')
-         .doc(id)
-         .get()
-         .then(doc=> {
-             if(doc.exists){
-                 console.log(doc.data())
-                 setArticle(doc.data())
-             }
-             else {
-                 props.history.push({pathname:'/'})
-         }
-         })
-     }
-
-    useEffect(()=> {
-        if(typeof props.location.state !== 'undefined'){
-            if(props.location.state.hasOwnProperty('article'))
-            setArticle(props.location.state.article)
-
-            console.log(props)
-        }
-         else {
-             console.log("reached")
-             getArticleByID(props.match.params.id)
-         }
-    },[])
-
-    if(isLoaded){
-        return (
-            <>
-                <Navbar/>
-                <h1>{article.title}</h1>
-                <h6>{dateCreated(article.datePosted.seconds)}</h6>
-                <h6>{article.author}</h6>
-                <h6>{article.category}</h6>
-                <h3>{parse(article.content)}</h3>
-            </>
-        )
-    }
-    else
-   { return (
-        <>
-         Loading...
-        </>
-    )}
-}*/
 class Article extends Component {
     constructor(props) {
         super(props);
@@ -83,7 +27,6 @@ class Article extends Component {
             article:{},
             isLoaded: false
         }
-        console.log(props)
     }
     componentDidMount() {
         if(typeof this.props.location.state !== 'undefined'){

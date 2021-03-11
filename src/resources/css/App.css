@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
     flex-wrap: wrap;
 }
 .flexThree {
-    flex: 0 0 25%;
+    flex: 0 0 20%;
 }
 .pages {
     color: #1a0117;
@@ -29,4 +29,10 @@ body::-webkit-scrollbar {
 }
 .mobileOnly {
     display: none;
+}
+a {
+    text-decoration: none;
+}
+.displayFlex a {
+    margin: 5% 5%;
 }

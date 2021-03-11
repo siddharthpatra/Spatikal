@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 
 import firebase from "../../config/firebase"
 
 import Banner from '../body/banner'
-import Card from '../body/card'
 import Navbar from '../header/Navbar'
 import Carousel from '../body/carousel'
+const Card = lazy(()=> import('../body/card'))
 
 import '../../resources/css/home.css'
 import '../../resources/css/mobile.css'
@@ -16,7 +16,7 @@ const db = firebase.firestore()
 
 
 
-const About = () => {
+const Home = () => {
 
     const [isLoaded, setIsLoaded] = useState(false)
     const [articles,setArticles] = useState([])
@@ -65,9 +65,11 @@ const About = () => {
                     {
                         isSorted ? sorting.slice(0,3).map((article, index) => {
                             return (
+                                <Suspense fallback={<div>Please wait while Loading....</div>}>
                                 <Card
                                 key= {index}
                                 data ={article}/>
+                                </Suspense>
                             )
                         } ) : ""
                     }
@@ -81,68 +83,62 @@ const About = () => {
                     {
                         isLoaded ? articles.map((article, index) => {
                             return (
+                                <Suspense fallback={<div>Please wait while Loading....</div>}>
                                 <Card
                                 key= {index}
                                 data ={article}/>
+                                </Suspense>
                             )
                         } ) : ""
                     }
                 </div>
                 <div className="bordertop"></div>
-                    <div className="content">
-                        <p><i>Categories</i></p>
-                    </div>
-                    <div className="catogeries">
-                <p><i>All the things to talk about!</i></p>
-                
-                
-                <div className="row">
-                    <div className="column floatLeft"> <i class="fas fa-hamburger"></i></div>
-                    <div className="column floatRight"><i class="fas fa-dumbbell"></i></div>
+                <div className="content">
+                    <p><i>Categories</i></p>
                 </div>
-                <div className="row">
-                    <div className="column floatLeft"> Food and Drinks</div>
-                    <div className="column floatRight"> Health and Fitness</div>
-                </div>
-                <div className="row">
-                &nbsp;
-                </div>
-              
-                <br></br>
-                <div className="row">
-                    <div className="column floatLeft"><i class="fas fa-rocket"></i></div>
-                    <div className="column floatRight"><i class="fas fa-chart-bar"></i></div>
-                
-                </div>
-                <div className="row">
-                    <div className="column floatLeft"> Science and Technology</div>
-                    <div className="column floatRight"> Business and Economy</div>
-                </div>
-                <div className="row">
-                &nbsp;
-                </div>
-                
-                <br></br>
-                <div className="row">
-                    <div className="column floatLeft"><i class="fas fa-place-of-worship"></i></div>
-                    <div className="column floatRight"><i class="fas fa-dharmachakra"></i></div>
-                </div>
-                
-                <div className="row">
+                <div className="catogeriesContent">
+
+                    <p><i>All the things to talk about!</i></p>
                     
-                    <div className="column floatLeft">Tours and Travels</div>
-                    <div className="column floatRight"> Culture and Heritage</div>
-                      
-                </div>
-               <div className="row">
-                &nbsp;
-                </div>
-                
-               
+                    <div>
+                        <div className="row">
+                            <div className="column floatLeft"> <i className="fas fa-hamburger"></i>
+                                <p>Food and Drinks</p>
+                            </div>
+                            <div className="column floatRight"><i className="fas fa-dumbbell"></i>
+                                <p>Health and Fitness</p>
+                            </div>
+                        </div>
+                        <div className="clear"></div>
+                    </div>
+                    <div>
+                        <div className="row">
+                            <div className="column floatLeft"><i className="fas fa-rocket"></i>
+                                <p>Science and Technology</p>
+                            </div>
+                            <div className="column floatRight"><i className="fas fa-chart-bar"></i>
+                                <p>Business and Economy</p>
+                            </div>
+                        
+                        </div>
+                        <div className="clear"></div>
+                    </div>
+                    <div>
+                        <div className="row">
+                            <div className="column floatLeft"><i className="fas fa-place-of-worship"></i>
+                                <p>Tours and Travels</p>
+                            </div>
+                            <div className="column floatRight"><i className="fas fa-dharmachakra"></i>
+                                <p>Culture and Heritage</p>
+                            </div>
+                        </div>
+                        
+                        <div className="clear"></div>
+                    </div>
                 </div>
             </div>
         </>
     )
 }
 
-export default About
+export default Home

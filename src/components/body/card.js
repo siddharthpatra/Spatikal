@@ -18,6 +18,10 @@ export function dateCreated (dp) {
 const Card = (props)=> {
     return (
         <>
+            <Link to={{
+                        pathname: 'article/'+ props.data.id,
+                        state: {article:props.data}
+                    }}> 
             <div className="card-container flexThree">
                     <div className="image-container">
                         <img src={props.data.image} alt="Blog_Image"/>
@@ -37,17 +41,8 @@ const Card = (props)=> {
                             {parse(props.data.content)}
                         </div>
                 </div>
-                <div className="displayFlex">
-                    <Link to={{
-                        pathname: 'article/'+ props.data.id,
-                        state: {article:props.data}
-                    }}> 
-                        <button>
-                            <a>View More</a>
-                        </button>
-                    </Link>
-                </div>
             </div>
+            </Link>
         </>
     )
 }
