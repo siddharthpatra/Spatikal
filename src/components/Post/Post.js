@@ -170,7 +170,7 @@ class Post extends Component {
                                     hasVideo: true,
                                     article: {
                                         ...this.state.article,
-                                        video: uploadImage.data.link
+                                        video: uploadVideo.data.link
                                     }
                                 })
                             }
