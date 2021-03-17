@@ -176,7 +176,7 @@ class Post extends Component {
                             }
                             }}/>
                             {
-                                this.state.hasVideo ? <img src={this.state.article.video}/> : ''
+                                this.state.hasVideo ?  <source src={this.state.article.video} type="video/mp4"/> : ''
                             }
                     </div>
                     <div>

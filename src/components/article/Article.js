@@ -91,8 +91,12 @@ class Article extends Component {
                                 </ul>
                                 <div className="bordertop"></div>
                             </div>
-                            
-                            
+
+                            <div className="articleVideo">
+                                <p><strong>Watch</strong></p>
+                                <source src={this.state.article.video} type="video/mp4"/>
+                            </div>
+
                             <div className="articleContent">
                                 {parse(this.state.article.content)}
                             </div>
