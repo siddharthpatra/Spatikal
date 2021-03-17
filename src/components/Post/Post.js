@@ -19,10 +19,12 @@ class Post extends Component {
                 datePosted: new Date(),
                 category: '',
                 image: null,
+                video:null,
                 content: '',
                 isPublished: false
             },
             hasImage: false,
+            hasVideo: false,
             uploaded: false
         }
     }
@@ -56,10 +58,22 @@ class Post extends Component {
       onChangeImageUploaderCallBack = (e) => {
           return new Promise(async(resolve,reject) =>{
               const file = e.target.files[0]
-              const fileName = uuidv4()
-              storageRef.ref().child("Articles/" + fileName).put(file)
+              storageRef.ref().child("Articles/" + file.name).put(file)
                 .then(async snapshot => {
-                    const downloadURL = await storageRef.ref().child("Articles/" + fileName).getDownloadURL()
+                    const downloadURL = await storageRef.ref().child("Articles/" + file.name).getDownloadURL()
+                    resolve({
+                        success: true,
+                        data: {link: downloadURL}
+                    })
+                })
+          })
+      }
+      onChangeVideoUploaderCallBack = e => {
+          return new Promise(async(resolve,reject) => {
+              const file = e.target.files[0]
+              storageRef.ref().child("Articles/" + file.name).put(file)
+                .then(async snapshot => {
+                    const downloadURL = await storageRef.ref().child("Articles/" + file.name).getDownloadURL()
                     resolve({
                         success: true,
                         data: {link: downloadURL}
@@ -144,6 +158,25 @@ class Post extends Component {
                             }}/>
                             {
                                 this.state.hasImage ? <img src={this.state.article.image}/> : ''
+                            }
+                    </div>
+                    <div className="videoInput">
+                        <label htmlFor="video">Video</label>
+                        <input id="video" type="file" accept="video/*" 
+                        onChange={async (e) => {
+                            const uploadVideo = await this.onChangeVideoUploaderCallBack(e)
+                            if(uploadVideo.success){
+                                this.setState({
+                                    hasVideo: true,
+                                    article: {
+                                        ...this.state.article,
+                                        video: uploadImage.data.link
+                                    }
+                                })
+                            }
+                            }}/>
+                            {
+                                this.state.hasVideo ? <img src={this.state.article.video}/> : ''
                             }
                     </div>
                     <div>
