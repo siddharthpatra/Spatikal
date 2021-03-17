@@ -20,6 +20,7 @@ export function dateCreated (dp) {
     return months[date.getMonth()]+ ' ' + date.getDate() + ', ' + date.getFullYear()
 }
 
+
 class Article extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +28,7 @@ class Article extends Component {
             article:{},
             isLoaded: false
         }
+        console.log(props)
     }
     componentDidMount() {
         if(typeof this.props.location.state !== 'undefined'){
@@ -65,25 +67,32 @@ class Article extends Component {
             return (
                 <>
                     <Navbar/>
+                    <br></br>
                     <div className="container">
                         <div className="articleDetails">
                             <div className="articleBlog">
                                 <h3>Blog</h3>
                             </div>
-                            <div className="articleImageContainer">
+                            <br></br>
+                           <div className="articleImageContainer">
                                 <img src={this.state.article.image} alt="articleImage"/>
                             </div>
+                            <br></br>
                             <div className="articleTitle">
-                                <h2>{this.state.article.title}</h2>
+                                <h4>{this.state.article.title}</h4>
                             </div>
                             <div className="bordertop"></div>
+                            
                             <div className="information">
-                                <ul className="displayFlex">
-                                    <li><i className="far fa-user"></i>{this.state.article.author}</li>
-                                    <li><i className="far fa-calendar"></i>{dateCreated(this.state.article.datePosted.seconds)}</li>
-                                    <li><i className="far fa-folder"></i>{this.state.article.category}</li>
+                                <ul className="displayFlex mobileBlock">
+                                    <li className="padding1"><i className="far fa-user"></i>{this.state.article.author}&nbsp;&nbsp;</li>
+                                    <li className="padding1"><i className="far fa-calendar"></i>{dateCreated(this.state.article.datePosted.seconds)}&nbsp;&nbsp;</li>
+                                    <li className="padding1"><i className="far fa-folder"></i>{this.state.article.category}&nbsp;&nbsp;</li>
                                 </ul>
+                                <div className="bordertop"></div>
                             </div>
+                            
+                            
                             <div className="articleContent">
                                 {parse(this.state.article.content)}
                             </div>
