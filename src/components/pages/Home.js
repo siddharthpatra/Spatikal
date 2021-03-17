@@ -123,6 +123,7 @@ const Home = () => {
                         </div>
                         <div className="clear"></div>
                     </div>
+                    
                     <div>
                         <div className="row">
                             <div className="column floatLeft"><i className="fas fa-place-of-worship"></i>
@@ -135,6 +136,7 @@ const Home = () => {
                         
                         <div className="clear"></div>
                     </div>
+                   
                 </div>
             </div>
         </>

@@ -1,6 +1,8 @@
 .card-container {
     box-sizing: border-box;
     border: 1px solid #1a0117;
+    margin: 5% 2%;
+    height: 700px;
     width: 300px;
     color: rgba(255, 255, 255, 0.7);
     transition: 0.3s;
@@ -34,7 +36,9 @@ h3,p {
 }
 .card-title {
     margin-bottom: 0.5rem;
-    font-size: 1.5vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
 }
 .displayFlex button {
     padding: 0.5rem;
@@ -62,6 +66,8 @@ h3,p {
     box-sizing: border-box;
     margin: 1rem 0;
     text-transform: capitalize;
+    padding-left: 11px;
+    padding-right: 11px;
 }
 .card-details ul {
     list-style: none;
@@ -70,14 +76,27 @@ h3,p {
     margin-bottom: 0.2rem;
 }
 .card-body {
-    font-size: 1vw;
+    font-size: 15px;
     line-height: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    
 }
-.card-body p {
+.card-body p{
+    display:none;
+} 
+.card-body p:nth-child(1){
+   
     overflow: hidden;
     -webkit-line-clamp: 4;
-    display: -webkit-box;
+    display: -webkit-box  !important;
     -webkit-box-orient: vertical;
+}
+
+.card-body img {
+    display: none;
+
 }
 .far {
     margin-right: 0.5rem;

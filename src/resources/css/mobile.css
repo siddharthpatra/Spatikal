@@ -5,10 +5,7 @@
     .card-body {
         font-size: 4.5vw;
     }
-    .card-title {
-        font-size: 5vw;
-    }
-    .pages .desktopOnly {
+ .pages .desktopOnly {
         display: none;
     }
     .pages .mobileOnly {
@@ -16,5 +13,39 @@
     }
     .nav-logo {
         font-size: 1.2rem;
+    }
+    .articleTitle {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        font-size: 20px;
+    }
+    .articleContent {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .information{
+        font-size: 10px !important;
+        color: rgb(66, 65, 65);
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+       text-align: center;
+    }
+    .articleImageContainer {
+        box-sizing: border-box;
+        border: 0.1px solid #1a0117;
+        height: auto !important;
+        width: auto;
+    }
+    .mobileBlock{
+        display: block !important;
+        
+    }
+    .padding1{
+        padding: 1%;
+    }
+    .fas{
+        font-size: 30px;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
