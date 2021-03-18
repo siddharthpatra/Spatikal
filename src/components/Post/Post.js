@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import Navbar from '../header/Navbar';
 import firebase from '../../config/firebase'
-import {v4 as uuidv4} from 'uuid'
+import {isEmpty} from 'lodash'
 
 const db = firebase.firestore()
 
@@ -18,13 +18,13 @@ class Post extends Component {
                 author: '',
                 datePosted: new Date(),
                 category: '',
-                image: null,
-                video:null,
+                image: '',
+                video: '',
                 content: '',
                 isPublished: false
             },
-            hasImage: false,
-            hasVideo: false,
+            tempImageLink: '',
+            tempVideoLink: '',
             uploaded: false
         }
     }
@@ -108,16 +108,22 @@ class Post extends Component {
 
     submitArticle = (e) => {
         e.preventDefault()
-        const article = this.state.article;
+        const article = {
+            ...this.state.article
+        }
+        article.video = this.state.tempVideoLink
+        article.image = this.state.tempImageLink
         db.collection("spatikal-db").add(article).then( res => {
             this.setState({
                 uploaded:true,
-                hasImage: false,
+                tempImageLink: '',
+                tempVideoLink: '',
                 article: {
                     title: '',
                     author: '',
                     category: '',
-                    image: null,
+                    image: '',
+                    video: '',
                     content: '',
                     isPublished: false
                 },
@@ -149,15 +155,12 @@ class Post extends Component {
                             if(uploadImage.success){
                                 this.setState({
                                     hasImage: true,
-                                    article: {
-                                        ...this.state.article,
-                                        image: uploadImage.data.link
-                                    }
+                                    tempImageLink: uploadImage.data.link
                                 })
                             }
                             }}/>
                             {
-                                this.state.hasImage ? <img src={this.state.article.image}/> : ''
+                                !isEmpty(this.state.tempImageLink) ? <img src={this.state.tempImageLink}/> : ''
                             }
                     </div>
                     <div className="videoInput">
@@ -168,15 +171,14 @@ class Post extends Component {
                             if(uploadVideo.success){
                                 this.setState({
                                     hasVideo: true,
-                                    article: {
-                                        ...this.state.article,
-                                        video: uploadVideo.data.link
-                                    }
+                                    tempVideoLink: uploadVideo.data.link
                                 })
                             }
                             }}/>
                             {
-                                this.state.hasVideo ?  <source src={this.state.article.video} type="video/mp4"/> : ''
+                                !isEmpty(this.state.tempVideoLink) ?  <video controls autoPlay loop className="videoContent">
+                                <source src={this.state.tempVideoLink} type="video/mp4"/>
+                            </video> : ''
                             }
                     </div>
                     <div>

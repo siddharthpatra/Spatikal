@@ -43,3 +43,8 @@ ul.displayFlex .far {
     padding-left: 55mm;
     padding-right: 55mm;
 }
+.videoContent {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}

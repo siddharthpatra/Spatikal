@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom'
 import Navbar from '../header/Navbar';
 import '../../resources/css/article.css'
 import parse from 'html-react-parser'
+import { isEmpty } from 'lodash'
 
 const db = firebase.firestore();
 
@@ -28,7 +29,6 @@ class Article extends Component {
             article:{},
             isLoaded: false
         }
-        console.log(props)
     }
     componentDidMount() {
         if(typeof this.props.location.state !== 'undefined'){
@@ -92,10 +92,14 @@ class Article extends Component {
                                 <div className="bordertop"></div>
                             </div>
 
-                            <div className="articleVideo">
-                                <p><strong>Watch</strong></p>
-                                <source src={this.state.article.video} type="video/mp4"/>
-                            </div>
+                           {
+                                !isEmpty(this.state.article.video) ?  <div className="articleVideo">
+                                        <p><strong>Watch</strong></p>
+                                        <video controls autoPlay loop className="videoContent">
+                                            <source src={this.state.article.video} type="video/mp4"/>
+                                        </video>
+                                    </div> : ''
+                            }
 
                             <div className="articleContent">
                                 {parse(this.state.article.content)}

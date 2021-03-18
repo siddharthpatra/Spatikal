@@ -24,10 +24,12 @@ const Home = () => {
     const [isSorted, setIsSorted] = useState(false)
 
     useEffect(() => {
-        getMyArticles()
+        getMyArticles();
     },[])
     useEffect(()=>{
-        setIsLoaded(true)
+        setIsLoaded(true);
+        group();
+        console.log(group())
     },[articles])
     useEffect(()=>{
         setIsSorted(true)
@@ -49,6 +51,9 @@ const Home = () => {
                 setSorting(allArticles.slice().sort( (a,b) => b.datePosted - a.datePosted ))
             }
         })
+    }
+    const group = () => {
+        articles.slice().filter((article) => article.category.toLowerCase().includes("tour and travels"))
     }
 
     return (
@@ -113,7 +118,7 @@ const Home = () => {
                     </div>
                     <div>
                         <div className="row">
-                            <div className="column floatLeft"><i className="fas fa-rocket"></i>
+                            <div className="column floatLeft" ><i className="fas fa-rocket"></i>
                                 <p>Science and Technology</p>
                             </div>
                             <div className="column floatRight"><i className="fas fa-chart-bar"></i>
