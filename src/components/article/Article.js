@@ -58,7 +58,7 @@ class Article extends Component {
                 }))
             }
             else {
-                props.history.push({pathname:'/'})
+                this.props.history.push({pathname:'/'})
         }
         })
     }
@@ -95,7 +95,7 @@ class Article extends Component {
                            {
                                 !isEmpty(this.state.article.video) ?  <div className="articleVideo">
                                         <p><strong>Watch</strong></p>
-                                        <video controls autoPlay loop className="videoContent">
+                                        <video controls className="videoContent">
                                             <source src={this.state.article.video} type="video/mp4"/>
                                         </video>
                                     </div> : ''

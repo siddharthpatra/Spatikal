@@ -10,6 +10,7 @@ const Card = lazy(()=> import('../body/card'))
 import '../../resources/css/home.css'
 import '../../resources/css/mobile.css'
 import '../../resources/css/footer.css'
+import { Link } from 'react-router-dom'
 
 
 const db = firebase.firestore()
@@ -26,14 +27,15 @@ const Home = () => {
     useEffect(() => {
         getMyArticles();
     },[])
+
     useEffect(()=>{
         setIsLoaded(true);
-        group();
-        console.log(group())
     },[articles])
+
     useEffect(()=>{
         setIsSorted(true)
     },[sorting])
+
     const getMyArticles = ()=> {
         db.collection('spatikal-db')
         .get()
@@ -51,9 +53,6 @@ const Home = () => {
                 setSorting(allArticles.slice().sort( (a,b) => b.datePosted - a.datePosted ))
             }
         })
-    }
-    const group = () => {
-        articles.slice().filter((article) => article.category.toLowerCase().includes("tour and travels"))
     }
 
     return (
@@ -107,23 +106,43 @@ const Home = () => {
                     
                     <div>
                         <div className="row">
-                            <div className="column floatLeft"> <i className="fas fa-hamburger"></i>
-                                <p>Food and Drinks</p>
-                            </div>
-                            <div className="column floatRight"><i className="fas fa-dumbbell"></i>
-                                <p>Health and Fitness</p>
-                            </div>
+                            <Link to={{
+                                            pathname: 'category/'+ encodeURI("Food and Drinks"),
+                                            state: {article: articles}
+                                        }}>
+                                <div className="column floatLeft"> <i className="fas fa-hamburger"></i>
+                                    <p>Food and Drinks</p>
+                                </div>
+                            </Link>
+                            <Link to={{
+                                            pathname: 'category/'+ encodeURI("Health and Fitness"),
+                                            state: {article: articles}
+                                        }}>
+                                <div className="column floatRight"><i className="fas fa-dumbbell"></i>
+                                    <p>Health and Fitness</p>
+                                </div>
+                            </Link>
                         </div>
                         <div className="clear"></div>
                     </div>
                     <div>
                         <div className="row">
-                            <div className="column floatLeft" ><i className="fas fa-rocket"></i>
-                                <p>Science and Technology</p>
-                            </div>
-                            <div className="column floatRight"><i className="fas fa-chart-bar"></i>
-                                <p>Business and Economy</p>
-                            </div>
+                        <Link to={{
+                                            pathname: 'category/'+ encodeURI("Science and Technology"),
+                                            state: {article: articles}
+                                        }}>
+                                <div className="column floatLeft" ><i className="fas fa-rocket"></i>
+                                    <p>Science and Technology</p>
+                                </div>
+                            </Link>
+                            <Link to={{
+                                            pathname: 'category/'+ encodeURI("Business and Economy"),
+                                            state: {article: articles}
+                                        }}>
+                                <div className="column floatRight"><i className="fas fa-chart-bar"></i>
+                                    <p>Business and Economy</p>
+                                </div>
+                            </Link>
                         
                         </div>
                         <div className="clear"></div>
@@ -131,12 +150,22 @@ const Home = () => {
                     
                     <div>
                         <div className="row">
-                            <div className="column floatLeft"><i className="fas fa-place-of-worship"></i>
-                                <p>Tours and Travels</p>
-                            </div>
-                            <div className="column floatRight"><i className="fas fa-dharmachakra"></i>
-                                <p>Culture and Heritage</p>
-                            </div>
+                            <Link to={{
+                                            pathname: 'category/'+ encodeURI("Tours and Travels"),
+                                            state: {article: articles}
+                                        }}>
+                                <div className="column floatLeft"><i className="fas fa-place-of-worship"></i>
+                                    <p>Tours and Travels</p>
+                                </div>
+                            </Link>
+                            <Link to={{
+                                            pathname: 'category/'+ encodeURI("Culture and Heritage"),
+                                            state: {article: articles}
+                                        }}>
+                                <div className="column floatRight"><i className="fas fa-dharmachakra"></i>
+                                    <p>Culture and Heritage</p>
+                                </div>
+                            </Link>
                         </div>
                         
                         <div className="clear"></div>

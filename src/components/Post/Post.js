@@ -176,7 +176,7 @@ class Post extends Component {
                             }
                             }}/>
                             {
-                                !isEmpty(this.state.tempVideoLink) ?  <video controls autoPlay loop className="videoContent">
+                                !isEmpty(this.state.tempVideoLink) ?  <video controls className="videoContent">
                                 <source src={this.state.tempVideoLink} type="video/mp4"/>
                             </video> : ''
                             }

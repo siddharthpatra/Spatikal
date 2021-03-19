@@ -22,26 +22,26 @@ const Card = (props)=> {
                         pathname: 'article/'+ props.data.id,
                         state: {article:props.data}
                     }}> 
-            <div className="card-container flexThree">
-                    <div className="image-container">
-                        <img src={props.data.image} alt="Blog_Image"/>
-                    </div>
-                <div className="card-content">
-                    <div className="card-details">
-                        <ul>
-                            <li><i className="far fa-user"></i>{props.data.author}</li>
-                            <li><i className="far fa-calendar"></i>{dateCreated(props.data.datePosted.seconds)}</li>
-                            <li><i className="far fa-folder"></i>{props.data.category}</li>
-                        </ul>
-                    </div>
-                        <div className="card-title">
-                            <h3>{props.data.title}</h3>
+                <div className="card-container flexThree">
+                        <div className="image-container">
+                            <img src={props.data.image} alt="Blog_Image"/>
                         </div>
-                        <div className="card-body">
-                            {parse(props.data.content)}
+                    <div className="card-content">
+                        <div className="card-details">
+                            <ul>
+                                <li><i className="far fa-user"></i>{props.data.author}</li>
+                                <li><i className="far fa-calendar"></i>{dateCreated(props.data.datePosted.seconds)}</li>
+                                <li><i className="far fa-folder"></i>{props.data.category}</li>
+                            </ul>
                         </div>
+                            <div className="card-title">
+                                <h3>{props.data.title}</h3>
+                            </div>
+                            <div className="card-body">
+                                {parse(props.data.content)}
+                            </div>
+                    </div>
                 </div>
-            </div>
             </Link>
         </>
     )
