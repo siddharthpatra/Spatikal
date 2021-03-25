@@ -19,7 +19,7 @@ const Card = (props)=> {
     return (
         <>
             <Link to={{
-                        pathname: 'article/'+ props.data.id,
+                        pathname: '/article/'+ props.data.id,
                         state: {article:props.data}
                     }}> 
                 <div className="card-container flexThree">

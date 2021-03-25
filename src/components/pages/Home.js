@@ -59,7 +59,6 @@ const Home = () => {
         <>
             <Navbar/>
             <Banner/>
-            <Carousel/>
 
             <div className="container">
                 <div className="bordertop"></div>
@@ -69,7 +68,7 @@ const Home = () => {
                     {
                         isSorted ? sorting.slice(0,3).map((article, index) => {
                             return (
-                                <Suspense fallback={<div>Please wait while Loading....</div>}>
+                                <Suspense fallback={<div></div>}>
                                 <Card
                                 key= {index}
                                 data ={article}/>
@@ -85,15 +84,7 @@ const Home = () => {
                 </div>
                 <div className="displayFlex mobileGrid flexWrap">
                     {
-                        isLoaded ? articles.map((article, index) => {
-                            return (
-                                <Suspense fallback={<div>Please wait while Loading....</div>}>
-                                <Card
-                                key= {index}
-                                data ={article}/>
-                                </Suspense>
-                            )
-                        } ) : ""
+                        isLoaded ? <Carousel article={articles}/> : ""
                     }
                 </div>
                 <div className="bordertop"></div>
@@ -107,7 +98,7 @@ const Home = () => {
                     <div>
                         <div className="row">
                             <Link to={{
-                                            pathname: 'category/'+ encodeURI("Food and Drinks"),
+                                            pathname: '/category/'+ encodeURI("Food and Drinks"),
                                             state: {article: articles}
                                         }}>
                                 <div className="column floatLeft"> <i className="fas fa-hamburger"></i>
@@ -115,7 +106,7 @@ const Home = () => {
                                 </div>
                             </Link>
                             <Link to={{
-                                            pathname: 'category/'+ encodeURI("Health and Fitness"),
+                                            pathname: '/category/'+ encodeURI("Health and Fitness"),
                                             state: {article: articles}
                                         }}>
                                 <div className="column floatRight"><i className="fas fa-dumbbell"></i>
@@ -128,7 +119,7 @@ const Home = () => {
                     <div>
                         <div className="row">
                         <Link to={{
-                                            pathname: 'category/'+ encodeURI("Science and Technology"),
+                                            pathname: '/category/'+ encodeURI("Science and Technology"),
                                             state: {article: articles}
                                         }}>
                                 <div className="column floatLeft" ><i className="fas fa-rocket"></i>
@@ -136,7 +127,7 @@ const Home = () => {
                                 </div>
                             </Link>
                             <Link to={{
-                                            pathname: 'category/'+ encodeURI("Business and Economy"),
+                                            pathname: '/category/'+ encodeURI("Business and Economy"),
                                             state: {article: articles}
                                         }}>
                                 <div className="column floatRight"><i className="fas fa-chart-bar"></i>
@@ -151,7 +142,7 @@ const Home = () => {
                     <div>
                         <div className="row">
                             <Link to={{
-                                            pathname: 'category/'+ encodeURI("Tours and Travels"),
+                                            pathname: '/category/'+ encodeURI("Tours and Travels"),
                                             state: {article: articles}
                                         }}>
                                 <div className="column floatLeft"><i className="fas fa-place-of-worship"></i>
@@ -159,7 +150,7 @@ const Home = () => {
                                 </div>
                             </Link>
                             <Link to={{
-                                            pathname: 'category/'+ encodeURI("Culture and Heritage"),
+                                            pathname: '/category/'+ encodeURI("Culture and Heritage"),
                                             state: {article: articles}
                                         }}>
                                 <div className="column floatRight"><i className="fas fa-dharmachakra"></i>

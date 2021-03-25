@@ -12,17 +12,11 @@ import Footer from './footer/footer'
 
 import '../resources/css/App.css'
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 const App = () => {
     return (
         <>
-            <Router>
                 <div className="pages">
                     <Switch>
                         <Route exact path="/" component={Home}/>
@@ -31,12 +25,11 @@ const App = () => {
                         <Route path="/about" component={About}/>
                         {/* <Route path="/login" component={Login}/> */}
                         <Route path="/article/:id" component={Article}/>
-                        <Route path="/post" component={Post}/>  
+                        <Route path="/post" component={Post}/>
                         <Route path="/category/:category" component={Category}/>
                     </Switch>
                 </div>
                 <Footer/>
-            </Router>
         </>
     )
 }

@@ -17,7 +17,7 @@ class Post extends Component {
                 title: '',
                 author: '',
                 datePosted: new Date(),
-                category: '',
+                category: [],
                 image: '',
                 video: '',
                 content: '',
@@ -25,8 +25,10 @@ class Post extends Component {
             },
             tempImageLink: '',
             tempVideoLink: '',
-            uploaded: false
+            uploaded: false,
+            category: []
         }
+        this.onChangeCategory = this.onChangeCategory.bind(this)
     }
     modules = {
         toolbar: [
@@ -90,12 +92,13 @@ class Post extends Component {
         })
     }
     onChangeCategory = (value) => {
-        this.setState({
-            article: {
-                ...this.state.article,
-                category: value
-            }
+        if(value.target.checked)
+       { this.setState({
+                category: this.state.category.push(value.target.value)
         })
+        console.log(this)
+    }
+        console.log(this.state.category)
     }
     onChangeArticleContent = (value) => {
         this.setState({
@@ -186,8 +189,35 @@ class Post extends Component {
                         <input id="author" type="text" onChange={(e) => this.onChangeAuthor(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="category">Category</label>
-                        <input id="category" type="text" onChange={(e) => this.onChangeCategory(e.target.value)}/>
+                        <div>
+                            <label >Category</label>
+                            <div>
+                                <div>
+                                    <label htmlFor="1">Tours and Travels</label>
+                                    <input id="1" type="checkbox" name="Tours and Travels" value="Tours and Travels" onChange={this.onChangeCategory}/>
+                                </div>
+                                <div>
+                                    <label htmlFor="2">Food and Drinks</label>
+                                    <input id="2" type="checkbox" name="Food and Drinks" value="Food and Drinks" onChange={this.onChangeCategory}/>
+                                </div>
+                                <div>
+                                    <label htmlFor="3">Science and Technology</label>
+                                    <input id="3" type="checkbox" name="Science and Technology" value="Science and Technology" onChange={this.onChangeCategory}/>
+                                </div>
+                                <div>
+                                    <label htmlFor="4">Buisness and Economy</label>
+                                    <input id="4" type="checkbox" name="Buisness and Economy" value="Buisness and Economy" onChange={this.onChangeCategory}/>
+                                </div>
+                                <div>
+                                    <label htmlFor="5">Culture</label>
+                                    <input id="5" type="checkbox" name="Culture" value="Culture" onChange={this.onChangeCategory}/>
+                                </div>
+                                <div>
+                                    <label htmlFor="6">Health and Fitness</label>
+                                    <input id="6" type="checkbox" name="Health and Fitness" value="Health and Fitness" onChange={this.onChangeCategory}/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <ReactQuill
                         ref={(el) => this.quill = el}

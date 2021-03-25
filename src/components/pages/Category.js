@@ -99,7 +99,7 @@ class Category extends Component {
                     {
                         this.state.isLoaded ? this.state.articles.map((article, index) => {
                             return (
-                                <Suspense fallback={<div>Please wait while Loading....</div>}>
+                                <Suspense fallback={<div></div>}>
                                 <Card
                                 key= {index}
                                 data ={article}/>

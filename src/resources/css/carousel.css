@@ -1,38 +1,8 @@
 .slider {
     position: relative;
-    height: 40vh;
     align-items: center;
 }
 
-.sliderImg {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 1px;
-    transition: all 0.5s ease-in;
-}
-.image__container {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-}
-.image__container .image{
-    height: 10%;
-    width: 10%;
-}
-.image:first-child{
-    background: url(../images/again.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-}
-.image:nth-child(2){
-    background: url(../images/again.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-}
 .right-arrow, .left-arrow {
     position: absolute ;
     top: 50%;

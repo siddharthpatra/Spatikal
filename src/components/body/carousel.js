@@ -1,59 +1,45 @@
 import React,{ useState } from 'react'
-import {SliderData} from './slider'
 import '../../resources/css/carousel.css'
+import Card from './card';
 
 
 
 
-const Carousel = () => {
+const Carousel = props => {
     const [current,setCurrent] = useState(0)
-    const slideLength = SliderData.length;
+    const length = props.article.length;
 
     const nextSlide= () => {
-        setCurrent(current === slideLength-1 ? 0 : current+1)
+        setCurrent(current === length-1 ? 0 : current+1)
     }
 
     const prevSlide = () => {
-        setCurrent(current === 0 ? slideLength-1 : current-1)
+        setCurrent(current === 0 ? length-1 : current-1)
     }
-    if(!Array.isArray(SliderData) || slideLength <= 0) {
+    if(!Array.isArray(props.article) || length <= 0) {
         return null;
     }
     return (
         
-        <div className="container mobileOnly">
+        <>
             
             <section className="slider displayFlex">
-           <div className="container">
-               <div className="image__container first__active">
-                   <div className="image"></div>
-                   
-               </div>
-           </div>
-            {/*
-            <div class="nav__dots nth__current">
-                <div class="dot" id="dot1"></div>
-                <div class="dot" id="dot2"></div>
-                <div class="dot" id="dot3"></div>
-                <div class="dot" id="dot4"></div>
-
-            </div>
-            */}
-
+                <i className="fas fa-arrow-circle-left" onClick={prevSlide}></i>          
             
-            
-                { SliderData.map((slide,index) => 
+                { props.article.map((article,index) => 
                     {
                         return (
                             <span className={index === current ? 'slide active' : 'slide' } key={index}>
-                                {index === current && (<img src={slide.image} alt="Banner Image" className="sliderImg"/>)}
+                                {index === current && (<Card key={index} data={article}/>)}
                             </span>
                         )
                     })
                 }
                 
+                <i className="fas fa-arrow-circle-right" onClick={nextSlide}></i>  
+
             </section>
-        </div>
+        </>
     )    
 }
 
