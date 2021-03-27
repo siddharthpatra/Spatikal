@@ -1,6 +1,5 @@
 import React, { Component, lazy, Suspense, } from 'react'
 import Navbar from '../header/Navbar';
-import { isEmpty } from 'lodash'
 
 const Card = lazy(()=> import('../body/card'))
 
@@ -74,7 +73,7 @@ class Category extends Component {
 
                 case "Culture and Heritage":
                     this.setState({
-                        articles: this.props.location.state.article.slice().filter((article) => article.category.toLowerCase().includes("culture and heritage")),
+                        articles: this.props.location.state.article.slice().filter((article) => article.category.toLowerCase().includes("culture")),
                         category: this.props.match.params.category
                     }, () => {
                         this.setState({

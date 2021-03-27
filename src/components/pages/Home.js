@@ -150,11 +150,11 @@ const Home = () => {
                                 </div>
                             </Link>
                             <Link to={{
-                                            pathname: '/category/'+ encodeURI("Culture and Heritage"),
+                                            pathname: '/category/'+ encodeURI("Culture"),
                                             state: {article: articles}
                                         }}>
                                 <div className="column floatRight"><i className="fas fa-dharmachakra"></i>
-                                    <p>Culture and Heritage</p>
+                                    <p>Culture</p>
                                 </div>
                             </Link>
                         </div>

@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import Navbar from '../header/Navbar';
+import Categorydata from './Categorydata'
+import Checkbox from './Checkbox'
 import firebase from '../../config/firebase'
 import {isEmpty} from 'lodash'
 
@@ -17,7 +19,7 @@ class Post extends Component {
                 title: '',
                 author: '',
                 datePosted: new Date(),
-                category: [],
+                category: '',
                 image: '',
                 video: '',
                 content: '',
@@ -26,9 +28,8 @@ class Post extends Component {
             tempImageLink: '',
             tempVideoLink: '',
             uploaded: false,
-            category: []
+            category: Categorydata
         }
-        this.onChangeCategory = this.onChangeCategory.bind(this)
     }
     modules = {
         toolbar: [
@@ -91,15 +92,14 @@ class Post extends Component {
             }
         })
     }
-    onChangeCategory = (value) => {
-        if(value.target.checked)
-       { this.setState({
-                category: this.state.category.push(value.target.value)
+    handleCheckChieldElement = (event) => {
+        let category = this.state.category
+        category.forEach(category => {
+           if (category.value === event.target.value)
+              category.isChecked =  event.target.checked
         })
-        console.log(this)
-    }
-        console.log(this.state.category)
-    }
+        this.setState({category: category})
+      }
     onChangeArticleContent = (value) => {
         this.setState({
             article: {
@@ -116,6 +116,7 @@ class Post extends Component {
         }
         article.video = this.state.tempVideoLink
         article.image = this.state.tempImageLink
+        article.category= Object.entries(this.state.category.filter(a => a.isChecked === true)).map(a => a[1].value).toString().replace(/,/g, ' | ')
         db.collection("spatikal-db").add(article).then( res => {
             this.setState({
                 uploaded:true,
@@ -190,33 +191,14 @@ class Post extends Component {
                     </div>
                     <div>
                         <div>
-                            <label >Category</label>
-                            <div>
-                                <div>
-                                    <label htmlFor="1">Tours and Travels</label>
-                                    <input id="1" type="checkbox" name="Tours and Travels" value="Tours and Travels" onChange={this.onChangeCategory}/>
-                                </div>
-                                <div>
-                                    <label htmlFor="2">Food and Drinks</label>
-                                    <input id="2" type="checkbox" name="Food and Drinks" value="Food and Drinks" onChange={this.onChangeCategory}/>
-                                </div>
-                                <div>
-                                    <label htmlFor="3">Science and Technology</label>
-                                    <input id="3" type="checkbox" name="Science and Technology" value="Science and Technology" onChange={this.onChangeCategory}/>
-                                </div>
-                                <div>
-                                    <label htmlFor="4">Buisness and Economy</label>
-                                    <input id="4" type="checkbox" name="Buisness and Economy" value="Buisness and Economy" onChange={this.onChangeCategory}/>
-                                </div>
-                                <div>
-                                    <label htmlFor="5">Culture</label>
-                                    <input id="5" type="checkbox" name="Culture" value="Culture" onChange={this.onChangeCategory}/>
-                                </div>
-                                <div>
-                                    <label htmlFor="6">Health and Fitness</label>
-                                    <input id="6" type="checkbox" name="Health and Fitness" value="Health and Fitness" onChange={this.onChangeCategory}/>
-                                </div>
-                            </div>
+                            <label>Category</label>
+                            <ul>
+                                {
+                                    this.state.category.map((category) => {
+                                        return (<Checkbox handleCheckChieldElement={this.handleCheckChieldElement} {...category} />)
+                                })
+                                }
+                            </ul>
                         </div>
                     </div>
                     <ReactQuill
