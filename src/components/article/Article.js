@@ -5,6 +5,7 @@ import Navbar from '../header/Navbar';
 import '../../resources/css/article.css'
 import parse from 'html-react-parser'
 import { isEmpty } from 'lodash'
+import RelatedPost from './RelatedPost';
 
 const db = firebase.firestore();
 
@@ -106,6 +107,10 @@ class Article extends Component {
                             </div>
                         </div>
                     </div>
+                    <>
+                        <h1>Related Posts</h1>
+                        <RelatedPost category={this.state.article.category} id={this.state.article.id}/>
+                    </>
                 </>
             )
         }

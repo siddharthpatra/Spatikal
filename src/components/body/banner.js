@@ -6,7 +6,6 @@ import '../../resources/css/banner.css'
 const Banner = () => {
     return (
         <>
-            <div className="desktopOnly">
                 <div className="container displayFlex">
                     
                     
@@ -32,8 +31,7 @@ const Banner = () => {
                         </div>
                         
                         
-                        
-                    </div>
+                       
                     <div className="clear"></div>
               
         </>

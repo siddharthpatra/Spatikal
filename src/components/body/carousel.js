@@ -30,7 +30,7 @@ const Carousel = props => {
                     {
                         return (
                             <span className={index === current ? 'slide active' : 'slide' } key={index}>
-                                {index === current && (<Card key={index} data={article}/>)}
+                                {(<Card key={index} data={article}/>)}
                             </span>
                         )
                     })

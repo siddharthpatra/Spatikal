@@ -134,6 +134,7 @@ class Post extends Component {
             })
             console.log(res)
         }).catch(err => console.log(err))
+        e.target.reset()
     }
 
     render () {
