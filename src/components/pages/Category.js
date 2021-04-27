@@ -1,6 +1,4 @@
 import React, { Component, lazy, Suspense, } from 'react'
-import Navbar from '../header/Navbar';
-
 const Card = lazy(()=> import('../body/card'))
 
 class Category extends Component {
@@ -91,7 +89,6 @@ class Category extends Component {
     render () {
         return (
             <>
-                <Navbar/>
                 {this.state.category}
 
                 <div className="displayFlex mobileGrid flexWrap">

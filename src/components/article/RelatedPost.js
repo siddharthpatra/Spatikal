@@ -1,4 +1,4 @@
-import { isEmpty, isEqual } from 'lodash';
+import { isEmpty } from 'lodash';
 import React, { Component, lazy, Suspense, } from 'react'
 
 import firebase from '../../config/firebase'
@@ -21,6 +21,9 @@ class RelatedPost extends Component {
         this.getMyArticles()
     }
 
+    componentWillReceiveProps(){
+        this.getMyArticles()
+    }
     getMyArticles = ()=> {
         db.collection('spatikal-db')
         .get()

@@ -1,15 +1,14 @@
 import React, {Component} from 'react'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
-import Navbar from '../header/Navbar';
 import Categorydata from './Categorydata'
 import Checkbox from './Checkbox'
-import firebase from '../../config/firebase'
+import { firedb, storage} from '../../config/firebase'
 import {isEmpty} from 'lodash'
 
-const db = firebase.firestore()
+const db = firedb;
 
-const storageRef= firebase.storage()
+const storageRef= storage;
 
 class Post extends Component {
     constructor(props){
@@ -140,7 +139,6 @@ class Post extends Component {
     render () {
         return (
             <>
-                <Navbar/>
                 {
                     this.state.uploaded ? <p>The post was successful</p> : ''
                 }

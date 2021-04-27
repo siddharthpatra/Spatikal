@@ -4,11 +4,14 @@ import App from './components/App'
 import {BrowserRouter} from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 
+
 const app = (
-    <BrowserRouter>
-        <ScrollToTop/>
-        <App/>
-    </BrowserRouter>
+    <React.StrictMode>
+        <BrowserRouter>
+            <ScrollToTop/>
+                <App/>
+        </BrowserRouter>
+    </React.StrictMode>
 )
 
 ReactDom.render(app, document.getElementById("app")

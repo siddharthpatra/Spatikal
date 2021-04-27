@@ -1,9 +1,8 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react'
 
-import firebase from "../../config/firebase"
+import {firedb} from "../../config/firebase"
 
 import Banner from '../body/banner'
-import Navbar from '../header/Navbar'
 import Carousel from '../body/carousel'
 const Card = lazy(()=> import('../body/card'))
 
@@ -13,7 +12,7 @@ import '../../resources/css/footer.css'
 import { Link } from 'react-router-dom'
 
 
-const db = firebase.firestore()
+const db = firedb;
 
 
 
@@ -57,7 +56,6 @@ const Home = () => {
 
     return (
         <>
-            <Navbar/>
             <Banner/>
 
             <div className="container">

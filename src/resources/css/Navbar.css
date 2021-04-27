@@ -86,7 +86,9 @@ input.nav-searchinput:focus {
 .nav-icon {
     display: none;
 }
-
+.pointer {
+    cursor: pointer;
+}
 @media screen and (max-width: 960px) {
     .nav-menu {
         display: flex;

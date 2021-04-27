@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import firebase from '../../config/firebase'
-import {withRouter} from 'react-router-dom'
-import Navbar from '../header/Navbar';
+import React, { PureComponent } from 'react'
+import {firedb} from '../../config/firebase'
+import {Link, withRouter} from 'react-router-dom'
 import '../../resources/css/article.css'
 import parse from 'html-react-parser'
 import { isEmpty } from 'lodash'
-import RelatedPost from './RelatedPost';
+// import RelatedPost from './RelatedPost';
 
-const db = firebase.firestore();
+const db = firedb;
 
 export function dateCreated (dp) {
     const months = [ 
@@ -23,7 +22,7 @@ export function dateCreated (dp) {
 }
 
 
-class Article extends Component {
+class Article extends PureComponent {
     constructor(props) {
         super(props);
         this.state={
@@ -46,6 +45,7 @@ class Article extends Component {
              this.getArticleByID(this.props.match.params.id)
          }
     }
+    
     getArticleByID = (id) => {
         db.collection('spatikal-db')
         .doc(id)
@@ -67,7 +67,6 @@ class Article extends Component {
         if(this.state.isLoaded){
             return (
                 <>
-                    <Navbar/>
                     <br></br>
                     <div className="container">
                         <div className="articleDetails">
@@ -108,8 +107,21 @@ class Article extends Component {
                         </div>
                     </div>
                     <>
-                        <h1>Related Posts</h1>
-                        <RelatedPost category={this.state.article.category} id={this.state.article.id}/>
+                        {/* <h1>Related Posts</h1>
+                        <RelatedPost category={this.state.article.category} id={this.state.article.id}/> */}
+                        <div className="suggestionButton">
+                            <p>
+                                <span>Didn&#39;t like the content?</span>
+                                <span><i>Feeling like adding some suggestions?</i>
+                                    <Link to={{
+                                                pathname: '/editPost/'+ this.state.article.id,
+                                                state: {article:this.state.article.id}
+                                            }}> 
+                                        Please Click Here...!!
+                                    </Link>
+                                </span>
+                            </p>
+                        </div>
                     </>
                 </>
             )
