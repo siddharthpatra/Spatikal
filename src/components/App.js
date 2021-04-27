@@ -12,7 +12,7 @@ import Footer from './footer/footer'
 import { Switch, Route } from "react-router-dom";
 import Signup from './authentication/Signup'
 import { AuthProvider } from '../components/authentication/context/AuthContext'
-import PrivateRoute from './authentication/Privateroute'
+import PrivateRoute from "../components/authentication/PrivateRoute"
 import EditPost from './article/EditPost'
 
 import '../resources/css/App.css'
