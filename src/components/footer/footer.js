@@ -35,14 +35,18 @@ const Footer = () => {
                     </div>
                     <hr/>
                     <div className="row displayFlex social">
-                        <div className="column">
+                        {/* <div className="column">
                             <i className="fab fa-linkedin"></i>
-                        </div>
+                        </div> */}
                         <div className="column">
+                            <a href="https://www.instagram.com/_spatikal">
                             <i className="fab fa-instagram"></i>
+                            </a>
                         </div>
                         <div className="column">
+                            <a href="https://www.facebook.com/Spatikal-104889145028341">
                             <i className="fab fa-facebook"></i>
+                            </a>
                         </div>
                     </div>
                     <hr/>
