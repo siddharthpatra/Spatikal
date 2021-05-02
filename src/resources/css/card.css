@@ -3,6 +3,7 @@
     border: 1px solid #1a0117;
     margin: 5% 2%;
     height: 700px;
+    font-size: 24px;
     width: 300px;
     color: rgba(255, 255, 255, 0.7);
     transition: 0.3s;
@@ -76,27 +77,14 @@ h3,p {
     margin-bottom: 0.2rem;
 }
 .card-body {
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height: 30px;
     padding-left: 10px;
     padding-right: 10px;
     color: white;
-    
-}
-.card-body p{
-    display:none;
-} 
-.card-body p:nth-child(1){
-   
+    max-height: 300px;
     overflow: hidden;
-    -webkit-line-clamp: 4;
-    display: -webkit-box  !important;
-    -webkit-box-orient: vertical;
-}
-
-.card-body img {
-    display: none;
-
+    
 }
 .far {
     margin-right: 0.5rem;

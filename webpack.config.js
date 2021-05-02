@@ -38,6 +38,14 @@ module.exports = {
                     loader: 'file-loader',
                   },
                 ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|svg)$/i,
+                use: [
+                  {
+                    loader: 'url-loader',
+                  },
+                ],
             }
         ]
     },

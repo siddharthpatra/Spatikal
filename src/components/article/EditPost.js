@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function EditPost() {
+const EditPost = (props) => {
     return (
         <div>
             EditPost
         </div>
     )
 }
+
+export default EditPost

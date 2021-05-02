@@ -115,7 +115,7 @@ class Article extends PureComponent {
                                 <span><i>Feeling like adding some suggestions?</i>
                                     <Link to={{
                                                 pathname: '/editPost/'+ this.state.article.id,
-                                                state: {article:this.state.article.id}
+                                                state: {article:this.state.article}
                                             }}> 
                                         Please Click Here...!!
                                     </Link>

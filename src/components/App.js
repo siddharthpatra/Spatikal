@@ -26,14 +26,13 @@ const App = () => {
                 <div className="pages">
                     <Switch>
                         <Route exact path="/" component={Home}/>
-                        <Route path="/contact" component={Contact}/>
                         <Route path="/blog" component={Blog}/>
                         <Route path="/about" component={About}/>
                         <Route path="/article/:id" component={Article}/>
-                        <Route path="/post" component={Post}/>
                         <Route path="/category/:category" component={Category}/>
                         <AuthProvider>
                             <PrivateRoute exact path="/editPost/:id" component={EditPost}/>
+                            <PrivateRoute exact path ="/post" component={Post}/>
                             <Route path="/login" component={Login}/>
                             <Route path="/signup" component={Signup}/>
                         </AuthProvider>
