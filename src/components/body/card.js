@@ -57,7 +57,7 @@ const Card = (props) => {
             <div className="card-title">
               <h3>{props.data.title}</h3>
             </div>
-            <div className="card-body">{parse(props.data.content)}</div>
+            <div className="card-body">{parse(props.data.description)}</div>
           </div>
         </div>
       </Link>

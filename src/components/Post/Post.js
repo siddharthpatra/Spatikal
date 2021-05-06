@@ -15,6 +15,7 @@ const storageRef = storage;
 const Post = () => {
   const initialState = {
     title: "",
+    description: "",
     author: "",
     datePosted: new Date(),
     category: "",
@@ -69,6 +70,13 @@ const Post = () => {
     setArticle({
       ...article,
       title: value,
+    });
+  };
+
+  const onChangeArticleDescription = (value) => {
+    setArticle({
+      ...article,
+      description: value,
     });
   };
 
@@ -181,6 +189,18 @@ const Post = () => {
               onChangeArticleTitle(e.target.value);
             }}
             value={article.title}
+          />
+        </div>
+        <div className="descriptionInput">
+          <label htmlFor="description">Description</label>
+          <input
+            id="description"
+            type="text"
+            placehoder="Here goes your Description"
+            onChange={(e) => {
+              onChangeArticleDescription(e.target.value);
+            }}
+            value={article.description}
           />
         </div>
         <div className="imageInput">

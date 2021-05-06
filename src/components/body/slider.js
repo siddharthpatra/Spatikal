@@ -11,22 +11,22 @@ SwiperCore.use([Pagination, Navigation]);
 
 const Slider = (props) => {
   return (
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={10}
-        slidesPerGroup={3}
-        loop={true}
-        loopFillGroupWithBlank={false}
-        pagination={{ clickable: true }}
-        navigation={true}
-        className="mySwiper"
-      >
-        {props.article.map((article, index) => (
-          <SwiperSlide key={index}>
-            <Card key={index} data={article} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <Swiper
+      slidesPerView={3}
+      spaceBetween={10}
+      slidesPerGroup={3}
+      loop={true}
+      loopFillGroupWithBlank={false}
+      pagination={{ clickable: true }}
+      navigation={true}
+      className="mySwiper"
+    >
+      {props.article.map((article, index) => (
+        <SwiperSlide key={index}>
+          <Card key={index} data={article} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
