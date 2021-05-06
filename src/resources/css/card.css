@@ -9,9 +9,9 @@
     transition: 0.3s;
     text-align: left;
     animation: ease-in;
-    background-color: #072154;
+    background-color: #1C3382;
     overflow: hidden;
-    box-shadow: 5px 5px 15px 2px #1a0117;
+    
 }
 .image-container {
     box-shadow: 0px 0px 15px -5px;

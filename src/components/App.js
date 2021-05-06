@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/header/Navbar";
 import Home from "../components/pages/Home";
-import Feedback from "./pages/Feedback";
+// import Feedback from "./pages/Feedback";
 import Blog from "../components/pages/blog";
 import About from "../components/pages/about";
 import Login from "./authentication/login";
@@ -28,7 +28,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/blog" component={Blog} />
           <Route path="/about" component={About} />
-          <Route path="/feedback" component={Feedback} />
+          {/* <Route path="/feedback" component={Feedback} /> */}
           <Route path="/article/:id" component={Article} />
           <Route path="/category/:category" component={Category} />
           <AuthProvider>

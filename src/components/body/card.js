@@ -55,7 +55,7 @@ const Card = (props) => {
               </ul>
             </div>
             <div className="card-title">
-              <h3>{props.data.title}</h3>
+              <h4>{props.data.title}</h4>
             </div>
             <div className="card-body">{parse(props.data.description)}</div>
           </div>
