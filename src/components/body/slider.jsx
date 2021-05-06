@@ -3,7 +3,7 @@ import React, { lazy, Suspense } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "../../resources/css/carousel.css";
-const Card = lazy(() => import("../body/card"));
+const Card = lazy(() => import("./card"));
 
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 

@@ -1,18 +1,18 @@
 import React from "react";
-import Navbar from "../components/header/Navbar";
-import Home from "../components/pages/Home";
+import Navbar from "./header/Navbar";
+import Home from "./pages/Home";
 import Feedback from "./pages/Feedback";
-import Blog from "../components/pages/blog";
-import About from "../components/pages/about";
+import Blog from "./pages/blog";
+import About from "./pages/about";
 import Login from "./authentication/login";
 import Article from "./article/Article";
 import Post from "./Post/Post";
-import Category from "../components/pages/Category";
+import Category from "./pages/Category";
 import Footer from "./footer/footer";
 import { Switch, Route } from "react-router-dom";
 import Signup from "./authentication/Signup";
-import { AuthProvider } from "../components/authentication/context/AuthContext";
-import PrivateRoute from "../components/authentication/PrivateRoute";
+import { AuthProvider } from "./authentication/context/AuthContext";
+import PrivateRoute from "./authentication/PrivateRoute";
 import EditPost from "./article/EditPost";
 
 import "../resources/css/App.css";
