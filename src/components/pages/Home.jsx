@@ -4,6 +4,7 @@ import { firedb } from "../../config/firebase";
 
 import Banner from "../body/banner";
 import Slider from "../body/slider";
+import Feedback from "./feedback/Feedback";
 const Card = lazy(() => import("../body/card"));
 
 import "../../resources/css/home.css";
@@ -179,6 +180,7 @@ const Home = () => {
             <div className="clear"></div>
           </div>
         </div>
+        <Feedback />
       </div>
     </>
   );

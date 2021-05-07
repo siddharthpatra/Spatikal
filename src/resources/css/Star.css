@@ -1,0 +1,6 @@
+#starcontainer {
+  display: flex;
+}
+.radioInput {
+  display: none;
+}

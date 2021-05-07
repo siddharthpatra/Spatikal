@@ -133,7 +133,7 @@ class Article extends PureComponent {
               </div>
             </div>
 
-            <>
+            {/* <>
               <div className="suggestionButton">
                 <p>
                   <span>Didn&#39;t like the content?</span>
@@ -150,7 +150,7 @@ class Article extends PureComponent {
                   </span>
                 </p>
               </div>
-            </>
+            </> */}
             <RelatedPost
               category={this.state.article.category}
               id={this.state.article.id}
