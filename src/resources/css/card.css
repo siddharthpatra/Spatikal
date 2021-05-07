@@ -2,15 +2,18 @@
   box-sizing: border-box;
   border: 1px solid #1a0117;
   margin: 5% 2%;
-  height: 700px;
+  height: 696px;
   font-size: 24px;
-  width: 300px;
+  width: 350px;
   color: rgba(255, 255, 255, 0.7);
   transition: 0.3s;
   text-align: left;
   animation: ease-in;
-  background-color: #1c3382;
+  background-color: #1C3382;
   overflow: hidden;
+  border-radius: 22px;
+  padding: 3% 3%;
+  
 }
 .image-container {
   box-shadow: 0px 0px 15px -5px;
@@ -30,8 +33,7 @@
   margin: 1rem;
   margin-top: 0.5rem;
 }
-h3,
-p {
+h3,p {
   margin: 0;
   padding: 0;
 }
@@ -50,7 +52,7 @@ p {
   text-transform: uppercase;
 }
 .displayFlex button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255,255,255,0.1);
   text-transform: scale(1.1);
 }
 .displayFlex button a {
@@ -58,10 +60,11 @@ p {
   color: #e1e2e1;
   font-weight: bold;
   cursor: pointer;
+  
 }
 .card-details {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 22px;
   list-style: none;
   box-sizing: border-box;
   margin: 1rem 0;
@@ -83,6 +86,7 @@ p {
   color: white;
   max-height: 300px;
   overflow: hidden;
+  
 }
 .far {
   margin-right: 0.5rem;

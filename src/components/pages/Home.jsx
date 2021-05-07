@@ -61,7 +61,9 @@ const Home = () => {
         <div className="bordertop"></div>
         <div className="content">
           <p>
-            <i>Recent Posts</i>
+            <div className="sectionTitle">
+            <i>R E C E N T&nbsp;&nbsp;&nbsp;&nbsp;P O S T S</i>
+            </div>
           </p>
           <div className="displayFlex mobileGrid flexWrap">
             {isSorted
@@ -75,26 +77,31 @@ const Home = () => {
               : ""}
           </div>
         </div>
-        <div className="bordertop"></div>
+        {/* <div className="bordertop"></div> */}
         <div className="content">
           <p>
-            <i>Collections</i>
+          <div className="sectionTitle">
+            <i>C O L L E C T I O N S</i>
+          </div>  
           </p>
         </div>
         <div className="displayFlex mobileGrid flexWrap">
           {isLoaded ? <Slider article={articles} /> : ""}
         </div>
-        <div className="bordertop"></div>
+        {/* <div className="bordertop"></div> */}
         <div className="content">
           <p>
-            <i>Categories</i>
+          <div className="sectionTitle">  
+            <i>C A T E G O R I E S</i>
+            </div>  
           </p>
         </div>
         <div className="catogeriesContent">
           <p>
+            <br></br>
             <i>All the things to talk about!</i>
           </p>
-
+          <br></br>
           <div>
             <div className="row">
               <Link
@@ -109,6 +116,7 @@ const Home = () => {
                   <p>Food and Drinks</p>
                 </div>
               </Link>
+              
               <Link
                 to={{
                   pathname: "/category/" + encodeURI("Health and Fitness"),
@@ -120,6 +128,7 @@ const Home = () => {
                   <p>Health and Fitness</p>
                 </div>
               </Link>
+
             </div>
             <div className="clear"></div>
           </div>
@@ -180,8 +189,7 @@ const Home = () => {
             <div className="clear"></div>
           </div>
         </div>
-        <Feedback />
-      </div>
+        <Feedback />      </div>
     </>
   );
 };

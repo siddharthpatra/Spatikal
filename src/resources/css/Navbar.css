@@ -1,12 +1,13 @@
 .navbar {
-  background-color: black;
-  height: 80px;
+  background-color: white;
+  height:  80px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
   top: 0;
   z-index: 20;
+  color: black;
 }
 .nav-container {
   display: flex;
@@ -17,7 +18,7 @@
   max-width: 1500px;
 }
 .nav-logo {
-  color: #fff;
+  color: black;
   text-transform: uppercase;
   align-items: center;
   margin-left: 20px;
@@ -26,6 +27,7 @@
   text-align: left;
   font-size: 2rem;
   flex-grow: 1;
+  
 }
 .nav-menu {
   display: flex;
@@ -34,7 +36,7 @@
   margin-right: 2rem;
 }
 .nav-links {
-  color: white;
+  color: black;
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
@@ -43,6 +45,7 @@
 .nav-item {
   line-height: 40px;
   margin-right: 1rem;
+
 }
 .nav-item:after {
   content: "";
@@ -55,14 +58,12 @@
 
 .nav-item:hover:after {
   width: 100%;
-  background: #ffdd40;
+  background: black;
 }
-.nav-item .active {
-  color: #ffdd40;
-}
+
 .nav-item .fa {
   padding-left: 0.3rem;
-  color: #aa501f;
+  color: black;
 }
 .nav-search {
   width: auto;
@@ -77,7 +78,7 @@
   top: 45px;
   left: -220px;
   border-radius: 5px;
-  border: #1a0117 1px solid;
+  border: black 1px solid;
 }
 input.nav-searchinput:focus {
   outline: none;
@@ -88,31 +89,29 @@ input.nav-searchinput:focus {
 .pointer {
   cursor: pointer;
 }
+.nav-container .navSection{
+  font-family: 'Suez One', serif;
+}
 @media screen and (max-width: 960px) {
   .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-top: 1px solid #fff;
-    position: absolute;
-    top: 80px;
-    left: -110%;
-    opacity: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-top: 1px solid #fff;
+      position: absolute;
+      top: 80px;
+      left: -110%;
+      opacity: 1;
   }
-  .nav-menu.active {
-    background: #1a0117;
-    left: 0px;
-    opacity: 1;
-    z-index: 1;
-    transition: all 0.5s ease;
-  }
+  
   .nav-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    color: #f5deb3;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 60%);
+      font-size: 1.8rem;
+      color: #f5deb3;
   }
+  
 }

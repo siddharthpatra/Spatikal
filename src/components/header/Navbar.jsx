@@ -29,14 +29,15 @@ const Navbar = () => {
         <div className="nav-container">
           {error}
           <NavLink exact to="/" className="nav-logo">
-            <h2>Spatikal</h2>
+            <div className="navSection">
+              <h2>Spatikal</h2>
+            </div>
           </NavLink>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu">
             <li className="nav-item">
               <NavLink
                 exact
                 to="/about"
-                activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -47,7 +48,6 @@ const Navbar = () => {
               <NavLink
                 exact
                 to="/blog"
-                activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -68,7 +68,6 @@ const Navbar = () => {
                 <NavLink
                   exact
                   to="/login"
-                  activeClassName="active"
                   className="nav-links"
                   onClick={handleClick}
                 >

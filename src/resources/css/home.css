@@ -5,6 +5,7 @@
 
 .row {
   width: 100%;
+  padding-bottom: 50mm;
 }
 img {
   width: 100%;
@@ -24,8 +25,7 @@ img {
   width: 45%;
   float: right;
 }
-.column.second .row.end,
-.column.second .column {
+.column.second .row.end, .column.second .column {
   height: 199px;
   position: relative;
 }
@@ -42,14 +42,14 @@ img {
   clear: both;
 }
 .bordertop {
-  border-top: 3px solid #e7e7e7;
+  border-top: 3px solid black;
   border-radius: 1px;
   margin: 2% auto;
   width: 75%;
 }
 .content {
   text-align: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #000;
   font-size: 30px;
   line-height: 35px;
@@ -58,14 +58,22 @@ img {
 .icon-text {
   font-size: 80px;
 }
-.catogeriesContent {
+.catogeriesContent{
   font-size: 20px;
-  color: #6ec1e4;
+  color: #6EC1E4;
+  height: auto;
+  
+}
+.catogeriesContent .column{
   height: auto;
 }
-.catogeriesContent .column {
-  height: auto;
+.fas{
+  font-size: 80px;
 }
-.fas {
-  font-size: 60px;
+.sectionTitle{
+  text-transform: capitalize;
+  
+}
+.sectionTitle{
+  font-weight: bold;
 }
