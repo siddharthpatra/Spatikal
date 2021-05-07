@@ -5,6 +5,7 @@
 
 .row {
     width: 100%;
+    padding-bottom: 50mm;
 }
 img {
     width: 100%;
@@ -41,7 +42,7 @@ img {
     clear: both;
 }
 .bordertop {
-    border-top: 3px solid #e7e7e7;
+    border-top: 3px solid black;
     border-radius: 1px;
     margin: 2% auto;
     width: 75%;
@@ -67,5 +68,12 @@ img {
     height: auto;
 }
 .fas{
-    font-size: 60px;
+    font-size: 80px;
+}
+.sectionTitle{
+    text-transform: capitalize;
+    
+}
+.sectionTitle{
+    font-weight: bold;
 }

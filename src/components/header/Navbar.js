@@ -29,7 +29,9 @@ const Navbar = () => {
         <div className="nav-container">
           {error}
           <NavLink exact to="/" className="nav-logo">
+            <div className="navSection">
             <h2>Spatikal</h2>
+            </div>
           </NavLink>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">

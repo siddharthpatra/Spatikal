@@ -20,7 +20,7 @@ const Footer = () => {
                             </ul> */}
                         </div>
                     </div>
-                    <hr/>
+                   <hr/>
                     <div className="row displayFlex details">
                         <div className="column">
                             <NavLink exact to ="/about" className="nav-logo-footer">

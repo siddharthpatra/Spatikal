@@ -2,15 +2,17 @@
     box-sizing: border-box;
     border: 1px solid #1a0117;
     margin: 5% 2%;
-    height: 700px;
+    height: 696px;
     font-size: 24px;
-    width: 300px;
+    width: 350px;
     color: rgba(255, 255, 255, 0.7);
     transition: 0.3s;
     text-align: left;
     animation: ease-in;
     background-color: #1C3382;
     overflow: hidden;
+    border-radius: 22px;
+    padding: 3% 3%;
     
 }
 .image-container {
@@ -61,8 +63,8 @@ h3,p {
     
 }
 .card-details {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 22px;
     list-style: none;
     box-sizing: border-box;
     margin: 1rem 0;

@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
 }
 body {
     background-color: white;
@@ -35,5 +35,5 @@ a {
     color: inherit;
 }
 .displayFlex a {
-    margin: 5% 5%;
+    margin: 2.5% 2.5%;
 }
