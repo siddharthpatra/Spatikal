@@ -6,25 +6,24 @@
   align-items: center;
   font-size: 1.5rem;
   top: 0;
-  z-index: 20;
+  z-index: 50;
   color: black;
-  border: 2px solid black;
-  margin: 0.125%;
-  position: sticky
+  box-shadow:0 2px 6px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.1);
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
 }
 .nav-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 80px;
-  max-width: 1500px;
+  width: 95%;
+  margin:0 auto;
 }
 .nav-logo {
   color: black;
   text-transform: uppercase;
   align-items: center;
-  margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
   text-align: left;
@@ -36,7 +35,6 @@
   display: flex;
   list-style: none;
   text-align: center;
-  margin-right: 2rem;
 }
 .nav-links {
   color: black;
@@ -47,8 +45,6 @@
 }
 .nav-item {
   line-height: 40px;
-  margin-right: 1rem;
-
 }
 .nav-item:after {
   content: "";
@@ -92,29 +88,30 @@ input.nav-searchinput:focus {
 .pointer {
   cursor: pointer;
 }
-.nav-container .navSection{
-  font-family: 'Suez One', serif;
+.nav-container .navSection h2 {
+  font-family: "Suez One", serif !important;
+  font-weight: normal;
+  letter-spacing: 0.05em;
 }
 @media screen and (max-width: 960px) {
   .nav-menu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      border-top: 1px solid #fff;
-      position: absolute;
-      top: 80px;
-      left: -110%;
-      opacity: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid #fff;
+    position: absolute;
+    top: 80px;
+    left: -110%;
+    opacity: 1;
   }
-  
+
   .nav-icon {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
-      font-size: 1.8rem;
-      color: #f5deb3;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    color: #f5deb3;
   }
-  
 }
