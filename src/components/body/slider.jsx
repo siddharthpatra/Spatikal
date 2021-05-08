@@ -3,7 +3,7 @@ import React, { lazy, Suspense } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "../../resources/css/carousel.css";
-const Card = lazy(() => import("./card"));
+const CardSlider = lazy(() => import("./cardSlider"));
 
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 
@@ -14,7 +14,7 @@ const Slider = (props) => {
     return props.article.map((article, index) => (
       <SwiperSlide key={index}>
         <Suspense fallback={<div></div>}>
-          <Card key={index} data={article} />
+          <CardSlider key={index} data={article} />
         </Suspense>
       </SwiperSlide>
     ));

@@ -1,6 +1,6 @@
 .navbar {
   background-color: white;
-  height:  80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,6 +8,9 @@
   top: 0;
   z-index: 20;
   color: black;
+  border: 2px solid black;
+  margin: 0.125%;
+  position: sticky
 }
 .nav-container {
   display: flex;

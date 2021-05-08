@@ -3,6 +3,7 @@
   color: black;
   margin-top: 1%;
   padding: 1%;
+  border-top: 2px solid black;
   font-family: Arial, Helvetica, sans-serif;
 }
 .footer .container {
