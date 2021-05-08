@@ -56,3 +56,8 @@
   opacity: 0.5;
 
 }
+.footerLogo h2{
+font-family: "Suez One", serif !important;
+font-weight: normal;
+letter-spacing: 0.05em;
+}
