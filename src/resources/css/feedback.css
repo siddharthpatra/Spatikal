@@ -78,3 +78,6 @@
 .submitButton button {
   color: #fff;
 }
+.starContainer .fas{
+    font-size: inherit;
+}

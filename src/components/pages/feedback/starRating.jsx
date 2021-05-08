@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
-import "../../../resources/css/Star.css";
 
 const Rate = ({ count, rating, color, onRating }) => {
   const [hoverRating, setHoverRating] = useState(0);
@@ -19,7 +18,7 @@ const Rate = ({ count, rating, color, onRating }) => {
       .map((_, i) => i + 1)
       .map((index) => (
         <i
-          class="far fa-star"
+          class="fas fa-star"
           onClick={() => onRating(index)}
           style={{ color: getColor(index) }}
           onMouseEnter={() => setHoverRating(index)}
