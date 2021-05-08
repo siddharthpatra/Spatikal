@@ -56,6 +56,12 @@
   .sectionTitle {
     font-size: 18px;
   }
+  .aboutContent{
+    padding-left: 0mm;
+  }
+  .aboutTitle{
+    padding-left: 0mm;
+  }
 }
 @media only screen and (max-width: 800px) and (min-width: 601px) {
   .pages .tabOnly {
