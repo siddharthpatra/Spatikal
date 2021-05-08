@@ -128,7 +128,7 @@ const Post = () => {
   };
 
   const handleCheckChieldElement = (event) => {
-    let categories = category;
+    let categories = [...category];
     categories.forEach((category) => {
       if (category.value === event.target.value)
         category.isChecked = event.target.checked;
@@ -145,11 +145,10 @@ const Post = () => {
 
   const clearState = () => {
     console.log("Reached");
-    setArticle({ ...initialState });
+    setArticle(initialState);
     setUploaded(true);
     setTempImageLink();
     setTempVideoLink();
-    setCategory([...Categorydata]);
     console.log(article);
     console.log(category);
   };

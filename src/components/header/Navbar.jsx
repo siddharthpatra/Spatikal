@@ -33,7 +33,7 @@ const Navbar = () => {
               <h2>Spatikal</h2>
             </div>
           </NavLink>
-          <ul className="nav-menu">
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
                 exact

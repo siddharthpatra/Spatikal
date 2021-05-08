@@ -56,9 +56,17 @@
   .sectionTitle {
     font-size: 18px;
   }
-  
+
   .feedbackContainer {
     width: 98% !important;
+    margin: 25% auto !important;
+  }
+  #feedbackHeader {
+    font-size: 16px !important;
+  }
+  .feedbackContents,
+  .feedbackStarBox {
+    font-size: 14px !important;
   }
   .feedbackStarBox {
     width: 90% !important;

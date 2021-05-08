@@ -41,11 +41,13 @@
 #feedbackHeader {
   padding: 3%;
   margin: 0.01em auto;
+  font-size: 18px;
 }
 .feedbackContents {
   text-align: center;
   margin: 0.1em auto;
   padding: 4%;
+  font-size: 16px;
 }
 .fontBold {
   font-weight: bold;

@@ -25,7 +25,8 @@ const Feedback = () => {
     db.collection("spatikal-Feedbackdb")
       .add(feedback)
       .then((res) => {
-        res ? clearState() : console.log(res);
+        alert("Your Feedback is submitted successfuly.Thanks for your Co-operation")
+        res ? (clearState()) : console.log(res);
       })
       .catch((err) => console.log(err));
     e.target.reset();
