@@ -2,6 +2,9 @@
   .displayFlex.mobileGrid {
     display: grid;
   }
+  .card-container {
+    width: auto !important;
+  }
   .card-body {
     font-size: 4.5vw;
   }

@@ -65,7 +65,7 @@ const Home = () => {
             <i>R E C E N T&nbsp;&nbsp;&nbsp;&nbsp;P O S T S</i>
             </div>
           </p>
-          <div className="displayFlex mobileGrid flexWrap">
+          <div className="displayFlex mobileGrid">
             {isSorted
               ? sorting.slice(0, 3).map((article, index) => {
                   return (
@@ -85,7 +85,7 @@ const Home = () => {
           </div>  
           </p>
         </div>
-        <div className="displayFlex mobileGrid flexWrap">
+        <div className="displayFlex mobileGrid">
           {isLoaded ? <Slider article={articles} /> : ""}
         </div>
         {/* <div className="bordertop"></div> */}
