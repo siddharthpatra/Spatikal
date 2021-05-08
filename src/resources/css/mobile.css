@@ -57,6 +57,12 @@
     font-size: 18px;
   }
   
+  .feedbackContainer {
+    width: 98% !important;
+  }
+  .feedbackStarBox {
+    width: 90% !important;
+  }
 }
 @media only screen and (max-width: 800px) and (min-width: 601px) {
   .pages .tabOnly {

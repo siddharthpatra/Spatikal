@@ -9,25 +9,34 @@ const db = firedb;
 
 const Feedback = () => {
   const initialState = {
-    site: "",
-    experience: "",
-    content: "",
+    site: 0,
+    experience: 0,
+    content: 0,
     comments: "",
   };
   const clearState = () => {
-    setFeedback({ ...initialState });
+    console.log("reached")
+    setFeedback(initialState);
   };
   const [feedback, setFeedback] = useState(initialState);
-  // db.collection("spatikal-Feedbackdb")
-  //   .add(feedback)
-  //   .then((res) => {
-  //     clearState();
-  //   });
+
+  const handleFeedback = (e) => {
+    e.preventDefault();
+    db.collection("spatikal-Feedbackdb")
+      .add(feedback)
+      .then((res) => {
+        res ? clearState() : console.log(res);
+      })
+      .catch((err) => console.log(err));
+    e.target.reset();
+  };
   return (
-    <>
+    <form onSubmit={(e) => handleFeedback(e)}>
       <div className="feedbackContainer">
         <div className="feedbackContents">
-          <p id="feedbackHeader" className="fontBold">Feedback</p>
+          <p id="feedbackHeader" className="fontBold">
+            Feedback
+          </p>
           <p>
             <span>
               We believe in meeting the requirements of our audience, so please
@@ -42,34 +51,60 @@ const Feedback = () => {
         </div>
         <div className="feedbackStarBox">
           <div className="feedbackSite">
-            <div className="displayFlex">
-              <p>Site</p>
-              <StarRating />
+            <div className="row">
+              <div className="column floatLeft">
+                <p>Site</p>
+              </div>
+              <div className="column floatRight">
+                <StarRating
+                  rating={feedback.site}
+                  onRating={(rate) => setFeedback({ ...feedback, site: rate })}
+                />
+              </div>
             </div>
+            <div className="clear"></div>
           </div>
           <div className="feedbackExperience">
-            <div className="displayFlex">
-              <p>Experience</p>
-              <StarRating />
+            <div className="row">
+              <div className="column floatLeft">
+                <p>Experience</p>
+              </div>
+              <div className="column floatRight">
+                <StarRating
+                  rating={feedback.experience}
+                  onRating={(rate) =>
+                    setFeedback({ ...feedback, experience: rate })
+                  }
+                />
+              </div>
             </div>
+            <div className="clear"></div>
           </div>
           <div className="feedbackContent">
-            <div className="displayFlex">
-              <p>Content</p>
-              <StarRating />
+            <div className="row">
+              <div className="column floatLeft">
+                <p>Content</p>
+              </div>
+              <div className="column floatRight">
+                <StarRating
+                  rating={feedback.content}
+                  onRating={(rate) =>
+                    setFeedback({ ...feedback, content: rate })
+                  }
+                />
+              </div>
             </div>
+            <div className="clear"></div>
           </div>
         </div>
         <div className="commentBox">
-          <input type="text" placeholder="Type your comment.." />
+          <textarea type="text" placeholder="Type your comment.."></textarea>
         </div>
-        <div className="submitButton">
-          <button>
-            Submit
-          </button>
+        <div className="submitButton displayFlex">
+          <button>Submit</button>
         </div>
       </div>
-    </>
+    </form>
   );
 };
 
