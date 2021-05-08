@@ -1,0 +1,23 @@
+.feedbackContainer {
+  width: 60%;
+  margin: 2% auto;
+  box-sizing: border-box;
+  border: 2px solid black;
+  padding: 2%;
+  font-size: 18px;
+  border-radius: 5px;
+}
+#feedbackHeader {
+    padding: 3%;
+    margin: 0.01em auto;
+    box-sizing: border-box;
+}
+.feedbackContents {
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0.1em auto;
+  padding: 4%;
+}
+.fontBold {
+  font-weight: bold;
+}

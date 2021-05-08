@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { firedb } from "../../../config/firebase";
 import StarRating from "./starRating";
 
+import "../../../resources/css/feedback.css";
+
 const db = firedb;
 
 const Feedback = () => {
@@ -24,15 +26,16 @@ const Feedback = () => {
   return (
     <>
       <div className="feedbackContainer">
-        <div className="feedbackContent">
+        <div className="feedbackContents">
+          <p id="feedbackHeader" className="fontBold">Feedback</p>
           <p>
             <span>
               We believe in meeting the requirements of our audience, so please
-              take
+              take&nbsp;
             </span>
             <span>
               a moment and provide us with your valuable feedback by filling out
-              the
+              the&nbsp;
             </span>
             <span>form given below.</span>
           </p>
@@ -59,6 +62,11 @@ const Feedback = () => {
         </div>
         <div className="commentBox">
           <input type="text" placeholder="Type your comment.." />
+        </div>
+        <div className="submitButton">
+          <button>
+            Submit
+          </button>
         </div>
       </div>
     </>
