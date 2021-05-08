@@ -1,50 +1,50 @@
 .articleImageContainer {
-    margin-left: 10%;
-    margin-right: 10%;
-    box-sizing: border-box;
-    border: 0.1px solid #1a0117;
-    height: 500px;
+  margin-left: 10%;
+  margin-right: 10%;
+  box-sizing: border-box;
+  border: 0.1px solid #1a0117;
+  height: 500px;
 }
 .container .articleDetails {
-    text-align: justify;
+  text-align: justify;
 }
 ul.displayFlex {
-    list-style: none;
+  list-style: none;
 }
 ul.displayFlex .far {
-    font-size: 15px;
+  font-size: 15px;
 }
 
-.font-size{
-    font-size: 22px;
-    text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
+.font-size {
+  font-size: 22px;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
-.information{
-    font-size: 15px;
-    color: rgb(66, 65, 65);
-}
-
-.articleBlog{
-    text-align: center;
+.information {
+  font-size: 15px;
+  color: rgb(66, 65, 65);
 }
 
-.articleContent{
-    box-sizing: border-box;
-    font-size: 16px;
-    line-height: 1.5;
-    padding-left: 55mm;
-    padding-right: 55mm;
+.articleBlog {
+  text-align: center;
 }
-.articleTitle{
-    box-sizing: border-box;
-    text-align: center;
-    padding-left: 55mm;
-    padding-right: 55mm;
+
+.articleContent {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: 55mm;
+  padding-right: 55mm;
+}
+.articleTitle {
+  box-sizing: border-box;
+  text-align: center;
+  padding-left: 55mm;
+  padding-right: 55mm;
 }
 .videoContent {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
 }

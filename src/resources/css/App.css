@@ -1,39 +1,42 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 body {
-    background-color: white;
+  background-color: white;
 }
 body::-webkit-scrollbar {
-    display: none;
+  display: 10px;
 }
 .displayFlex {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .flexWrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .flexThree {
-    flex: 0 0 20%;
+  flex: 0 0 20%;
 }
 .pages {
-    color: #1a0117;
-    text-align: center;
-    font-size: 2rem;
+  color: #1a0117;
+  text-align: center;
+  font-size: 2rem;
 }
 .desktopOnly {
-    display: block;
+  display: block;
 }
 .mobileOnly {
-    display: none;
+  display: none;
+}
+.tabOnly {
+  display: none;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 .displayFlex a {
-    margin: 5% 5%;
+  margin: 2.5% 2.5%;
 }

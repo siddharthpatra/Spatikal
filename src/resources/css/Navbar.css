@@ -1,118 +1,122 @@
 .navbar {
-    background-color: black;
-    height:  80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    top: 0;
-    z-index: 20;
+  background-color: white;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  top: 0;
+  z-index: 50;
+  color: black;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  position: sticky;
+  width: 100%;
 }
 .nav-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
 }
 .nav-logo {
-    color: #fff;
-    text-transform: uppercase;
-    align-items: center;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: left;
-    font-size: 2rem;
-    flex-grow: 1;
+  color: black;
+  text-transform: uppercase;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  font-size: 1.2em;
+  flex-grow: 1;
 }
 .nav-menu {
-    display: flex;
-    list-style: none;
-    text-align: center;
-    margin-right: 2rem;
+  display: flex;
+  list-style: none;
+  text-align: center;
 }
 .nav-links {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    height: 100%;
-    border-bottom: 3px solid transparent;
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  border-bottom: 3px solid transparent;
 }
 .nav-item {
-    line-height: 40px;
-    margin-right: 1rem;
-
+  line-height: 40px;
 }
 .nav-item:after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0;
-    background: transparent;
-    transition: width 0.7s ease, background-color 0.5s ease;
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease, background-color 0.5s ease;
 }
 
 .nav-item:hover:after {
-    width: 100%;
-    background: #ffdd40;
-}
-.nav-item .active {
-    color: #ffdd40;
-}
-.nav-item .fa {
-    padding-left: 0.3rem;
-    color: #aa501f;
-}
-.nav-search {
-    width: auto;
-    position: relative;
-    text-align: left;
-    border-radius: 4px;
-}
-.nav-searchinput {
-    padding: 15px 50px;
-    text-align: center;
-    position: absolute;
-    top: 45px;
-    left: -220px;
-    border-radius: 5px;
-    border: #1a0117 1px solid;
-}
-input.nav-searchinput:focus {
-    outline: none;
-}
-.nav-icon {
-    display: none;
+  width: 100%;
+  background: black;
 }
 
+.nav-item .fa {
+  padding-left: 0.3rem;
+  color: black;
+}
+.nav-search {
+  width: auto;
+  position: relative;
+  text-align: left;
+  border-radius: 4px;
+}
+.nav-searchinput {
+  padding: 15px 50px;
+  text-align: center;
+  position: absolute;
+  top: 45px;
+  left: -220px;
+  border-radius: 5px;
+  border: black 1px solid;
+}
+input.nav-searchinput:focus {
+  outline: none;
+}
+.nav-icon {
+  display: none;
+}
+.pointer {
+  cursor: pointer;
+}
+.nav-container .navSection h2 {
+  font-family: "Suez One", serif !important;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
 @media screen and (max-width: 960px) {
-    .nav-menu {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        border-top: 1px solid #fff;
-        position: absolute;
-        top: 80px;
-        left: -110%;
-        opacity: 1;
-    }
-    .nav-menu.active {
-        background: #1a0117;
-        left: 0px;
-        opacity: 1;
-        z-index: 1;
-        transition: all .5s ease;
-    }
-    .nav-icon {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 60%);
-        font-size: 1.8rem;
-        color: #f5deb3;
-    }
-    
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid #fff;
+    position: absolute;
+    top: 65px;
+    left: -110%;
+    opacity: 1;
+  }
+  .nav-menu.active {
+    background: #fff;
+    left: 0px;
+    opacity: 1;
+    z-index: 1;
+    transition: all 0.5s ease;
+  }
+  .nav-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    color: #f5deb3;
+  }
 }

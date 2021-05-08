@@ -38,11 +38,22 @@ module.exports = {
                     loader: 'file-loader',
                   },
                 ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|svg)$/i,
+                use: [
+                  {
+                    loader: 'url-loader',
+                  },
+                ],
             }
         ]
     },
     devServer: {
         historyApiFallback: true
+      },
+      resolve: {
+        extensions: ['', '.js', '.jsx'],
       },
     plugins: [
         new HtmlWebpackPlugin({template: './src/index.html'})

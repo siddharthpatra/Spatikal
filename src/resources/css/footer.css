@@ -1,57 +1,63 @@
 .footer {
-    background-color: #1a0117;
-    color: #fff;
-    margin-top: 1%;
-    padding: 1%;
-    font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f5f7;
+  color: black;
+  margin-top: 1%;
+  padding: 1%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .footer .container {
-    width: 99%;
-    margin: 0 auto;
+  width: 99%;
+  margin: 0 auto;
 }
 .footer .row {
-    box-sizing: border-box;
-    margin: 1%;
-    padding: 1%;
-    max-width: 99%;
+  box-sizing: border-box;
+  padding: 1%;
+  max-width: 99%;
 }
 .footer .column {
-    height: auto;
-    width: auto;
+  height: auto;
+  width: auto;
 }
 .footer .details .column {
-    width: auto;
+  width: auto;
 }
 .footer .details .column h3 {
-    font-size: 16px;
+  font-size: 16px;
 }
 .footer .details .column, .footer .social .column {
-    margin-right: 1rem;
-    text-align: center;
+  margin-right: 1rem;
+  text-align: center;
 }
 .footer .social .column {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 .footer li {
-    font-size: 14px;
-    line-height: 18px;
-    opacity: 70%;
-    list-style: none;
+  font-size: 14px;
+  line-height: 18px;
+  opacity: 70%;
+  list-style: none;
 }
 .terms {
-    
-    font-size: 12px;
+  
+  font-size: 12px;
 }
 .footer h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 .footer h2, .footer h3 {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 .nav-logo-footer {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: black;
 }
 .footer hr {
-    border-color: #3f2c3d;
+  color:  #3f2c3d;
+  opacity: 0.5;
+
+}
+.footerLogo h2{
+font-family: "Suez One", serif !important;
+font-weight: normal;
+letter-spacing: 0.05em;
 }
