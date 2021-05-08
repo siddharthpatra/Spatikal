@@ -37,11 +37,11 @@ const CardSlider = (props) => {
           <div className="imageSlider-container">
             <img src={props.data.image} alt="Blog_Image" />
           </div>
-          <div className="card-content">
+          <div className="cardSlider-content">
             <div className="cardSlider-title">
               <h4>{props.data.title}</h4>
             </div>
-            <div className="card-body">{parse(props.data.description)}</div>
+            <div className="cardSlider-body">{parse(props.data.description)}</div>
           </div>
         </div>
       </Link>

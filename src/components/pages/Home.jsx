@@ -62,7 +62,7 @@ const Home = () => {
         <div className="content">
           <p>
             <div className="sectionTitle">
-            <i>R E C E N T&nbsp;&nbsp;&nbsp;&nbsp;P O S T S</i>
+              <i>R E C E N T&nbsp;&nbsp;&nbsp;&nbsp;P O S T S</i>
             </div>
           </p>
           <div className="displayFlex mobileGrid">
@@ -77,23 +77,27 @@ const Home = () => {
               : ""}
           </div>
         </div>
-       {/* <div className="bordertop"></div>  */}
+        {/* <div className="bordertop"></div>  */}
+        <br></br>
         <div className="content">
           <p>
-          <div className="sectionTitle">
-            <i>C O L L E C T I O N S</i>
-          </div>  
+            <div className="sectionTitle">
+              <i>C O L L E C T I O N S</i>
+            </div>
           </p>
+          <br></br>
         </div>
         <div className="displayFlex mobileGrid">
           {isLoaded ? <Slider article={articles} /> : ""}
         </div>
         {/* <div className="bordertop"></div> */}
+        <br></br>
+        <br></br>
         <div className="content">
           <p>
-          <div className="sectionTitle">  
-            <i>C A T E G O R I E S</i>
-            </div>  
+            <div className="sectionTitle">
+              <i>C A T E G O R I E S</i>
+            </div>
           </p>
         </div>
         <div className="catogeriesContent">
@@ -116,7 +120,7 @@ const Home = () => {
                   <p>Food and Drinks</p>
                 </div>
               </Link>
-              
+
               <Link
                 to={{
                   pathname: "/category/" + encodeURI("Health and Fitness"),
@@ -128,7 +132,6 @@ const Home = () => {
                   <p>Health and Fitness</p>
                 </div>
               </Link>
-
             </div>
             <div className="clear"></div>
           </div>
@@ -189,7 +192,8 @@ const Home = () => {
             <div className="clear"></div>
           </div>
         </div>
-        <Feedback />      </div>
+        <Feedback />{" "}
+      </div>
     </>
   );
 };

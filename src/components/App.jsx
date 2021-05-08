@@ -15,6 +15,7 @@ import PrivateRoute from "./authentication/PrivateRoute";
 import EditPost from "./article/EditPost";
 
 import "../resources/css/App.css";
+import contact from "./pages/contact";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/blog" component={Blog} />
           <Route path="/about" component={About} />
+          <Route path="/contact" component={contact} />
           <Route path="/article/:id" component={Article} />
           <Route path="/category/:category" component={Category} />
           <AuthProvider>

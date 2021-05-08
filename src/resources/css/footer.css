@@ -1,9 +1,8 @@
 .footer {
-  background-color: white;
+  background-color: #f3f5f7;
   color: black;
   margin-top: 1%;
   padding: 1%;
-  border-top: 2px solid black;
   font-family: Arial, Helvetica, sans-serif;
 }
 .footer .container {
@@ -12,7 +11,6 @@
 }
 .footer .row {
   box-sizing: border-box;
-  margin: 1%;
   padding: 1%;
   max-width: 99%;
 }
@@ -55,4 +53,5 @@
 }
 .footer hr {
   border-color: #3f2c3d;
+  opacity: 0.2;
 }

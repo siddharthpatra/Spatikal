@@ -25,7 +25,7 @@
   overflow: hidden;
   height: 200px;
 }
-.card-content {
+.cardSlider-content {
   margin: 1rem;
   margin-top: 0.5rem;
 }
@@ -38,7 +38,8 @@ p {
   margin-bottom: 0.5rem;
   padding-left: 10px;
   padding-right: 10px;
-  color: white;
+  color: black;
+  min-height: 50px;
 }
 .displayFlex button {
   padding: 0.5rem;
@@ -74,12 +75,12 @@ p {
 .card-details ul li {
   margin-bottom: 0.2rem;
 }
-.card-body {
+.cardSlider-body {
   font-size: 12px;
   line-height: 30px;
   padding-left: 10px;
   padding-right: 10px;
-  color: white;
+  color: black;
   max-height: 300px;
   overflow: hidden;
 }
