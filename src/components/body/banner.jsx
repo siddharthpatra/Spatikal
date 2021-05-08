@@ -6,7 +6,7 @@ import "../../resources/css/banner.css";
 const Banner = () => {
   return (
     <>
-      <div className="container displayFlex">
+      <div className="displayFlex">
         <img src={Main} alt="Main_Banner" />
 
         {/*

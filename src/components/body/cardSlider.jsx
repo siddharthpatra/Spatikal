@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 
-import "../../resources/css/card.css";
+import "../../resources/css/cardSlider.css";
 export function dateCreated(dp) {
   const months = [
     "January",
@@ -33,28 +33,12 @@ const CardSlider = (props) => {
           state: { article: props.data },
         }}
       >
-        <div className="card-container">
-          <div className="image-container">
+        <div className="cardSlider-container">
+          <div className="imageSlider-container">
             <img src={props.data.image} alt="Blog_Image" />
           </div>
           <div className="card-content">
-            <div className="card-details">
-              <ul>
-                <li>
-                  <i className="far fa-user"></i>
-                  {props.data.author}
-                </li>
-                <li>
-                  <i className="far fa-calendar"></i>
-                  {dateCreated(props.data.datePosted.seconds)}
-                </li>
-                <li>
-                  <i className="far fa-folder"></i>
-                  {props.data.category}
-                </li>
-              </ul>
-            </div>
-            <div className="card-title">
+            <div className="cardSlider-title">
               <h4>{props.data.title}</h4>
             </div>
             <div className="card-body">{parse(props.data.description)}</div>

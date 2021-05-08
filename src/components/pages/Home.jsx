@@ -77,7 +77,7 @@ const Home = () => {
               : ""}
           </div>
         </div>
-        {/* <div className="bordertop"></div> */}
+       {/* <div className="bordertop"></div>  */}
         <div className="content">
           <p>
           <div className="sectionTitle">
