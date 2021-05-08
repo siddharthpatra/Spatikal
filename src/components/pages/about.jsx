@@ -50,6 +50,7 @@ const About = () => {
           content they are viewing on our platform.
         </p>
       </div>
+      <br></br>
     </>
   );
 };

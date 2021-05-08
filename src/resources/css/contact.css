@@ -1,0 +1,8 @@
+.contactContent {
+  padding-top: 10mm;
+  padding-bottom: 10mm;
+}
+.contactContent a {
+  color: blue;
+  text-decoration: underline;
+}

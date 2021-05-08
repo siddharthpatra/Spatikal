@@ -52,6 +52,7 @@
   color: black;
 }
 .footer hr {
-  border-color: #3f2c3d;
-  opacity: 0.2;
+  color:  #3f2c3d;
+  opacity: 0.5;
+
 }
