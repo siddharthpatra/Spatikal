@@ -1,5 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 const Card = lazy(() => import("../body/card"));
+const CardSlider = lazy(() => import("../body/cardSlider"));
 
 class Category extends Component {
   constructor(props) {
@@ -131,12 +132,13 @@ class Category extends Component {
 
   render() {
     return (
-      <>
-        {this.state.category}
-
-        <div className="displayFlex mobileGrid flexWrap">
+      <div className="container">
+        <div>
+          <p>{this.state.category}</p>
+        </div>
+        <div className="">
           {this.state.isLoaded
-            ? this.state.articles.map((article, index) => {
+            ? this.state.articles.slice(0, 3).map((article, index) => {
                 return (
                   <Suspense fallback={<div></div>}>
                     <Card key={index} data={article} />
@@ -145,7 +147,20 @@ class Category extends Component {
               })
             : ""}
         </div>
-      </>
+        <div className="displayFlex">
+          {this.state.isLoaded
+            ? this.state.articles
+                .slice(3, this.state.articles.length)
+                .map((article, index) => {
+                  return (
+                    <Suspense fallback={<div></div>}>
+                      <CardSlider key={index} data={article} />
+                    </Suspense>
+                  );
+                })
+            : ""}
+        </div>
+      </div>
     );
   }
 }

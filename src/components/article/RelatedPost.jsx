@@ -3,7 +3,7 @@ import React, { Component, lazy, Suspense } from "react";
 
 import firebase from "../../config/firebase";
 
-const Card = lazy(() => import("../body/card"));
+const Card = lazy(() => import("../body/cardSlider"));
 
 const db = firebase.firestore();
 
