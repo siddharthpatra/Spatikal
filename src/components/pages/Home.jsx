@@ -26,11 +26,8 @@ const Home = () => {
 
   useEffect(() => {
     setIsLoaded(true);
-  }, [articles]);
-
-  useEffect(() => {
     setIsSorted(true);
-  }, [sorting]);
+  }, [articles, sorting]);
 
   const getMyArticles = () => {
     db.collection("spatikal-db")
@@ -60,31 +57,33 @@ const Home = () => {
       <div className="container">
         <div className="bordertop"></div>
         <div className="content">
-          <p>
-            <div className="sectionTitle">
+          <div className="sectionTitle">
+            <p>
               <i>R E C E N T&nbsp;&nbsp;&nbsp;&nbsp;P O S T S</i>
-            </div>
-          </p>
+            </p>
+          </div>
+
           <div className="displayFlex mobileGrid">
-            {isSorted
+            {/* {isSorted
               ? sorting.slice(0, 3).map((article, index) => {
                   return (
-                    <Suspense fallback={<div></div>}>
+                    <Suspense fallback={<div key={index}></div>}>
                       <Card key={index} data={article} />
                     </Suspense>
                   );
                 })
-              : ""}
+              : ""} */}
           </div>
         </div>
         {/* <div className="bordertop"></div>  */}
         <br></br>
         <div className="content">
-          <p>
-            <div className="sectionTitle">
+          <div className="sectionTitle">
+            <p>
               <i>C O L L E C T I O N S</i>
-            </div>
-          </p>
+            </p>
+          </div>
+
           <br></br>
         </div>
         <div className="displayFlex mobileGrid">
@@ -94,11 +93,11 @@ const Home = () => {
         <br></br>
         <br></br>
         <div className="content">
-          <p>
-            <div className="sectionTitle">
+          <div className="sectionTitle">
+            <p>
               <i>C A T E G O R I E S</i>
-            </div>
-          </p>
+            </p>
+          </div>
         </div>
         <div className="catogeriesContent">
           <p>

@@ -18,7 +18,8 @@ const Rate = ({ count, rating, color, onRating }) => {
       .map((_, i) => i + 1)
       .map((index) => (
         <i
-          class="fas fa-star"
+          key={index}
+          className="fas fa-star"
           onClick={() => onRating(index)}
           style={{ color: getColor(index) }}
           onMouseEnter={() => setHoverRating(index)}

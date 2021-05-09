@@ -1,19 +1,27 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
+let mode = "development";
+
+if (process.env.NODE_ENV === "production") {
+  mode = "production";
+}
+
 module.exports = {
-  mode: "production",
+  mode: mode,
   entry: "./src/index.js",
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-  devtool: false,
+  devtool: "source-map",
   output: {
     path: path.join(__dirname, "build"),
     filename: "bundle.js",
     publicPath: "/",
+    assetModuleFilename: "images/[hash][ext][querry]"
   },
   module: {
     rules: [
@@ -29,28 +37,20 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(png|jpe?g|gif|mp4)$/i,
         use: [
-          {
-            loader: "file-loader",
-          },
+          { loader: MiniCssExtractPlugin.loader, options: { publicPath: "" } },
+          "css-loader",
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/i,
-        use: [
-          {
-            loader: "url-loader",
-          },
-        ],
+        test: /\.(png|jpe?g|gif|mp4|woff|woff2|eot|ttf|svg)$/i,
+        type: "asset",
       },
     ],
   },
   devServer: {
     historyApiFallback: true,
+    hot: true,
   },
   resolve: {
     extensions: ["", ".js", ".jsx"],
@@ -60,5 +60,6 @@ module.exports = {
       template: "./src/index.html",
       favicon: "./src/resources/images/logo.ico",
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
