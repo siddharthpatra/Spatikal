@@ -1,13 +1,15 @@
 import React from "react";
 
-import Main from "../../resources/images/again.png";
+import Main from "../../resources/images/Artboard_15.png";
 import "../../resources/css/banner.css";
 
 const Banner = () => {
   return (
     <>
       <div className="displayFlex">
-        <img src={Main} alt="Main_Banner" />
+        <div className="bannerImage">
+          <img src={Main} alt="Main_Banner" />
+        </div>
 
         {/*
                         <div className="column second">

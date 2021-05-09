@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 const Card = lazy(() => import("../body/card"));
-import Slider from "../body/slider";
+// import Slider from "../body/slider";
 
 class Category extends Component {
   constructor(props) {
@@ -143,9 +143,9 @@ class Category extends Component {
               );
             })}
           </div>
-          <div className="displayFlex mobileGrid">
+          {/* <div className="displayFlex mobileGrid">
             <Slider article={this.state.articles.slice(3, this.state.articles.length)} />
-          </div>
+          </div> */}
         </>
       );
     } else {
