@@ -1,14 +1,18 @@
 import React from "react";
 
-import Main from "../../resources/images/Artboard_15.png";
+import Maindesktop from "../../resources/images/Artboard_15.png";
+import Mainmobile from "../../resources/images/Artboard.png";
 import "../../resources/css/banner.css";
 
 const Banner = () => {
   return (
     <>
       <div className="displayFlex">
-        <div className="bannerImage">
-          <img src={Main} alt="Main_Banner" />
+        <div className="bannerImage desktopOnly">
+          <img src={Maindesktop} alt="Main_Banner" />
+        </div>
+        <div className="bannerImage mobileOnly">
+          <img src={Mainmobile} alt="Main_Banner" />
         </div>
 
         {/*
