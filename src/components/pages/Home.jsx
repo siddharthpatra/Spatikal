@@ -5,7 +5,7 @@ import { firedb } from "../../config/firebase";
 import Banner from "../body/banner";
 import Slider from "../body/slider";
 import Feedback from "./feedback/Feedback";
-const Card = lazy(() => import("../body/card"));
+import Card from "../body/card";
 
 import "../../resources/css/home.css";
 import "../../resources/css/mobile.css";
@@ -64,15 +64,13 @@ const Home = () => {
           </div>
 
           <div className="displayFlex mobileGrid">
-            {/* {isSorted
+            {isSorted
               ? sorting.slice(0, 3).map((article, index) => {
                   return (
-                    <Suspense fallback={<div key={index}></div>}>
                       <Card key={index} data={article} />
-                    </Suspense>
                   );
                 })
-              : ""} */}
+              : ""}
           </div>
         </div>
         {/* <div className="bordertop"></div>  */}
