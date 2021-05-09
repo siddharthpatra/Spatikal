@@ -7,12 +7,12 @@ export default function contact() {
       <p>
         <div className="contactContent">
           While you are scrolling for information and knowledge, you can also
-          contact us for any enquiry or details at <a href="mailto:contact@spatikal.com">contact@spatikal.com</a>
+          contact us for any enquiry or details at
+          <p>
+            Mail: <a href="mailto:contact@spatikal.in">contact@spatikal.in</a>
+          </p>
         </div>
       </p>
-      
-          
-       
     </div>
   );
 }

@@ -41,7 +41,7 @@ const Footer = () => {
                             <i className="fab fa-linkedin"></i>
                         </div> */}
             <div className="column">
-              <a href="https://www.instagram.com/_spatikal">
+              <a href="https://www.instagram.com/_spatikal_">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>

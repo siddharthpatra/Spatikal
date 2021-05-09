@@ -62,7 +62,7 @@ class RelatedPost extends Component {
       <>
         {!isEmpty(this.state.filtered) ? (
           <>
-            <h1>Related Posts</h1>
+            <h4>Related Posts</h4>
             <div className="displayFlex mobileGrid flexWrap">
               {this.state.filtered.map((article, index) => {
                 return (

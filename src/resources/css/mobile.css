@@ -46,7 +46,7 @@
     padding: 1%;
   }
   .fas {
-    font-size: 30px;
+    font-size: 40px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -70,6 +70,22 @@
   }
   .feedbackStarBox {
     width: 90% !important;
+  }
+  .catogeriesContent {
+    font-size: 15px;
+    color: #6ec1e4;
+    height: auto;
+  }
+  .aboutTitle {
+    font: size 20px;
+  }
+
+  .aboutContent {
+    font-size: 15px;
+  }
+  .contactContent {
+    
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 800px) and (min-width: 601px) {

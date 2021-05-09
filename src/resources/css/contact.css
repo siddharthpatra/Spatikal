@@ -1,6 +1,7 @@
 .contactContent {
-  padding-top: 10mm;
-  padding-bottom: 10mm;
+  padding-top: 20mm;
+  padding-bottom: 20mm;
+  font-size: 20px;
 }
 .contactContent a {
   color: blue;
