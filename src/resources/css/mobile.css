@@ -2,7 +2,7 @@
   .displayFlex.mobileGrid {
     display: grid;
   }
-  .card-container {
+  .card-container, .cardslider-container {
     width: auto !important;
   }
   .card-body {
