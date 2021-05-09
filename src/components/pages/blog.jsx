@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useState, useEffect } from "react";
 import { firedb } from "../../config/firebase";
 
 const Card = lazy(() => import("../body/card"));
-const CardSlider = lazy(() => import("../body/cardSlider"));
+import Slider from "../body/slider";
 
 const db = firedb;
 
@@ -48,14 +48,8 @@ const Blog = () => {
             );
           })}
         </div>
-        <div className="displayFlex">
-          {articles.slice(3, articles.length).map((article, index) => {
-            return (
-              <Suspense fallback={<div></div>}>
-                <CardSlider key={index} data={article} />
-              </Suspense>
-            );
-          })}
+        <div className="displayFlex mobileGrid">
+          <Slider article={articles.slice(3, articles.length)} />
         </div>
       </>
     );

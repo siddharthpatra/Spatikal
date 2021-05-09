@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 const Card = lazy(() => import("../body/card"));
-const CardSlider = lazy(() => import("../body/cardSlider"));
+import Slider from "../body/slider";
 
 class Category extends Component {
   constructor(props) {
@@ -131,37 +131,26 @@ class Category extends Component {
   }
 
   render() {
-    return (
-      <div className="container">
-        <div>
-          <p>{this.state.category}</p>
-        </div>
-        <div className="">
-          {this.state.isLoaded
-            ? this.state.articles.slice(0, 3).map((article, index) => {
-                return (
-                  <Suspense fallback={<div></div>}>
-                    <Card key={index} data={article} />
-                  </Suspense>
-                );
-              })
-            : ""}
-        </div>
-        <div className="displayFlex">
-          {this.state.isLoaded
-            ? this.state.articles
-                .slice(3, this.state.articles.length)
-                .map((article, index) => {
-                  return (
-                    <Suspense fallback={<div></div>}>
-                      <CardSlider key={index} data={article} />
-                    </Suspense>
-                  );
-                })
-            : ""}
-        </div>
-      </div>
-    );
+    if (this.state.isLoaded) {
+      return (
+        <>
+          <div className="">
+            {this.state.articles.slice(0, 3).map((article, index) => {
+              return (
+                <Suspense fallback={<div></div>}>
+                  <Card key={index} data={article} />
+                </Suspense>
+              );
+            })}
+          </div>
+          <div className="displayFlex mobileGrid">
+            <Slider article={this.state.articles.slice(3, this.state.articles.length)} />
+          </div>
+        </>
+      );
+    } else {
+      return <h1>Loading...</h1>;
+    }
   }
 }
 

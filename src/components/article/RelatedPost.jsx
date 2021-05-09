@@ -3,7 +3,7 @@ import React, { Component, lazy, Suspense } from "react";
 
 import firebase from "../../config/firebase";
 
-const Card = lazy(() => import("../body/cardSlider"));
+import Slider from "../body/slider";
 
 const db = firebase.firestore();
 
@@ -63,14 +63,8 @@ class RelatedPost extends Component {
         {!isEmpty(this.state.filtered) ? (
           <>
             <h4>Related Posts</h4>
-            <div className="displayFlex mobileGrid flexWrap">
-              {this.state.filtered.map((article, index) => {
-                return (
-                  <Suspense fallback={<div></div>}>
-                    <Card key={index} data={article} />
-                  </Suspense>
-                );
-              })}
+            <div className="displayFlex mobileGrid">
+              <Slider article={this.state.filtered} />
             </div>
           </>
         ) : (
