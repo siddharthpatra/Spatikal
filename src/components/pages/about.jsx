@@ -17,13 +17,14 @@ const About = () => {
             information and insights on various topics. Our primary focus is on
             removing the digital garbage and bringing out a wider essence to the
             topic to which the audience can completely rely on.{" "}
-            <p>
-              Spatikal is derived from a Sanskrit word 'SPHATIKA’ which means
-              ‘crystal’. A crystal is a representation of transparency and
-              uniqueness which is what we aim on inculcating in our business
-              model. We want to project transparency in the information &
-              content we provide and uniqueness in the way we present it.
-            </p>
+          </p>
+          <br></br>
+          <p>
+            Spatikal is derived from a Sanskrit word 'SPHATIKA’ which means
+            ‘crystal’. A crystal is a representation of transparency and
+            uniqueness which is what we aim on inculcating in our business
+            model. We want to project transparency in the information & content
+            we provide and uniqueness in the way we present it.
           </p>
         </div>
 
