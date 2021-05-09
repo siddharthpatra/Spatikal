@@ -84,7 +84,7 @@ class Article extends PureComponent {
           <div className="container">
             <div className="articleDetails">
               <div className="articleBlog">
-                <h3>Blog</h3>
+                <h5>Blog</h5>
               </div>
               <br></br>
               <div className="articleImageContainer">

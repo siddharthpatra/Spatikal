@@ -62,7 +62,9 @@ class RelatedPost extends Component {
       <>
         {!isEmpty(this.state.filtered) ? (
           <>
-            <h4>Related Posts</h4>
+            <br></br>
+            <h5>Related Posts</h5>
+
             <div className="displayFlex mobileGrid">
               <Slider article={this.state.filtered} />
             </div>
