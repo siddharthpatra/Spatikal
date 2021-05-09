@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import { firedb } from "../../config/firebase";
 
-const Card = lazy(() => import("../body/card"));
+const Card = lazy(() => import("../body/cardBlog"));
 // import Slider from "../body/slider";
 
 const db = firedb;
@@ -39,8 +39,8 @@ const Blog = () => {
   if (isLoaded) {
     return (
       <>
-        <div className="">
-          {articles.slice(0, 3).map((article, index) => {
+        <div className="container">
+          {articles.map((article, index) => {
             return (
               <Suspense fallback={<div></div>}>
                 <Card key={index} data={article} />

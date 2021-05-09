@@ -2,7 +2,9 @@
   .displayFlex.mobileGrid {
     display: grid;
   }
-  .card-container, .cardslider-container {
+  .card-container,
+  .cardslider-container,
+  .cardBlog-container {
     width: auto !important;
   }
   .card-body {
@@ -53,8 +55,11 @@
   .row {
     padding-bottom: 20mm;
   }
-  .sectionTitle {
-    font-size: 18px;
+  .sectionTitle,
+  .card-container,
+  .cardBlog-container,
+  .cardslider-container {
+    font-size: 18px !important;
   }
 
   .feedbackContainer {
@@ -65,8 +70,12 @@
     font-size: 16px !important;
   }
   .feedbackContents,
-  .feedbackStarBox {
+  .feedbackStarBox,
+  .card-body,
+  .cardSlider-body,
+  .cardBlog-body {
     font-size: 14px !important;
+    line-height: 18px !important;
   }
   .feedbackStarBox {
     width: 90% !important;
@@ -84,8 +93,11 @@
     font-size: 15px;
   }
   .contactContent {
-    
     font-size: 15px;
+  }
+  .cardBlog-details{
+    font-size: 10px !important;
+    line-height: 13px !important;
   }
 }
 @media only screen and (max-width: 800px) and (min-width: 601px) {
