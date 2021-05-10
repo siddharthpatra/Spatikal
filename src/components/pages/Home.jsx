@@ -208,7 +208,7 @@ const Home = () => {
                 }}
               >
                 <div className="column floatRight">
-                <i class="fas fa-money-check-alt"></i>
+                <i className="fas fa-money-check-alt"></i>
                   <p>Finance</p>
                 </div>
               </Link>
