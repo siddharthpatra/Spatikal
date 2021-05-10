@@ -181,7 +181,7 @@ const Home = () => {
               >
                 <div className="column floatRight">
                   <i className="fas fa-dharmachakra"></i>
-                  <p>Culture</p>
+                  <p>Social and Culture</p>
                 </div>
               </Link>
             </div>

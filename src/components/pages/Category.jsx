@@ -106,13 +106,47 @@ class Category extends Component {
         );
         break;
 
-      case "Culture and Heritage":
+      case "Social and Culture":
         this.setState(
           {
             articles: this.props.location.state.article
               .slice()
               .filter((article) =>
-                article.category.toLowerCase().includes("culture")
+                article.category.toLowerCase().includes("social and culture")
+              ),
+            category: this.props.match.params.category,
+          },
+          () => {
+            this.setState({
+              isLoaded: true,
+            });
+          }
+        );
+        break;
+      case "Sports and Games":
+        this.setState(
+          {
+            articles: this.props.location.state.article
+              .slice()
+              .filter((article) =>
+                article.category.toLowerCase().includes("sports and games")
+              ),
+            category: this.props.match.params.category,
+          },
+          () => {
+            this.setState({
+              isLoaded: true,
+            });
+          }
+        );
+        break;
+      case "Finance":
+        this.setState(
+          {
+            articles: this.props.location.state.article
+              .slice()
+              .filter((article) =>
+                article.category.toLowerCase().includes("finance")
               ),
             category: this.props.match.params.category,
           },
