@@ -40,6 +40,10 @@ p {
   padding-right: 10px;
   color: black;
   min-height: 50px;
+  font-weight: bold;
+}
+.cardSlider-title h4{
+  font-family: 'Poppins', sans-serif !important;
 }
 .displayFlex button {
   padding: 0.5rem;
@@ -76,6 +80,7 @@ p {
   margin-bottom: 0.2rem;
 }
 .cardSlider-body {
+  font-family: 'Poppins', sans-serif !important;
   font-size: 12px;
   line-height: 30px;
   padding-left: 10px;

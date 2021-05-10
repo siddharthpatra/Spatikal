@@ -118,11 +118,13 @@ class Article extends PureComponent {
               {!isEmpty(this.state.article.video) ? (
                 <div className="articleVideo">
                   <p>
-                    <strong>Watch</strong>
+                    <strong>Watch Video</strong>
                   </p>
+                  <br></br>
                   <video controls className="videoContent">
                     <source src={this.state.article.video} type="video/mp4" />
                   </video>
+                  <br></br>
                 </div>
               ) : (
                 ""

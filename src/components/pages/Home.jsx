@@ -188,6 +188,34 @@ const Home = () => {
 
             <div className="clear"></div>
           </div>
+          <div>
+            <div className="row">
+              <Link
+                to={{
+                  pathname: "/category/" + encodeURI("Sports and Games"),
+                  state: { article: articles },
+                }}
+              >
+                <div className="column floatLeft">
+                  <i className="fas fa-running"></i>
+                  <p>Sports and Games</p>
+                </div>
+              </Link>
+              <Link
+                to={{
+                  pathname: "/category/" + encodeURI("Finance"),
+                  state: { article: articles },
+                }}
+              >
+                <div className="column floatRight">
+                <i class="fas fa-money-check-alt"></i>
+                  <p>Finance</p>
+                </div>
+              </Link>
+            </div>
+
+            <div className="clear"></div>
+          </div>
         </div>
         <Feedback />{" "}
       </div>
