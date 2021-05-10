@@ -25,7 +25,8 @@ img {
   width: 45%;
   float: right;
 }
-.column.second .row.end, .column.second .column {
+.column.second .row.end,
+.column.second .column {
   height: 199px;
   position: relative;
 }
@@ -49,7 +50,7 @@ img {
 }
 .content {
   text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: #000;
   font-size: 30px;
   line-height: 35px;
@@ -58,23 +59,21 @@ img {
 .icon-text {
   font-size: 80px;
 }
-.catogeriesContent{
+.catogeriesContent {
   font-size: 20px;
-  color: #6EC1E4;
-  height: auto;
-  
-}
-.catogeriesContent .column{
+  color: #6ec1e4;
   height: auto;
 }
-.fas{
+.catogeriesContent .column {
+  height: auto;
+}
+.fas {
   font-size: 80px;
 }
-.sectionTitle{
+.sectionTitle {
   text-transform: capitalize;
-  
 }
-.sectionTitle{
+.sectionTitle {
   font-weight: bold;
   padding-top: 10mm;
 }

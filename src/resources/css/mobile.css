@@ -2,7 +2,9 @@
   .displayFlex.mobileGrid {
     display: grid;
   }
-  .card-container {
+  .card-container,
+  .cardslider-container,
+  .cardBlog-container {
     width: auto !important;
   }
   .card-body {
@@ -16,6 +18,9 @@
   }
   .nav-logo {
     font-size: 1.2rem;
+  }
+  .footer h2 {
+    font-size: 1.8rem !important;
   }
   .articleTitle {
     padding-left: 20px !important;
@@ -46,15 +51,20 @@
     padding: 1%;
   }
   .fas {
-    font-size: 30px;
+    font-size: 40px;
     padding-left: 0;
     padding-right: 0;
   }
   .row {
     padding-bottom: 20mm;
   }
-  .sectionTitle {
-    font-size: 18px;
+  .sectionTitle,
+  .card-container,
+  .cardBlog-container,
+  .cardslider-container,
+  .nav-bar,
+  .footer .details .column h3 {
+    font-size: 18px !important;
   }
 
   .feedbackContainer {
@@ -65,12 +75,47 @@
     font-size: 16px !important;
   }
   .feedbackContents,
-  .feedbackStarBox {
+  .feedbackStarBox,
+  .card-body,
+  .cardSlider-body,
+  .cardBlog-body {
     font-size: 14px !important;
+    line-height: 18px !important;
   }
   .feedbackStarBox {
     width: 90% !important;
   }
+  .catogeriesContent {
+    font-size: 15px;
+    color: #6ec1e4;
+    height: auto;
+  }
+  .aboutTitle {
+    font: size 20px;
+  }
+
+  .aboutContent {
+    font-size: 15px;
+  }
+  .contactContent {
+    font-size: 15px;
+  }
+  .cardBlog-details {
+    font-size: 12px !important;
+    line-height: 13px !important;
+  }
+  .bannerImage {
+    width: 100%;
+    height: auto !important;
+  }
+  .cardslider-container{
+    font-size: 18px;
+  }
+  .articleVideo strong{
+    padding-left: 8mm !important;
+    font-size: 20px;
+  }
+
 }
 @media only screen and (max-width: 800px) and (min-width: 601px) {
   .pages .tabOnly {

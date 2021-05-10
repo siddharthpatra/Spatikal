@@ -117,6 +117,6 @@ input.nav-searchinput:focus {
     right: 0;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
-    color: #f5deb3;
+    color: black;
   }
 }

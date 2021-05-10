@@ -5,7 +5,7 @@ import { firedb } from "../../config/firebase";
 import Banner from "../body/banner";
 import Slider from "../body/slider";
 import Feedback from "./feedback/Feedback";
-const Card = lazy(() => import("../body/card"));
+import Card from "../body/card";
 
 import "../../resources/css/home.css";
 import "../../resources/css/mobile.css";
@@ -26,11 +26,8 @@ const Home = () => {
 
   useEffect(() => {
     setIsLoaded(true);
-  }, [articles]);
-
-  useEffect(() => {
     setIsSorted(true);
-  }, [sorting]);
+  }, [articles, sorting]);
 
   const getMyArticles = () => {
     db.collection("spatikal-db")
@@ -60,18 +57,17 @@ const Home = () => {
       <div className="container">
         <div className="bordertop"></div>
         <div className="content">
-          <p>
-            <div className="sectionTitle">
+          <div className="sectionTitle">
+            <p>
               <i>R E C E N T&nbsp;&nbsp;&nbsp;&nbsp;P O S T S</i>
-            </div>
-          </p>
+            </p>
+          </div>
+
           <div className="displayFlex mobileGrid">
             {isSorted
               ? sorting.slice(0, 3).map((article, index) => {
                   return (
-                    <Suspense fallback={<div></div>}>
                       <Card key={index} data={article} />
-                    </Suspense>
                   );
                 })
               : ""}
@@ -80,11 +76,12 @@ const Home = () => {
         {/* <div className="bordertop"></div>  */}
         <br></br>
         <div className="content">
-          <p>
-            <div className="sectionTitle">
+          <div className="sectionTitle">
+            <p>
               <i>C O L L E C T I O N S</i>
-            </div>
-          </p>
+            </p>
+          </div>
+
           <br></br>
         </div>
         <div className="displayFlex mobileGrid">
@@ -94,11 +91,11 @@ const Home = () => {
         <br></br>
         <br></br>
         <div className="content">
-          <p>
-            <div className="sectionTitle">
+          <div className="sectionTitle">
+            <p>
               <i>C A T E G O R I E S</i>
-            </div>
-          </p>
+            </p>
+          </div>
         </div>
         <div className="catogeriesContent">
           <p>
@@ -184,7 +181,35 @@ const Home = () => {
               >
                 <div className="column floatRight">
                   <i className="fas fa-dharmachakra"></i>
-                  <p>Culture</p>
+                  <p>Social and Culture</p>
+                </div>
+              </Link>
+            </div>
+
+            <div className="clear"></div>
+          </div>
+          <div>
+            <div className="row">
+              <Link
+                to={{
+                  pathname: "/category/" + encodeURI("Sports and Games"),
+                  state: { article: articles },
+                }}
+              >
+                <div className="column floatLeft">
+                  <i className="fas fa-running"></i>
+                  <p>Sports and Games</p>
+                </div>
+              </Link>
+              <Link
+                to={{
+                  pathname: "/category/" + encodeURI("Finance"),
+                  state: { article: articles },
+                }}
+              >
+                <div className="column floatRight">
+                <i className="fas fa-money-check-alt"></i>
+                  <p>Finance</p>
                 </div>
               </Link>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 const Card = lazy(() => import("../body/card"));
+// import Slider from "../body/slider";
 
 class Category extends Component {
   constructor(props) {
@@ -105,13 +106,47 @@ class Category extends Component {
         );
         break;
 
-      case "Culture and Heritage":
+      case "Social and Culture":
         this.setState(
           {
             articles: this.props.location.state.article
               .slice()
               .filter((article) =>
-                article.category.toLowerCase().includes("culture")
+                article.category.toLowerCase().includes("social and culture")
+              ),
+            category: this.props.match.params.category,
+          },
+          () => {
+            this.setState({
+              isLoaded: true,
+            });
+          }
+        );
+        break;
+      case "Sports and Games":
+        this.setState(
+          {
+            articles: this.props.location.state.article
+              .slice()
+              .filter((article) =>
+                article.category.toLowerCase().includes("sports and games")
+              ),
+            category: this.props.match.params.category,
+          },
+          () => {
+            this.setState({
+              isLoaded: true,
+            });
+          }
+        );
+        break;
+      case "Finance":
+        this.setState(
+          {
+            articles: this.props.location.state.article
+              .slice()
+              .filter((article) =>
+                article.category.toLowerCase().includes("finance")
               ),
             category: this.props.match.params.category,
           },
@@ -130,23 +165,26 @@ class Category extends Component {
   }
 
   render() {
-    return (
-      <>
-        {this.state.category}
-
-        <div className="displayFlex mobileGrid flexWrap">
-          {this.state.isLoaded
-            ? this.state.articles.map((article, index) => {
-                return (
-                  <Suspense fallback={<div></div>}>
-                    <Card key={index} data={article} />
-                  </Suspense>
-                );
-              })
-            : ""}
-        </div>
-      </>
-    );
+    if (this.state.isLoaded) {
+      return (
+        <>
+          <div className="">
+            {this.state.articles.slice(0, 3).map((article, index) => {
+              return (
+                <Suspense fallback={<div></div>}>
+                  <Card key={index} data={article} />
+                </Suspense>
+              );
+            })}
+          </div>
+          {/* <div className="displayFlex mobileGrid">
+            <Slider article={this.state.articles.slice(3, this.state.articles.length)} />
+          </div> */}
+        </>
+      );
+    } else {
+      return <h1>Loading...</h1>;
+    }
   }
 }
 

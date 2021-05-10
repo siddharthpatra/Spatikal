@@ -1,7 +1,8 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import { firedb } from "../../config/firebase";
 
-const Card = lazy(() => import("../body/card"));
+const Card = lazy(() => import("../body/cardBlog"));
+// import Slider from "../body/slider";
 
 const db = firedb;
 
@@ -38,7 +39,7 @@ const Blog = () => {
   if (isLoaded) {
     return (
       <>
-        <div className="displayFlex mobileGrid flexWrap">
+        <div className="container">
           {articles.map((article, index) => {
             return (
               <Suspense fallback={<div></div>}>
@@ -47,6 +48,9 @@ const Blog = () => {
             );
           })}
         </div>
+        {/* <div className="displayFlex mobileGrid">
+          <Slider article={articles.slice(3, articles.length)} />
+        </div> */}
       </>
     );
   } else {

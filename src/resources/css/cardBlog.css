@@ -1,27 +1,21 @@
-.card-container {
+.cardBlog-container {
   box-sizing: border-box;
   border: 1px solid #1a0117;
-  margin: 5% 2%;
+  margin: 5% auto;
   font-size: 24px;
-  width: 350px;
-  color: rgba(255, 255, 255, 0.7);
+  max-width: 610px;
+  color: black;
   text-align: left;
-  background-color: #1C3382;
+  background-color: #c8c8c8;
   overflow: hidden;
-  border-radius: 22px;
-  padding: 3% 3%;
+  
 }
-.image-container {
-  box-shadow: 0px 0px 15px -5px;
-  margin: 2%;
-  box-sizing: border-box;
-  border: 0.2px solid #1a0117;
-}
-.image-container img {
+
+.imageBlog-container img {
   overflow: hidden;
-  height: 200px;
+  height: 250px;
 }
-.card-content {
+.cardBlog-content {
   margin: 1rem;
   margin-top: 0.5rem;
 }
@@ -30,11 +24,14 @@ p {
   margin: 0;
   padding: 0;
 }
-.card-title {
+.cardBlog-title {
   margin-bottom: 0.5rem;
   padding-left: 10px;
   padding-right: 10px;
-  color: white;
+  color: black;
+}
+.cardBlog-title h4{
+  font-family: 'Poppins', sans-serif !important;
 }
 .displayFlex button {
   padding: 0.5rem;
@@ -54,7 +51,7 @@ p {
   font-weight: bold;
   cursor: pointer;
 }
-.card-details {
+.cardBlog-details {
   font-size: 14px;
   line-height: 22px;
   list-style: none;
@@ -63,21 +60,26 @@ p {
   text-transform: capitalize;
   padding-left: 11px;
   padding-right: 11px;
+  font-family: "Suez One", serif !important;
 }
-.card-details ul {
+.cardBlog-details li{
+  font-family: "Suez One", serif !important;
+}
+.cardBlog-details ul {
   list-style: none;
 }
-.card-details ul li {
+.cardBlog-details ul li {
   margin-bottom: 0.2rem;
 }
-.card-body {
-  font-size: 12px;
-  line-height: 30px;
+.cardBlog-body {
+  font-size: 14px;
+  line-height: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  color: white;
+  color: black;
   max-height: 300px;
   overflow: hidden;
+  font-family: 'Poppins', sans-serif !important;
 }
 .far {
   margin-right: 0.5rem;

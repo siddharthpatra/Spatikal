@@ -84,7 +84,7 @@ class Article extends PureComponent {
           <div className="container">
             <div className="articleDetails">
               <div className="articleBlog">
-                <h3>Blog</h3>
+                <h5>Blog</h5>
               </div>
               <br></br>
               <div className="articleImageContainer">
@@ -118,11 +118,13 @@ class Article extends PureComponent {
               {!isEmpty(this.state.article.video) ? (
                 <div className="articleVideo">
                   <p>
-                    <strong>Watch</strong>
+                    <strong>Watch Video</strong>
                   </p>
+                  <br></br>
                   <video controls className="videoContent">
                     <source src={this.state.article.video} type="video/mp4" />
                   </video>
+                  <br></br>
                 </div>
               ) : (
                 ""
