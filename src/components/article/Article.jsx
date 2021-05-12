@@ -55,7 +55,23 @@ class Article extends PureComponent {
       this.getArticleByID(this.props.match.params.id);
     }
   }
-
+  componentDidUpdate() {
+    if (typeof this.props.location.state !== "undefined") {
+      if (this.props.location.state.hasOwnProperty("article"))
+        this.setState(
+          {
+            article: this.props.location.state.article,
+          },
+          () => {
+            this.setState({
+              isLoaded: true,
+            });
+          }
+        );
+    } else {
+      this.getArticleByID(this.props.match.params.id);
+    }
+  }
   getArticleByID = (id) => {
     db.collection("spatikal-db")
       .doc(id)

@@ -19,10 +19,6 @@ class RelatedPost extends Component {
   componentDidMount() {
     this.getMyArticles();
   }
-
-  componentWillReceiveProps() {
-    this.getMyArticles();
-  }
   getMyArticles = () => {
     db.collection("spatikal-db")
       .get()
