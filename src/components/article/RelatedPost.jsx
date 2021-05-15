@@ -1,25 +1,21 @@
-import { isEmpty } from "lodash";
-import React, { Component, lazy, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 
-import firebase from "../../config/firebase";
+import { firedb } from "../../config/firebase";
 
 import Slider from "../body/slider";
 
-const db = firebase.firestore();
+const db = firedb;
 
-class RelatedPost extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: {},
-      filtered: {},
-    };
-  }
-
-  componentDidMount() {
-    this.getMyArticles();
-  }
-  getMyArticles = () => {
+const RelatedPost = (props) => {
+  const [filtered, setFiltered] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    getMyArticles();
+  }, []);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, [filtered]);
+  const getMyArticles = () => {
     db.collection("spatikal-db")
       .get()
       .then((docs) => {
@@ -32,45 +28,32 @@ class RelatedPost extends Component {
             };
             allArticles.push(article);
           });
-          this.setState(
-            {
-              articles: allArticles,
-            },
-            () => {
-              this.setState({
-                filtered: allArticles
-                  .slice()
-                  .filter(
-                    (a) =>
-                      (a.category.includes(this.props.category) ||
-                        this.props.category.includes(a.category)) &&
-                      a.id !== this.props.id
-                  ),
-              });
-            }
+          setFiltered(
+            allArticles
+              .slice()
+              .filter(
+                (a) =>
+                  (a.category.includes(props.category) ||
+                    props.category.includes(a.category)) &&
+                  a.id !== props.id
+              )
           );
         }
       });
   };
 
-  render() {
-    return (
-      <>
-        {!isEmpty(this.state.filtered) ? (
-          <>
-            <br></br>
-            <h5>Related Posts</h5>
+  return isLoaded ? (
+    <>
+      <br></br>
+      <h5>Related Posts</h5>
 
-            <div className="displayFlex mobileGrid">
-              <Slider article={this.state.filtered} />
-            </div>
-          </>
-        ) : (
-          ""
-        )}
-      </>
-    );
-  }
-}
+      <div className="displayFlex mobileGrid">
+        <Slider article={filtered} />
+      </div>
+    </>
+  ) : (
+    ""
+  );
+};
 
 export default RelatedPost;

@@ -5,6 +5,7 @@ import "../../resources/css/article.css";
 import parse from "html-react-parser";
 import { isEmpty } from "lodash";
 import RelatedPost from "./RelatedPost";
+import { Helmet } from "react-helmet";
 
 const db = firedb;
 
@@ -96,6 +97,10 @@ class Article extends PureComponent {
     if (this.state.isLoaded) {
       return (
         <>
+          <Helmet>
+            <title>{this.state.article.title}</title>
+            <meta name="description" title={this.state.article.description} />
+          </Helmet>
           <br></br>
           <div className="container">
             <div className="articleDetails">

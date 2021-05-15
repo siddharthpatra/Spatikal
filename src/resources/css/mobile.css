@@ -3,7 +3,7 @@
     display: grid;
   }
   .card-container,
-  .cardslider-container,
+  .cardSlider-container,
   .cardBlog-container {
     width: auto !important;
   }
@@ -61,7 +61,7 @@
   .sectionTitle,
   .card-container,
   .cardBlog-container,
-  .cardslider-container,
+  .cardSlider-container,
   .nav-bar,
   .footer .details .column h3 {
     font-size: 18px !important;
@@ -108,7 +108,7 @@
     width: 100%;
     height: auto !important;
   }
-  .cardslider-container{
+  .cardSlider-container{
     font-size: 18px;
   }
   .articleVideo strong{
