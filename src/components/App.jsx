@@ -24,7 +24,7 @@ const App = () => {
     <>
       <Helmet>
         <title>S P A T I K A L</title>
-        <meta name="description" title="Online Informative Platform" />
+        <meta name="description" content="Online Informative Platform" />
       </Helmet>
       <AuthProvider>
         <Navbar />
