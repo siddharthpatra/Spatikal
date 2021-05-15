@@ -99,7 +99,7 @@ class Article extends PureComponent {
         <>
           <Helmet>
             <title>{this.state.article.title}</title>
-            <meta name="description" title={this.state.article.description} />
+            <meta name="description" content={this.state.article.description} />
           </Helmet>
           <br></br>
           <div className="container">
