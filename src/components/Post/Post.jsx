@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css";
 import Categorydata from "./Categorydata";
 import Checkbox from "./Checkbox";
 import { firedb, storage } from "../../config/firebase";
 import { isEmpty } from "lodash";
 
 import { useAuth } from "../authentication/context/AuthContext";
+import { Helmet } from "react-helmet";
 
 const db = firedb;
 
@@ -165,8 +166,9 @@ const Post = () => {
         .replace(/,/g, " | "),
       userID: currentUser.uid,
     };
-    db.collection("spatikal-db")
-      .add(articles)
+    db.collection("spatikal-test")
+      .doc(article.title.split(" ").join(""))
+      .set(articles)
       .then((res) => {
         res ? clearState() : console.log(res);
       })
@@ -176,6 +178,10 @@ const Post = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Post</title>
+        <meta name="description" content="Post your contents to Spatikal" />
+      </Helmet>
       {uploaded ? <p>The post was successful</p> : ""}
       <form onSubmit={(e) => submitArticle(e)}>
         <div className="titleInput">
@@ -251,10 +257,11 @@ const Post = () => {
           <div>
             <label>Category</label>
             <ul>
-              {category.map((category) => {
+              {category.map((category, index) => {
                 return (
                   <Checkbox
                     handleCheckChieldElement={handleCheckChieldElement}
+                    key={index}
                     {...category}
                   />
                 );
@@ -262,13 +269,13 @@ const Post = () => {
             </ul>
           </div>
         </div>
-        <ReactQuill
+        {/* <ReactQuill
           value={article.content}
           modules={modules}
           format={formats}
           theme="snow"
           onChange={(e) => onChangeArticleContent(e)}
-        />
+        /> */}
         <button>Submit</button>
       </form>
     </>

@@ -11,7 +11,7 @@ const RelatedPost = (props) => {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     getMyArticles();
-  }, []);
+  }, [props]);
   useEffect(() => {
     setIsLoaded(true);
   }, [filtered]);
