@@ -192,13 +192,13 @@ const Home = () => {
             <div className="row">
               <Link
                 to={{
-                  pathname: "/category/" + encodeURI("Sports and Games"),
+                  pathname: "/category/" + encodeURI("Sports and Entertainment"),
                   state: { article: articles },
                 }}
               >
                 <div className="column floatLeft">
                   <i className="fas fa-running"></i>
-                  <p>Sports and Games</p>
+                  <p>Sports and Entertainment</p>
                 </div>
               </Link>
               <Link

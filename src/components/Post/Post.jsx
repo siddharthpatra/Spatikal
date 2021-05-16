@@ -269,13 +269,13 @@ const Post = () => {
             </ul>
           </div>
         </div>
-        {/* <ReactQuill
+        <ReactQuill
           value={article.content}
           modules={modules}
           format={formats}
           theme="snow"
           onChange={(e) => onChangeArticleContent(e)}
-        /> */}
+        />
         <button>Submit</button>
       </form>
     </>

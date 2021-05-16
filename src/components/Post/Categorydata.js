@@ -5,7 +5,7 @@ const CategoryData = [
   { id: 4, value: "Business and Economy", isChecked: false },
   { id: 5, value: "Social and Culture", isChecked: false },
   { id: 6, value: "Health and Fitness", isChecked: false },
-  { id: 7, value: "Sports and Games", isChecked: false },
+  { id: 7, value: "Sports and Entertainment", isChecked: false },
   { id: 8, value: "Finance", isChecked: false },
 ];
 

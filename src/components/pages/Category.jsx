@@ -129,7 +129,7 @@ class Category extends Component {
             articles: this.props.location.state.article
               .slice()
               .filter((article) =>
-                article.category.toLowerCase().includes("sports and games")
+                article.category.toLowerCase().includes("sports and entertainment")
               ),
             category: this.props.match.params.category,
           },
