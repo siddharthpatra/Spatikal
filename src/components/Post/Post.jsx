@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import ReactQuill from "react-quill";
-// import "react-quill/dist/quill.snow.css";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import Categorydata from "./Categorydata";
 import Checkbox from "./Checkbox";
 import { firedb, storage } from "../../config/firebase";
@@ -26,7 +26,7 @@ const Post = () => {
     isPublished: false,
   };
 
-  const [article, setArticle] = useState(initialState);
+  const [article, setArticle] = useState({ ...initialState });
   const [tempImageLink, setTempImageLink] = useState();
   const [tempVideoLink, setTempVideoLink] = useState();
   const [category, setCategory] = useState([...Categorydata]);
@@ -145,13 +145,10 @@ const Post = () => {
   };
 
   const clearState = () => {
-    console.log("Reached");
-    setArticle(initialState);
+    setArticle({ ...initialState });
     setUploaded(true);
     setTempImageLink();
     setTempVideoLink();
-    console.log(article);
-    console.log(category);
   };
 
   const submitArticle = (e) => {
@@ -166,10 +163,12 @@ const Post = () => {
         .replace(/,/g, " | "),
       userID: currentUser.uid,
     };
-    db.collection("spatikal-test")
+    db.collection("spatikal-db")
       .doc(article.title.split(" ").join(""))
       .set(articles)
       .then((res) => {
+        clearState();
+        console.log(res);
         res ? clearState() : console.log(res);
       })
       .catch((err) => console.log(err));
