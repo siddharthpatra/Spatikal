@@ -81,6 +81,7 @@ p {
   overflow: hidden;
   font-family: 'Poppins', sans-serif !important;
 }
-.far {
+.cardBlog-details .fas {
   margin-right: 0.5rem;
+  font-size: 12px;
 }
