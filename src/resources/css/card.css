@@ -79,6 +79,7 @@ p {
   max-height: 300px;
   overflow: hidden;
 }
-.far {
+.card-details .fas{
   margin-right: 0.5rem;
+  font-size: 12px;
 }

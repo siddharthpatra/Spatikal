@@ -66,9 +66,7 @@ const Home = () => {
           <div className="displayFlex mobileGrid">
             {isSorted
               ? sorting.slice(0, 3).map((article, index) => {
-                  return (
-                      <Card key={index} data={article} />
-                  );
+                  return <Card key={index} data={article} />;
                 })
               : ""}
           </div>
@@ -81,14 +79,11 @@ const Home = () => {
               <i>C O L L E C T I O N S</i>
             </p>
           </div>
-
-          <br></br>
         </div>
         <div className="displayFlex mobileGrid">
           {isLoaded ? <Slider article={articles} /> : ""}
         </div>
         {/* <div className="bordertop"></div> */}
-        <br></br>
         <br></br>
         <div className="content">
           <div className="sectionTitle">
@@ -192,13 +187,13 @@ const Home = () => {
             <div className="row">
               <Link
                 to={{
-                  pathname: "/category/" + encodeURI("Sports and Games"),
+                  pathname: "/category/" + encodeURI("Sports and Entertainment"),
                   state: { article: articles },
                 }}
               >
                 <div className="column floatLeft">
                   <i className="fas fa-running"></i>
-                  <p>Sports and Games</p>
+                  <p>Sports and Entertainment</p>
                 </div>
               </Link>
               <Link
@@ -208,7 +203,7 @@ const Home = () => {
                 }}
               >
                 <div className="column floatRight">
-                <i className="fas fa-money-check-alt"></i>
+                  <i className="fas fa-money-check-alt"></i>
                   <p>Finance</p>
                 </div>
               </Link>

@@ -41,15 +41,17 @@ const Card = (props) => {
             <div className="card-details">
               <ul>
                 <li>
-                  <i className="far fa-user"></i>
+                  <div className="card-icon">
+                  <i className="fas fa-user"></i>
                   {props.data.author}
+                  </div>
                 </li>
                 <li>
-                  <i className="far fa-calendar"></i>
+                  <i className="fas fa-calendar"></i>
                   {dateCreated(props.data.datePosted.seconds)}
                 </li>
                 <li>
-                  <i className="far fa-folder"></i>
+                  <i className="fas fa-folder"></i>
                   {props.data.category}
                 </li>
               </ul>

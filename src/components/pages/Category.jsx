@@ -1,5 +1,5 @@
 import React, { Component, lazy, Suspense } from "react";
-const Card = lazy(() => import("../body/card"));
+const Card = lazy(() => import("../body/cardBlog"));
 // import Slider from "../body/slider";
 
 class Category extends Component {
@@ -16,7 +16,7 @@ class Category extends Component {
     switch (this.props.match.params.category) {
       case "Food and Drinks":
         this.setState(
-          {
+          { 
             articles: this.props.location.state.article
               .slice()
               .filter((article) =>
@@ -129,7 +129,7 @@ class Category extends Component {
             articles: this.props.location.state.article
               .slice()
               .filter((article) =>
-                article.category.toLowerCase().includes("sports and games")
+                article.category.toLowerCase().includes("sports and entertainment")
               ),
             category: this.props.match.params.category,
           },
@@ -167,7 +167,12 @@ class Category extends Component {
   render() {
     if (this.state.isLoaded) {
       return (
-        <>
+        <div className="container">
+          <div>
+            <p>
+              <span>{this.state.category}</span>
+            </p>
+          </div>
           <div className="">
             {this.state.articles.slice(0, 3).map((article, index) => {
               return (
@@ -180,7 +185,7 @@ class Category extends Component {
           {/* <div className="displayFlex mobileGrid">
             <Slider article={this.state.articles.slice(3, this.state.articles.length)} />
           </div> */}
-        </>
+        </div>
       );
     } else {
       return <h1>Loading...</h1>;

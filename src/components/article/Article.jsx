@@ -5,6 +5,7 @@ import "../../resources/css/article.css";
 import parse from "html-react-parser";
 import { isEmpty } from "lodash";
 import RelatedPost from "./RelatedPost";
+import { Helmet } from "react-helmet";
 
 const db = firedb;
 
@@ -55,7 +56,23 @@ class Article extends PureComponent {
       this.getArticleByID(this.props.match.params.id);
     }
   }
-
+  componentDidUpdate() {
+    if (typeof this.props.location.state !== "undefined") {
+      if (this.props.location.state.hasOwnProperty("article"))
+        this.setState(
+          {
+            article: this.props.location.state.article,
+          },
+          () => {
+            this.setState({
+              isLoaded: true,
+            });
+          }
+        );
+    } else {
+      this.getArticleByID(this.props.match.params.id);
+    }
+  }
   getArticleByID = (id) => {
     db.collection("spatikal-db")
       .doc(id)
@@ -80,6 +97,10 @@ class Article extends PureComponent {
     if (this.state.isLoaded) {
       return (
         <>
+          <Helmet>
+            <title>{this.state.article.title}</title>
+            <meta name="description" content={this.state.article.description} />
+          </Helmet>
           <br></br>
           <div className="container">
             <div className="articleDetails">
@@ -94,7 +115,7 @@ class Article extends PureComponent {
               <div className="articleTitle">
                 <h4>{this.state.article.title}</h4>
               </div>
-              <div className="bordertop"></div>
+              <div className="bordertopArticle"></div>
 
               <div className="information">
                 <ul className="displayFlex mobileBlock">
@@ -112,8 +133,9 @@ class Article extends PureComponent {
                     {this.state.article.category}&nbsp;&nbsp;
                   </li>
                 </ul>
-                <div className="bordertop"></div>
+                <div className="bordertopArticle"></div>
               </div>
+              <br></br>
 
               {!isEmpty(this.state.article.video) ? (
                 <div className="articleVideo">

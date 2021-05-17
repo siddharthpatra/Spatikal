@@ -52,3 +52,9 @@ ul.displayFlex .far {
   padding-left: 38mm;
   
 }
+.bordertopArticle{
+  border-top: 1px solid #adadad;
+  border-radius: 1px;
+  margin: 2% auto;
+  width: 75%;
+}

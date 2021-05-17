@@ -1,9 +1,17 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import "../../resources/css/about.css";
 
 const About = () => {
   return (
     <>
+      <Helmet>
+        <title>About Us</title>
+        <meta
+          name="description"
+          content="About Spatikal Page. About the complete Idea/Vision"
+        />
+      </Helmet>
       <div className="container">
         <div className="aboutTitle">
           <br></br>

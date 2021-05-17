@@ -7,6 +7,7 @@ import { firedb, storage } from "../../config/firebase";
 import { isEmpty } from "lodash";
 
 import { useAuth } from "../authentication/context/AuthContext";
+import { Helmet } from "react-helmet";
 
 const db = firedb;
 
@@ -25,7 +26,7 @@ const Post = () => {
     isPublished: false,
   };
 
-  const [article, setArticle] = useState(initialState);
+  const [article, setArticle] = useState({ ...initialState });
   const [tempImageLink, setTempImageLink] = useState();
   const [tempVideoLink, setTempVideoLink] = useState();
   const [category, setCategory] = useState([...Categorydata]);
@@ -144,13 +145,10 @@ const Post = () => {
   };
 
   const clearState = () => {
-    console.log("Reached");
-    setArticle(initialState);
+    setArticle({ ...initialState });
     setUploaded(true);
     setTempImageLink();
     setTempVideoLink();
-    console.log(article);
-    console.log(category);
   };
 
   const submitArticle = (e) => {
@@ -166,8 +164,11 @@ const Post = () => {
       userID: currentUser.uid,
     };
     db.collection("spatikal-db")
-      .add(articles)
+      .doc(article.title.split(" ").join(""))
+      .set(articles)
       .then((res) => {
+        clearState();
+        console.log(res);
         res ? clearState() : console.log(res);
       })
       .catch((err) => console.log(err));
@@ -176,6 +177,10 @@ const Post = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Post</title>
+        <meta name="description" content="Post your contents to Spatikal" />
+      </Helmet>
       {uploaded ? <p>The post was successful</p> : ""}
       <form onSubmit={(e) => submitArticle(e)}>
         <div className="titleInput">
@@ -251,10 +256,11 @@ const Post = () => {
           <div>
             <label>Category</label>
             <ul>
-              {category.map((category) => {
+              {category.map((category, index) => {
                 return (
                   <Checkbox
                     handleCheckChieldElement={handleCheckChieldElement}
+                    key={index}
                     {...category}
                   />
                 );

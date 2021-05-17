@@ -17,9 +17,15 @@ import EditPost from "./article/EditPost";
 import "../resources/css/App.css";
 import contact from "./pages/contact";
 
+import { Helmet } from "react-helmet";
+
 const App = () => {
   return (
     <>
+      <Helmet>
+        <title>S P A T I K A L</title>
+        <meta name="description" content="Online Informative Platform" />
+      </Helmet>
       <AuthProvider>
         <Navbar />
       </AuthProvider>
