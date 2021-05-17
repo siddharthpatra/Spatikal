@@ -167,7 +167,12 @@ class Category extends Component {
   render() {
     if (this.state.isLoaded) {
       return (
-        <>
+        <div className="container">
+          <div>
+            <p>
+              <span>{this.state.category}</span>
+            </p>
+          </div>
           <div className="">
             {this.state.articles.slice(0, 3).map((article, index) => {
               return (
@@ -180,7 +185,7 @@ class Category extends Component {
           {/* <div className="displayFlex mobileGrid">
             <Slider article={this.state.articles.slice(3, this.state.articles.length)} />
           </div> */}
-        </>
+        </div>
       );
     } else {
       return <h1>Loading...</h1>;

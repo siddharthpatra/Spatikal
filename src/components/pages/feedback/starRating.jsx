@@ -34,10 +34,10 @@ Rate.propTypes = {
   count: PropTypes.number,
   rating: PropTypes.number,
   onRating: PropTypes.func,
-  color: {
+  color: PropTypes.shape({
     filled: PropTypes.string,
     unfilled: PropTypes.string,
-  },
+  }),
 };
 Rate.defaultProps = {
   count: 5,
