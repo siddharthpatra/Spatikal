@@ -118,6 +118,10 @@
   .videoContent{
     width: 95% !important;
   }
+  .articleImageContainer{
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+  }
 
 }
 @media only screen and (max-width: 800px) and (min-width: 601px) {

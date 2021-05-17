@@ -115,7 +115,7 @@ class Article extends PureComponent {
               <div className="articleTitle">
                 <h4>{this.state.article.title}</h4>
               </div>
-              <div className="bordertop"></div>
+              <div className="bordertopArticle"></div>
 
               <div className="information">
                 <ul className="displayFlex mobileBlock">
@@ -133,8 +133,9 @@ class Article extends PureComponent {
                     {this.state.article.category}&nbsp;&nbsp;
                   </li>
                 </ul>
-                <div className="bordertop"></div>
+                <div className="bordertopArticle"></div>
               </div>
+              <br></br>
 
               {!isEmpty(this.state.article.video) ? (
                 <div className="articleVideo">

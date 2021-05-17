@@ -1,5 +1,5 @@
 import React, { Component, lazy, Suspense } from "react";
-const Card = lazy(() => import("../body/card"));
+const Card = lazy(() => import("../body/cardBlog"));
 // import Slider from "../body/slider";
 
 class Category extends Component {
@@ -16,7 +16,7 @@ class Category extends Component {
     switch (this.props.match.params.category) {
       case "Food and Drinks":
         this.setState(
-          {
+          { 
             articles: this.props.location.state.article
               .slice()
               .filter((article) =>
