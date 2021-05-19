@@ -4,7 +4,7 @@ import { firedb } from "../../config/firebase";
 
 import Banner from "../body/banner";
 import Slider from "../body/slider";
-import Feedback from "./feedback/Feedback";
+import Feedback from "../feedback/Feedback";
 import Card from "../body/card";
 
 import "../../resources/css/home.css";

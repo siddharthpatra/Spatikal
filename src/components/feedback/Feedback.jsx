@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import { firedb } from "../../../config/firebase";
+import { firedb } from "../../config/firebase";
 import StarRating from "./starRating";
 
-import "../../../resources/css/feedback.css";
+import "../../resources/css/feedback.css";
 
 const db = firedb;
 

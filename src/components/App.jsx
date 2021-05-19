@@ -6,7 +6,7 @@ import About from "./pages/about";
 import Login from "./authentication/login";
 import Article from "./article/Article";
 import Post from "./Post/Post";
-import Category from "./pages/Category";
+import Category from "./article/Category";
 import Footer from "./footer/footer";
 import { Switch, Route } from "react-router-dom";
 import Signup from "./authentication/Signup";
