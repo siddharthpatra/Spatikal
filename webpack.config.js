@@ -1,6 +1,8 @@
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 
 let mode = "development";
 
@@ -16,12 +18,12 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-  devtool: "source-map",
+  devtool: mode === "production" ? false : "source-map",
   output: {
     path: path.join(__dirname, "build"),
     filename: "bundle.js",
     publicPath: "/",
-    assetModuleFilename: "images/[hash][ext][querry]"
+    assetModuleFilename: "images/[hash][ext][querry]",
   },
   module: {
     rules: [
@@ -38,7 +40,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          { loader: MiniCssExtractPlugin.loader, options: { publicPath: "" } },
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: "" },
+          },
           "css-loader",
         ],
       },
@@ -51,7 +56,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     hot: true,
-    open: true
+    open: true,
   },
   resolve: {
     extensions: ["", ".js", ".jsx"],
@@ -62,5 +67,9 @@ module.exports = {
       favicon: "./src/resources/images/logo.ico",
     }),
     new MiniCssExtractPlugin(),
+    new Dotenv({
+      path: mode === "production" ? "./.env" : "./environments/.env.local",
+      safe: false,
+    }),
   ],
 };
