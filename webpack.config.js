@@ -68,8 +68,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new Dotenv({
-      path: mode === "production" ? "./.env" : "./environments/.env.local",
       safe: false,
+      systemvars: true,
     }),
   ],
 };
