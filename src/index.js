@@ -5,9 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
 import ReactGA from 'react-ga';
-const TRACKING_ID = "G-2T4D60PHLV"; // YOUR_OWN_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
-
+ReactGA.initialize('G-H78V6B9YBE'); // add your tracking id here.
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const app = (
   <React.StrictMode>
