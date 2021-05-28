@@ -19,15 +19,17 @@ import contact from "./pages/contact";
 
 import { Helmet } from "react-helmet";
 
+import ReactGA from "react-ga"; 
 
-import ReactGA from 'react-ga';
+const TRACKING_ID = "G-N4RPQY8YYM"; 
+ReactGA.initialize(TRACKING_ID);
 
-function intializeGA(){
-ReactGA.initialize('G-N4RPQY8YYM'); 
-ReactGA.pageview('/');
-}
+// function intializeGA(){
+// ReactGA.initialize('G-N4RPQY8YYM'); 
+// ReactGA.pageview('/');
+// }
 const App = () => {
-  intializeGA()
+  // intializeGA()
   return (
     <>
      
