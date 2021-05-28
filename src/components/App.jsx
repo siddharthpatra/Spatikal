@@ -23,7 +23,7 @@ import { Helmet } from "react-helmet";
 import ReactGA from 'react-ga';
 
 function intializeGA(){
-ReactGA.initialize('G-YG8SNCNTFH'); 
+ReactGA.initialize('G-N4RPQY8YYM'); 
 ReactGA.pageview('/');
 }
 const App = () => {
