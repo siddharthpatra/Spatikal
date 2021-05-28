@@ -20,10 +20,17 @@ import contact from "./pages/contact";
 import { Helmet } from "react-helmet";
 
 
+import ReactGA from 'react-ga';
 
+function intializeGA(){
+ReactGA.initialize('G-YG8SNCNTFH'); 
+ReactGA.pageview('/');
+}
 const App = () => {
+  intializeGA()
   return (
     <>
+     
       <Helmet>
         <title>S P A T I K A L</title>
         <meta name="description" content="Online Informative Platform" />
