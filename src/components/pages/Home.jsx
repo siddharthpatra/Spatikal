@@ -170,7 +170,7 @@ const Home = () => {
               </Link>
               <Link
                 to={{
-                  pathname: "/category/" + encodeURI("Culture"),
+                  pathname: "/category/" + encodeURI("Social and Culture"),
                   state: { article: articles },
                 }}
               >

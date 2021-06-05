@@ -40,7 +40,7 @@ const Slider = (props) => {
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={false}
-        pagination={{ clickable: true }}
+        pagination={false}
         navigation={false}
         className="mySwiper mobileOnly"
       >

@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "webpack serve",
     "build": "NODE_ENV=production webpack",
     "build-dev": "webpack",
@@ -27,7 +28,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "resolutions": {
-    "postcss": "8.2.15"
+    "postcss": "8.2.15",
+    "dns-packet": ">=5.2.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.9",

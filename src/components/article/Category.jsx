@@ -123,7 +123,7 @@ class Category extends Component {
           }
         );
         break;
-      case "Sports and Games":
+      case "Sports and Entertainment":
         this.setState(
           {
             articles: this.props.location.state.article
