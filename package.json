@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "webpack serve",
     "build": "NODE_ENV=production webpack",
     "build-dev": "webpack",
@@ -26,15 +27,15 @@
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.2"
   },
-  "resolutions": {
-    "postcss": "8.2.15"
-  },
   "dependencies": {
     "@babel/runtime": "^7.13.9",
+    "dotenv-webpack": "^7.0.2",
     "draft-js": "^0.11.7",
     "firebase": "^8.2.9",
     "html-react-parser": "^1.2.4",
     "lodash": "^4.17.21",
+    "postcss": "^8.3.0",
+    "postcss-loader": "^5.3.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
