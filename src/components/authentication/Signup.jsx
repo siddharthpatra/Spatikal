@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
+import "../../resources/css/signUp.css";
 export default function Signup(props) {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -31,34 +32,45 @@ export default function Signup(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        {error}
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input id="email" ref={emailRef} required type="email" />
+      <div className="signUp">
+        <form onSubmit={handleSubmit}>
+          {error}
+          <div>
+            <p>Welcome!</p>
+          </div>
+          <br></br>
+          <br></br>
+          <div className="emailSignUp">
+            <label htmlFor="email">Email: </label>
+            <input id="email" ref={emailRef} required type="email" />
+          </div>
+          <div className="passwordSignUp">
+            <label htmlFor="password">Password: </label>
+            <input id="password" ref={passwordRef} required type="password" />
+          </div>
+          <div className="cPasswordSignUp">
+            <label htmlFor="password_Confirmation">
+              Confirm your Password:{" "}
+            </label>
+            <input
+              id="password_Confirmation"
+              ref={passwordConfirmationRef}
+              required
+              type="password"
+            />
+          </div>
+          <button disabled={loading} type="submit">
+            Sign Up
+          </button>
+        </form>
+
+        <div className="SignUpBottom">
+          <br></br>
+          <br></br>
+          <p>
+            <Link to={{ pathname: "/login" }}>Login</Link>
+          </p>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input id="password" ref={passwordRef} required type="password" />
-        </div>
-        <div>
-          <label htmlFor="password_Confirmation">Confirm your Password:</label>
-          <input
-            id="password_Confirmation"
-            ref={passwordConfirmationRef}
-            required
-            type="password"
-          />
-        </div>
-        <button disabled={loading} type="submit">
-          Sign Up
-        </button>
-      </form>
-      <div>
-        <p>
-          Already have an account with us?
-          <Link to={{ pathname: "/login" }}>Login</Link>
-        </p>
       </div>
     </>
   );

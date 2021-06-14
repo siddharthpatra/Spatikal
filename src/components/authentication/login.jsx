@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import { useAuth } from "./context/AuthContext";
-
+import "../../resources/css/login.css";
 export default function Login(props) {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -28,24 +28,36 @@ export default function Login(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        {error}
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input id="email" ref={emailRef} required type="email" />
+      <div className="login">
+        <form onSubmit={handleSubmit}>
+          {error}
+          <div>
+            <p>Welcome!</p>
+          </div>
+          <br></br>
+          <br></br>
+          <div className="emailLogIn">
+            <label htmlFor="email">Email: </label>
+            <input id="email" ref={emailRef} required type="email" />
+          </div>
+          <div className="passwordLogIn">
+            <label htmlFor="password">Password: </label>
+            <input id="password" ref={passwordRef} required type="password" />
+          </div>
+          <div className="buttonLogin">
+            <button disabled={loading} type="submit">
+              Login
+            </button>
+          </div>
+        </form>
+        <div className="loginBottom">
+          <br></br>
+          <br></br>
+          <p>
+            <Link to={{ pathname: "/signup" }}> SignUp  |  </Link>
+            <Link to={{ pathname: "" }}>  Forget Password</Link>
+          </p>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input id="password" ref={passwordRef} required type="password" />
-        </div>
-        <button disabled={loading} type="submit">
-          Login
-        </button>
-      </form>
-      <div>
-        <p>
-          Need an Account?<Link to={{ pathname: "/signup" }}>Signup</Link>
-        </p>
       </div>
     </>
   );

@@ -1,0 +1,18 @@
+.emailSignUp {
+  font-size: 25px;
+}
+.passwordSignUp {
+  font-size: 25px;
+}
+.cPasswordSignUp {
+  font-size: 25px;
+}
+.SignUpBottom {
+  font-size: 20px;
+  color: blue;
+  text-decoration: underline;
+}
+.signUp {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
