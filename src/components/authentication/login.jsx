@@ -38,24 +38,44 @@ export default function Login(props) {
           <br></br>
           <div className="emailLogIn">
             <label htmlFor="email">Email: </label>
-            <input id="email" ref={emailRef} required type="email" />
+
+            <input
+              id="email"
+              ref={emailRef}
+              required
+              type="email"
+              placeholder="Email"
+            />
           </div>
+
           <div className="passwordLogIn">
             <label htmlFor="password">Password: </label>
-            <input id="password" ref={passwordRef} required type="password" />
+            <input
+              id="password"
+              ref={passwordRef}
+              required
+              type="password"
+              placeholder="Pasword"
+            />
           </div>
           <div className="buttonLogin">
-            <button disabled={loading} type="submit">
+            <button id="loginButton" disabled={loading} type="submit">
               Login
             </button>
           </div>
         </form>
+        <br></br>
+        <br></br>
+        <div className="extra">Or LogIn using</div>
+
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook-f"></i>
         <div className="loginBottom">
           <br></br>
           <br></br>
           <p>
-            <Link to={{ pathname: "/signup" }}> SignUp  |  </Link>
-            <Link to={{ pathname: "" }}>  Forget Password</Link>
+            <Link to={{ pathname: "/signup" }}> SignUp | </Link>
+            <Link to={{ pathname: "" }}> Forget Password</Link>
           </p>
         </div>
       </div>

@@ -42,11 +42,23 @@ export default function Signup(props) {
           <br></br>
           <div className="emailSignUp">
             <label htmlFor="email">Email: </label>
-            <input id="email" ref={emailRef} required type="email" />
+            <input
+              id="email"
+              ref={emailRef}
+              required
+              type="email"
+              placeholder="Email"
+            />
           </div>
           <div className="passwordSignUp">
             <label htmlFor="password">Password: </label>
-            <input id="password" ref={passwordRef} required type="password" />
+            <input
+              id="password"
+              ref={passwordRef}
+              required
+              type="password"
+              placeholder="Password"
+            />
           </div>
           <div className="cPasswordSignUp">
             <label htmlFor="password_Confirmation">
@@ -57,12 +69,18 @@ export default function Signup(props) {
               ref={passwordConfirmationRef}
               required
               type="password"
+              placeholder="Re-enter Password"
             />
           </div>
-          <button disabled={loading} type="submit">
+          <button id="signupButton" disabled={loading} type="submit">
             Sign Up
           </button>
         </form>
+        <br></br>
+        <div className="extra">Or SignUp using</div>
+
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook-f"></i>
 
         <div className="SignUpBottom">
           <br></br>
