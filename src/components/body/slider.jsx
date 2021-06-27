@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import PropTypes from "prop-types";
 
 import "../../resources/css/carousel.css";
 const CardSlider = lazy(() => import("./cardSlider"));
@@ -61,5 +62,7 @@ const Slider = (props) => {
     </>
   );
 };
-
+Slider.propTypes = {
+  article: PropTypes.array.isRequired,
+};
 export default Slider;

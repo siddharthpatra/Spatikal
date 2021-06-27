@@ -1,7 +1,7 @@
-import React, { Component, lazy, Suspense } from "react";
-const Card = lazy(() => import("../body/cardBlog"));
+import React, { Component } from "react";
+import Card from "../body/cardBlog";
 // import Slider from "../body/slider";
-
+import PropTypes from "prop-types";
 class Category extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +16,7 @@ class Category extends Component {
     switch (this.props.match.params.category) {
       case "Food and Drinks":
         this.setState(
-          { 
+          {
             articles: this.props.location.state.article
               .slice()
               .filter((article) =>
@@ -129,7 +129,9 @@ class Category extends Component {
             articles: this.props.location.state.article
               .slice()
               .filter((article) =>
-                article.category.toLowerCase().includes("sports and entertainment")
+                article.category
+                  .toLowerCase()
+                  .includes("sports and entertainment")
               ),
             category: this.props.match.params.category,
           },
@@ -174,12 +176,8 @@ class Category extends Component {
             </p>
           </div>
           <div className="">
-            {this.state.articles.slice(0, 3).map((article, index) => {
-              return (
-                <Suspense fallback={<div></div>}>
-                  <Card key={index} data={article} />
-                </Suspense>
-              );
+            {this.state.articles.map((article, index) => {
+              return <Card key={index} data={article} />;
             })}
           </div>
           {/* <div className="displayFlex mobileGrid">
@@ -192,5 +190,19 @@ class Category extends Component {
     }
   }
 }
-
+Category.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      category: PropTypes.string.isRequired,
+    }),
+  }),
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      article: PropTypes.array.isRequired,
+    }),
+  }),
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }),
+};
 export default Category;

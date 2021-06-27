@@ -3,9 +3,9 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import { firedb } from "../../config/firebase";
 
 import Banner from "../body/banner";
-import Slider from "../body/slider";
 import Feedback from "../feedback/Feedback";
-import Card from "../body/card";
+const Card = lazy(() => import("../body/card"));
+const Slider = lazy(() => import("../body/slider"));
 
 import "../../resources/css/home.css";
 import "../../resources/css/mobile.css";
@@ -21,12 +21,18 @@ const Home = () => {
   const [isSorted, setIsSorted] = useState(false);
 
   useEffect(() => {
-    getMyArticles();
+    let isSubscribed = true;
+    if (isSubscribed) getMyArticles();
+    return () => (isSubscribed = false);
   }, []);
 
   useEffect(() => {
-    setIsLoaded(true);
-    setIsSorted(true);
+    let isSubscribed = true;
+    if (isSubscribed) {
+      setIsLoaded(true);
+      setIsSorted(true);
+    }
+    return () => (isSubscribed = false);
   }, [articles, sorting]);
 
   const getMyArticles = () => {
@@ -66,7 +72,11 @@ const Home = () => {
           <div className="displayFlex mobileGrid">
             {isSorted
               ? sorting.slice(0, 3).map((article, index) => {
-                  return <Card key={index} data={article} />;
+                  return (
+                    <Suspense key={index} fallback={<div></div>}>
+                      <Card key={index} data={article} />
+                    </Suspense>
+                  );
                 })
               : ""}
           </div>
@@ -81,7 +91,13 @@ const Home = () => {
           </div>
         </div>
         <div className="displayFlex mobileGrid">
-          {isLoaded ? <Slider article={articles} /> : ""}
+          {isLoaded ? (
+            <Suspense fallback={<div></div>}>
+              <Slider article={articles} />
+            </Suspense>
+          ) : (
+            ""
+          )}
         </div>
         {/* <div className="bordertop"></div> */}
         <br></br>
@@ -187,7 +203,8 @@ const Home = () => {
             <div className="row">
               <Link
                 to={{
-                  pathname: "/category/" + encodeURI("Sports and Entertainment"),
+                  pathname:
+                    "/category/" + encodeURI("Sports and Entertainment"),
                   state: { article: articles },
                 }}
               >

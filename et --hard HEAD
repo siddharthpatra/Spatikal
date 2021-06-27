@@ -1,0 +1,45 @@
+[33mcommit ac271ac644e2127a51171712007a2964bf12e33c[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Siddharth Patra <siddharthpatra77@gmail.com>
+Date:   Sun Jun 27 13:03:11 2021 +0530
+
+    audit fixes
+
+[33mcommit 685e10135e355494bd27a54f384a486008068160[m
+Author: Siddharth Patra <siddharthpatra77@gmail.com>
+Date:   Sun Jun 27 12:47:53 2021 +0530
+
+    added props and contact to open in new tab
+
+[33mcommit 88735f732d9de4fdf15ab8bde8bbdb4f1f0bc4cc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: bb8e462c ccb88a52
+Author: Siddharth Patra <siddharthpatra77@gmail.com>
+Date:   Fri Jun 11 18:19:14 2021 +0530
+
+    Release 1.2
+
+[33mcommit bb8e462ca06d65b9282b60a1af62f941d1bd88cd[m
+Author: lakshya <lakshyasoni0811@gmail.com>
+Date:   Tue May 25 21:37:19 2021 +0530
+
+    Added Google Analytics
+
+[33mcommit 53194e49348353e008ad835751be6932e3e5600f[m
+Merge: ee2ba715 6db4ffa5
+Author: Siddharth Patra <siddharthpatra77@gmail.com>
+Date:   Mon May 17 14:23:26 2021 +0530
+
+    Merge branch 'master' into main
+
+[33mcommit ee2ba715a090113c8edd2abe10edcf1d1ffd26d5[m
+Merge: b5ae5ad0 699aacb1
+Author: Siddharth Patra <siddharthpatra77@gmail.com>
+Date:   Mon May 10 16:40:47 2021 +0530
+
+    Merge branch 'master' into main
+
+[33mcommit b5ae5ad0c84381c19eb1a23471a3ad94dd301355[m
+Merge: 7db335c6 6297ac45
+Author: Siddharth Patra <siddharthpatra77@gmail.com>
+Date:   Sat May 8 23:43:32 2021 +0530
+
+    Merge branch 'master' into main

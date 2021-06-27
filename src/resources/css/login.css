@@ -1,0 +1,40 @@
+.emailLogIn {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.passwordLogIn {
+  font-size: 25px;
+}
+
+.login {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.loginBottom {
+  font-size: 20px;
+  color: blue;
+  text-decoration: underline;
+}
+
+#loginButton {
+  width: 120px;
+}
+#email {
+  width: 150px;
+  height: 25px;
+}
+
+#password {
+  width: 150px;
+  height: 25px;
+}
+
+.additionalOptions {
+  font-size: 25px;
+}
+
+.fab {
+  padding-right: 20px;
+}

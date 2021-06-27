@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-
+import PropTypes from "prop-types";
 import { useAuth } from "./context/AuthContext";
-
+import "../../resources/css/login.css";
 export default function Login(props) {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -18,8 +18,7 @@ export default function Login(props) {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      if (props.link === undefined) history.push("/");
-      else history.push(props.link);
+      await history.replace(props.location.state.from.pathname);
     } catch {
       setError("Failed To Login");
     }
@@ -28,25 +27,67 @@ export default function Login(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        {error}
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input id="email" ref={emailRef} required type="email" />
+      <div className="login">
+        <form onSubmit={handleSubmit}>
+          {error}
+          <div>
+            <p>Welcome!</p>
+          </div>
+          <br></br>
+          <br></br>
+          <div className="emailLogIn">
+            <label htmlFor="email">Email: </label>
+
+            <input
+              id="email"
+              ref={emailRef}
+              required
+              type="email"
+              placeholder="Email"
+            />
+          </div>
+
+          <div className="passwordLogIn">
+            <label htmlFor="password">Password: </label>
+            <input
+              id="password"
+              ref={passwordRef}
+              required
+              type="password"
+              placeholder="Pasword"
+            />
+          </div>
+          <div className="buttonLogin">
+            <button id="loginButton" disabled={loading} type="submit">
+              Login
+            </button>
+          </div>
+        </form>
+        <br></br>
+        <br></br>
+        <div className="extra">Or LogIn using</div>
+
+        <i className="fab fa-google"></i>
+        <i className="fab fa-facebook-f"></i>
+        <div className="loginBottom">
+          <br></br>
+          <br></br>
+          <p>
+            <Link to={{ pathname: "/signup" }}> SignUp | </Link>
+            <Link to={{ pathname: "" }}> Forget Password</Link>
+          </p>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input id="password" ref={passwordRef} required type="password" />
-        </div>
-        <button disabled={loading} type="submit">
-          Login
-        </button>
-      </form>
-      <div>
-        <p>
-          Need an Account?<Link to={{ pathname: "/signup" }}>Signup</Link>
-        </p>
       </div>
     </>
   );
 }
+
+Login.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      from: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+      }),
+    }),
+  }),
+};

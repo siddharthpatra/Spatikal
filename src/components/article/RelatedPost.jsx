@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { firedb } from "../../config/firebase";
-
+import PropTypes from "prop-types";
 import Slider from "../body/slider";
 
 const db = firedb;
@@ -10,7 +10,9 @@ const RelatedPost = (props) => {
   const [filtered, setFiltered] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    getMyArticles();
+    let isSubscribed = true;
+    if (isSubscribed) getMyArticles();
+    return () => (isSubscribed = false);
   }, [props]);
   useEffect(() => {
     setIsLoaded(true);
@@ -45,15 +47,22 @@ const RelatedPost = (props) => {
   return isLoaded ? (
     <>
       <br></br>
-      <h5>Related Posts</h5>
-
-      <div className="displayFlex mobileGrid">
-        <Slider article={filtered} />
-      </div>
+      {filtered.length > 0 && (
+        <>
+          <h5>Related Posts</h5>
+          <div className="displayFlex mobileGrid">
+            <Slider article={filtered} />
+          </div>
+        </>
+      )}
     </>
   ) : (
     ""
   );
+};
+RelatedPost.propTypes = {
+  category: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default RelatedPost;

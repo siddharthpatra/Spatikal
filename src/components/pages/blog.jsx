@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import { firedb } from "../../config/firebase";
-
+import { ImSpinner2 } from "react-icons/im";
 const Card = lazy(() => import("../body/cardBlog"));
 // import Slider from "../body/slider";
 
@@ -11,7 +11,9 @@ const Blog = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    getMyArticles();
+    let isSubscribed = true;
+    if (isSubscribed) getMyArticles();
+    return () => (isSubscribed = false);
   }, []);
 
   useEffect(() => {
@@ -40,13 +42,11 @@ const Blog = () => {
     return (
       <>
         <div className="container">
-          {articles.map((article, index) => {
-            return (
-              <Suspense fallback={<div></div>}>
-                <Card key={index} data={article} />
-              </Suspense>
-            );
-          })}
+          <Suspense fallback={<div>Loading. Please Wait...</div>}>
+            {articles.map((article, index) => (
+              <Card key={index} data={article} />
+            ))}
+          </Suspense>
         </div>
         {/* <div className="displayFlex mobileGrid">
           <Slider article={articles.slice(3, articles.length)} />
@@ -54,7 +54,7 @@ const Blog = () => {
       </>
     );
   } else {
-    return <h1>Loading...</h1>;
+    return <ImSpinner2 />;
   }
 };
 

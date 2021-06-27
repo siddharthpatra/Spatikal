@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const CheckBox = (props) => {
   return (
@@ -14,5 +15,10 @@ export const CheckBox = (props) => {
     </li>
   );
 };
-
+CheckBox.propTypes = {
+  id: PropTypes.string.isRequired,
+  handleCheckChieldElement: PropTypes.func.isRequired,
+  value: PropTypes.any.isRequired,
+  isChecked: PropTypes.any.isRequired,
+};
 export default CheckBox;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
+import PropTypes from "prop-types";
 
 import "../../resources/css/cardSlider.css";
 
@@ -29,6 +30,16 @@ const CardSlider = (props) => {
       </Link>
     </>
   );
+};
+CardSlider.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    image: PropTypes.any.isRequired,
+  }),
 };
 
 export default CardSlider;

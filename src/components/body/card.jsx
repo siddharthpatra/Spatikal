@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 
 import "../../resources/css/card.css";
+import PropTypes from "prop-types";
+
 export function dateCreated(dp) {
   const months = [
     "January",
@@ -42,8 +44,8 @@ const Card = (props) => {
               <ul>
                 <li>
                   <div className="card-icon">
-                  <i className="fas fa-user"></i>
-                  {props.data.author}
+                    <i className="fas fa-user"></i>
+                    {props.data.author}
                   </div>
                 </li>
                 <li>
@@ -66,5 +68,15 @@ const Card = (props) => {
     </>
   );
 };
-
+Card.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    datePosted: PropTypes.shape({ seconds: PropTypes.number.isRequired }),
+    image: PropTypes.any.isRequired,
+  }),
+};
 export default Card;
