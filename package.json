@@ -15,17 +15,25 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.14.5",
+    "@babel/eslint-plugin": "^7.14.5",
     "@babel/plugin-transform-runtime": "^7.13.9",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
+    "eslint": "^7.28.0",
+    "eslint-plugin-react": "^7.24.0",
     "html-webpack-plugin": "^5.2.0",
     "mini-css-extract-plugin": "^1.6.0",
     "optimize-css-assets-webpack-plugin": "^5.0.5",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.2"
+  },
+  "resolutions": {
+    "css-what": ">=5.0.1",
+    "glob-parent": ">=5.1.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.9",
@@ -36,6 +44,7 @@
     "lodash": "^4.17.21",
     "postcss": "^8.3.0",
     "postcss-loader": "^5.3.0",
+    "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
-import "../../resources/css/signUp.css";
-export default function Signup(props) {
+export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
@@ -16,14 +15,13 @@ export default function Signup(props) {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmationRef.current.value) {
-      return setError("Passwords Donot Match");
+      return setError("Passwords do not match");
     }
     try {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      if (props.link === undefined) history.push("/");
-      else history.push(props.link);
+      history.push("/");
     } catch {
       setError("Failed To Create An Account");
     }
@@ -62,7 +60,7 @@ export default function Signup(props) {
           </div>
           <div className="cPasswordSignUp">
             <label htmlFor="password_Confirmation">
-              Confirm your Password:{" "}
+              Confirm your Password:
             </label>
             <input
               id="password_Confirmation"
@@ -79,8 +77,8 @@ export default function Signup(props) {
         <br></br>
         <div className="extra">Or SignUp using</div>
 
-        <i class="fab fa-google"></i>
-        <i class="fab fa-facebook-f"></i>
+        <i className="fab fa-google"></i>
+        <i className="fab fa-facebook-f"></i>
 
         <div className="SignUpBottom">
           <br></br>

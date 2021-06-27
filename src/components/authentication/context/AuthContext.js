@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../../../config/firebase";
+import PropTypes from "prop-types";
 
 const AuthContext = React.createContext();
 
@@ -11,24 +12,28 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  const signup = (email, password) => {
-    return auth.createUserWithEmailAndPassword(email, password);
+  const signup = async (email, password) => {
+    return await auth.createUserWithEmailAndPassword(email, password);
   };
 
-  const login = (email, password) => {
-    return auth.signInWithEmailAndPassword(email, password);
+  const login = async (email, password) => {
+    return await auth.signInWithEmailAndPassword(email, password);
   };
 
-  const logout = () => {
-    return auth.signOut();
+  const logout = async () => {
+    return await auth.signOut();
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-      setLoading(false);
-    });
-    return unsubscribe;
+    let isSubscribed = true;
+    if (isSubscribed) {
+      const unsubscribe = auth.onAuthStateChanged((user) => {
+        setCurrentUser(user);
+        setLoading(false);
+      });
+      return unsubscribe;
+    }
+    return () => (isSubscribed = false);
   }, []);
 
   const value = {
@@ -43,3 +48,9 @@ export function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
+AuthProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};

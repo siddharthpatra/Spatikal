@@ -41,17 +41,17 @@ const Footer = () => {
                             <i className="fab fa-linkedin"></i>
                         </div> */}
             <div className="column">
-              <a href="https://www.instagram.com/_spatikal_">
+              <a href="https://www.instagram.com/_spatikal_" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
             <div className="column">
-              <a href="https://www.facebook.com/Spatikal-104889145028341">
+              <a href="https://www.facebook.com/Spatikal-104889145028341" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-facebook"></i>
               </a>
             </div>
             <div className="column">
-              <a href="https://www.linkedin.com/company/spatikal">
+              <a href="https://www.linkedin.com/company/spatikal" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin"></i>
               </a>
             </div>

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-
+import PropTypes from "prop-types";
 import { useAuth } from "./context/AuthContext";
 import "../../resources/css/login.css";
 export default function Login(props) {
@@ -18,8 +18,7 @@ export default function Login(props) {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      if (props.link === undefined) history.push("/");
-      else history.push(props.link);
+      await history.replace(props.location.state.from.pathname);
     } catch {
       setError("Failed To Login");
     }
@@ -68,8 +67,8 @@ export default function Login(props) {
         <br></br>
         <div className="extra">Or LogIn using</div>
 
-        <i class="fab fa-google"></i>
-        <i class="fab fa-facebook-f"></i>
+        <i className="fab fa-google"></i>
+        <i className="fab fa-facebook-f"></i>
         <div className="loginBottom">
           <br></br>
           <br></br>
@@ -82,3 +81,13 @@ export default function Login(props) {
     </>
   );
 }
+
+Login.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      from: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+      }),
+    }),
+  }),
+};

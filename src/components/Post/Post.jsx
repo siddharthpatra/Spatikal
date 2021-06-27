@@ -82,13 +82,13 @@ const Post = () => {
   };
 
   const onChangeImageUploaderCallBack = (e) => {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve) => {
       const file = e.target.files[0];
       storageRef
         .ref()
         .child("Articles/" + file.name)
         .put(file)
-        .then(async (snapshot) => {
+        .then(async () => {
           const downloadURL = await storageRef
             .ref()
             .child("Articles/" + file.name)
@@ -102,13 +102,13 @@ const Post = () => {
   };
 
   const onChangeVideoUploaderCallBack = (e) => {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve) => {
       const file = e.target.files[0];
       storageRef
         .ref()
         .child("Articles/" + file.name)
         .put(file)
-        .then(async (snapshot) => {
+        .then(async () => {
           const downloadURL = await storageRef
             .ref()
             .child("Articles/" + file.name)

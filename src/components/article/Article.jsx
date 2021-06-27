@@ -7,6 +7,8 @@ import { isEmpty } from "lodash";
 import RelatedPost from "./RelatedPost";
 import { Helmet } from "react-helmet";
 
+import PropTypes from "prop-types";
+
 const db = firedb;
 
 export function dateCreated(dp) {
@@ -41,7 +43,12 @@ class Article extends PureComponent {
   }
   componentDidMount() {
     if (typeof this.props.location.state !== "undefined") {
-      if (this.props.location.state.hasOwnProperty("article"))
+      if (
+        Object.prototype.hasOwnProperty.call(
+          this.props.location.state,
+          "article"
+        )
+      )
         this.setState(
           {
             article: this.props.location.state.article,
@@ -58,7 +65,12 @@ class Article extends PureComponent {
   }
   componentDidUpdate() {
     if (typeof this.props.location.state !== "undefined") {
-      if (this.props.location.state.hasOwnProperty("article"))
+      if (
+        Object.prototype.hasOwnProperty.call(
+          this.props.location.state,
+          "article"
+        )
+      )
         this.setState(
           {
             article: this.props.location.state.article,
@@ -157,7 +169,7 @@ class Article extends PureComponent {
               </div>
             </div>
 
-            {/* <>
+            <>
               <div className="suggestionButton">
                 <p>
                   <span>Didn&#39;t like the content?</span>
@@ -166,7 +178,6 @@ class Article extends PureComponent {
                     <Link
                       to={{
                         pathname: "/editPost/" + this.state.article.id,
-                        state: { article: this.state.article },
                       }}
                     >
                       Please Click Here...!!
@@ -174,7 +185,7 @@ class Article extends PureComponent {
                   </span>
                 </p>
               </div>
-            </> */}
+            </>
             <RelatedPost
               category={this.state.article.category}
               id={this.state.article.id}
@@ -187,4 +198,19 @@ class Article extends PureComponent {
     }
   }
 }
+Article.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      article: PropTypes.object.isRequired,
+    }),
+  }),
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }),
+};
 export default withRouter(Article);

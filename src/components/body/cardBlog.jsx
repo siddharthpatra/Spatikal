@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
+import PropTypes from "prop-types";
 
 import "../../resources/css/cardBlog.css";
 export function dateCreated(dp) {
@@ -64,5 +65,17 @@ const Card = (props) => {
     </>
   );
 };
-
+Card.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    datePosted: PropTypes.shape({
+      seconds: PropTypes.number.isRequired,
+    }),
+    image: PropTypes.any.isRequired,
+  }),
+};
 export default Card;

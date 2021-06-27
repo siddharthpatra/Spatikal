@@ -28,10 +28,10 @@ const About = () => {
           </p>
           <br></br>
           <p>
-            Spatikal is derived from a Sanskrit word 'SPHATIKA’ which means
+            Spatikal is derived from a Sanskrit word &apos; SPHATIKA &apos; which means
             ‘crystal’. A crystal is a representation of transparency and
             uniqueness which is what we aim on inculcating in our business
-            model. We want to project transparency in the information & content
+            model. We want to project transparency in the information &amp; content
             we provide and uniqueness in the way we present it.
           </p>
         </div>
