@@ -50,6 +50,11 @@ const Footer = () => {
                 <i className="fab fa-facebook"></i>
               </a>
             </div>
+            <div className="column">
+              <a href="https://www.linkedin.com/company/spatikal">
+                <i className="fab fa-linkedin"></i>
+              </a>
+            </div>
           </div>
           <hr />
           <div className="row terms">

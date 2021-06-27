@@ -17,7 +17,7 @@ export default function contact() {
           </p>
           <br></br>
           <p>
-            Mail: <a href="mailto:contact@spatikal.in">contact@spatikal.in</a>
+            Mail: <a href="mailto:contact@spatikal.in">spatikal2000@gmail.com</a>
           </p>
         </div>
       </div>
