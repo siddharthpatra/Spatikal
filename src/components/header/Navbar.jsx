@@ -54,7 +54,7 @@ const Navbar = () => {
                 <span>Blog</span>
               </NavLink>
             </li>
-            {currentUser ? (
+            {/* {currentUser ? (
               <li className="nav-item">
                 <span className="nav-links pointer" onClick={handleLogout}>
                   <span>
@@ -77,7 +77,7 @@ const Navbar = () => {
                   </span>
                 </NavLink>
               </li>
-            )}
+            )} */}
             {/* <NavLink
               exact
               to="/post"
