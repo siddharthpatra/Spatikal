@@ -1,8 +1,26 @@
-import React from "react";
+import { useRef } from "react";
+import { firedb } from "../../config/firebase";
 
-const EditPost = () => {
+const db = firedb;
+
+const EditPost = (props) => {
+  console.log(props)
+  const suggestionTextRef = useRef();
+  const suggestedTextRef = useRef();
+  const suggestedReferenceRef = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
+    const suggestion = {
+      suggestionText: suggestionTextRef.current.value,
+      suggestedText: suggestedTextRef.current.value,
+      suggestedReference: suggestedReferenceRef.current.value,
+    };
+    db.collection("suggestion-db")
+      .doc()
+      .set(suggestion)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    e.target.reset();
   };
   return (
     <div>
@@ -13,6 +31,7 @@ const EditPost = () => {
           </label>
           <textarea
             id="suggestionText"
+            ref={suggestionTextRef}
             required
             type="password"
             placeholder="Please copy and paste the part you want to edit in the article"
@@ -24,15 +43,19 @@ const EditPost = () => {
             id="suggestedText"
             required
             type="password"
+            ref={suggestedTextRef}
             placeholder="Please copy and paste the part you want to edit in the article"
           />
         </div>
         <div>
-          <label htmlFor="suggestedReference">Enter from where you got the reference</label>
+          <label htmlFor="suggestedReference">
+            Enter from where you got the reference
+          </label>
           <textarea
             id="suggestedReference"
             required
             type="password"
+            ref={suggestedReferenceRef}
             placeholder="Please enter the references for the suggested part"
           />
         </div>

@@ -18,7 +18,8 @@ export default function Login(props) {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      await history.replace(props.location.state.from.pathname);
+      if(props.location.state) history.push(props.location.state.from.pathname);
+      else history.push("/");
     } catch {
       setError("Failed To Login");
     }
