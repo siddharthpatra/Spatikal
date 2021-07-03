@@ -3,8 +3,7 @@ import { firedb } from "../../config/firebase";
 
 const db = firedb;
 
-const EditPost = (props) => {
-  console.log(props)
+const EditPost = () => {
   const suggestionTextRef = useRef();
   const suggestedTextRef = useRef();
   const suggestedReferenceRef = useRef();

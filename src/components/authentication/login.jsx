@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useAuth } from "./context/AuthContext";
@@ -10,7 +10,7 @@ export default function Login(props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const { login } = useAuth();
+  const { login, signInWithGoogle, signInWithFacebook } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +18,8 @@ export default function Login(props) {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      if(props.location.state) history.push(props.location.state.from.pathname);
+      if (props.location.state)
+        history.push(props.location.state.from.pathname);
       else history.push("/");
     } catch {
       setError("Failed To Login");
@@ -34,8 +35,6 @@ export default function Login(props) {
           <div>
             <p>Welcome!</p>
           </div>
-          <br></br>
-          <br></br>
           <div className="emailLogIn">
             <label htmlFor="email">Email: </label>
 
@@ -64,19 +63,13 @@ export default function Login(props) {
             </button>
           </div>
         </form>
-        <br></br>
-        <br></br>
         <div className="extra">Or LogIn using</div>
 
-        <i className="fab fa-google"></i>
-        <i className="fab fa-facebook-f"></i>
+        <i className="fab fa-google" onClick={signInWithGoogle}></i>
+        <i className="fab fa-facebook-f" onClick={signInWithFacebook}></i>
         <div className="loginBottom">
-          <br></br>
-          <br></br>
-          <p>
-            <Link to={{ pathname: "/signup" }}> SignUp | </Link>
-            <Link to={{ pathname: "" }}> Forget Password</Link>
-          </p>
+          <Link to={{ pathname: "/signup" }}> SignUp | </Link>
+          <Link to={{ pathname: "/forgotPassword" }}> Forget Password</Link>
         </div>
       </div>
     </>

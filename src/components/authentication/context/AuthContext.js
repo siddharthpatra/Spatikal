@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { auth } from "../../../config/firebase";
+import { auth, googleProvider, FacebookAuth } from "../../../config/firebase";
 import PropTypes from "prop-types";
 
 const AuthContext = React.createContext();
@@ -13,7 +13,15 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   const signup = async (email, password) => {
-    return await auth.createUserWithEmailAndPassword(email, password);
+    return await auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // send verification mail.
+        userCredential.user.sendEmailVerification();
+        auth.signOut();
+        alert("Email sent");
+      })
+      .catch(alert);
   };
 
   const login = async (email, password) => {
@@ -22,6 +30,32 @@ export function AuthProvider({ children }) {
 
   const logout = async () => {
     return await auth.signOut();
+  };
+
+  const sendResetEmail = async (email) => {
+    return await auth.sendPasswordResetEmail(email);
+  };
+
+  const signInWithGoogle = () => {
+    auth
+      .signInWithPopup(googleProvider)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  const signInWithFacebook = () => {
+    auth
+      .signInWithPopup(FacebookAuth)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   useEffect(() => {
@@ -41,6 +75,9 @@ export function AuthProvider({ children }) {
     signup,
     login,
     logout,
+    sendResetEmail,
+    signInWithGoogle,
+    signInWithFacebook,
   };
   return (
     <AuthContext.Provider value={value}>

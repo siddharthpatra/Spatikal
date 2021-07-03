@@ -15,6 +15,10 @@ const app = firebase.initializeApp({
 });
 export const auth = app.auth();
 
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+export const FacebookAuth = new firebase.auth.FacebookAuthProvider();
+
 export const firedb = firebase.firestore();
 
 export const storage = firebase.storage();
