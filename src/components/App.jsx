@@ -13,7 +13,6 @@ import { Switch, Route } from "react-router-dom";
 import Signup from "./authentication/Signup";
 import { AuthProvider } from "./authentication/context/AuthContext";
 import PrivateRoute from "./authentication/PrivateRoute";
-import EditPost from "./article/EditPost";
 
 import "../resources/css/App.css";
 import contact from "./pages/contact";
@@ -49,7 +48,6 @@ const App = () => {
           <Route path="/category/:category" component={Category} />
           <AuthProvider>
             <Route path="/article/:id" component={Article} />
-            <PrivateRoute exact path="/editPost/:id" component={EditPost} />
             <PrivateRoute exact path="/post" component={Post} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />

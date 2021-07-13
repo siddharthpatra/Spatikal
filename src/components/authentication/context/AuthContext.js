@@ -36,38 +36,20 @@ export function AuthProvider({ children }) {
     return await auth.sendPasswordResetEmail(email);
   };
 
-  const signInWithGoogle = () => {
-    auth
-      .signInWithPopup(googleProvider)
-      .then((res) => {
-        console.log(res.user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+  const signInWithGoogle = async () => {
+    await auth.signInWithPopup(googleProvider);
   };
 
-  const signInWithFacebook = () => {
-    auth
-      .signInWithPopup(FacebookAuth)
-      .then((res) => {
-        console.log(res.user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+  const signInWithFacebook = async () => {
+    await auth.signInWithPopup(FacebookAuth);
   };
 
   useEffect(() => {
-    let isSubscribed = true;
-    if (isSubscribed) {
-      const unsubscribe = auth.onAuthStateChanged((user) => {
-        setCurrentUser(user);
-        setLoading(false);
-      });
-      return unsubscribe;
-    }
-    return () => (isSubscribed = false);
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
+    return unsubscribe;
   }, []);
 
   const value = {

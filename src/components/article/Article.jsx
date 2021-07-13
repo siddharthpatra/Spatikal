@@ -1,6 +1,6 @@
-import React, { PureComponent, useEffect } from "react";
+import React, { useEffect } from "react";
 import { firedb } from "../../config/firebase";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 import "../../resources/css/article.css";
 import parse from "html-react-parser";
 import { isEmpty } from "lodash";
@@ -9,9 +9,7 @@ import { Helmet } from "react-helmet";
 import { useAuth } from "../authentication/context/AuthContext";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import Login from "../authentication/login";
-import { render } from "react-dom";
-import EditPost from "./EditPost";
+import EditPost from "./EditPost/index";
 
 const db = firedb;
 
@@ -41,11 +39,12 @@ const Article = (props) => {
   const { currentUser } = useAuth();
   const [article, setArticle] = useState();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [login, setLogin] = useState(false);
+  const history = useHistory();
   const handleLoginCheck = () => {
-    console.log("clicked")
-    console.log(currentUser)
-    if (!currentUser)
-      render(<Login/>)
+    currentUser
+      ? setLogin(true)
+      : history.push({ pathname: "/login", state: { from: props.location } });
   };
   useEffect(() => {
     if (typeof props.location.state !== "undefined") {
@@ -57,7 +56,7 @@ const Article = (props) => {
     return () => {
       setIsLoaded(true);
     };
-  }, [article]);
+  });
   const getArticleByID = (id) => {
     db.collection("spatikal-db")
       .doc(id)
@@ -65,6 +64,7 @@ const Article = (props) => {
       .then((doc) => {
         if (doc.exists) {
           setArticle(doc.data());
+          console.log(doc.data());
         } else {
           props.history.push({ pathname: "/" });
         }
@@ -131,24 +131,17 @@ const Article = (props) => {
 
             <div className="articleContent">{parse(article.content)}</div>
           </div>
-          {currentUser ? <EditPost/> : <Login/>}
-
           <>
             <div className="suggestionButton">
               <p>
                 <span>Didn&#39;t like the content?</span>
                 <span>
                   <i>Feeling like adding some suggestions?</i>
-                  {/* <Link
-                      to={{
-                        pathname: "/editPost/" + article.id,
-                      }}
-                    > */}
                   <span onClick={handleLoginCheck}>Please Click Here...!!</span>
-                  {/* </Link> */}
                 </span>
               </p>
             </div>
+            {login ? <EditPost author={article.userID} currentUser={currentUser.uid}/> : ''}
           </>
           <RelatedPost category={article.category} id={article.id} />
         </div>

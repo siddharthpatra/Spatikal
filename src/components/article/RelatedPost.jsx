@@ -8,15 +8,9 @@ const db = firedb;
 
 const RelatedPost = (props) => {
   const [filtered, setFiltered] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    let isSubscribed = true;
-    if (isSubscribed) getMyArticles();
-    return () => (isSubscribed = false);
+    getMyArticles();
   }, [props]);
-  useEffect(() => {
-    setIsLoaded(true);
-  }, [filtered]);
   const getMyArticles = () => {
     db.collection("spatikal-db")
       .get()
@@ -44,7 +38,7 @@ const RelatedPost = (props) => {
       });
   };
 
-  return isLoaded ? (
+  return (
     <>
       <br></br>
       {filtered.length > 0 && (
@@ -56,8 +50,6 @@ const RelatedPost = (props) => {
         </>
       )}
     </>
-  ) : (
-    ""
   );
 };
 RelatedPost.propTypes = {

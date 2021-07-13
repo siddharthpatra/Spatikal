@@ -1,3 +1,4 @@
+import React from "react";
 import { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -18,6 +19,33 @@ export default function Login(props) {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
+      console.log(props)
+      if (props.location.state)
+        history.push(props.location.state.from.pathname);
+    } catch {
+      setError("Failed To Login");
+    }
+    setLoading(false);
+  };
+
+  const handleGoogle = async () => {
+    try {
+      setError("");
+      setLoading(true);
+      await signInWithGoogle();
+      if (props.location.state)
+        history.push(props.location.state.from.pathname);
+    } catch {
+      setError("Failed To Login");
+    }
+    setLoading(false);
+  };
+
+  const handleFacebook = async () => {
+    try {
+      setError("");
+      setLoading(true);
+      await signInWithFacebook();
       if (props.location.state)
         history.push(props.location.state.from.pathname);
       else history.push("/");
@@ -65,8 +93,8 @@ export default function Login(props) {
         </form>
         <div className="extra">Or LogIn using</div>
 
-        <i className="fab fa-google" onClick={signInWithGoogle}></i>
-        <i className="fab fa-facebook-f" onClick={signInWithFacebook}></i>
+        <i className="fab fa-google" onClick={handleGoogle}></i>
+        <i className="fab fa-facebook-f" onClick={handleFacebook}></i>
         <div className="loginBottom">
           <Link to={{ pathname: "/signup" }}> SignUp | </Link>
           <Link to={{ pathname: "/forgotPassword" }}> Forget Password</Link>
