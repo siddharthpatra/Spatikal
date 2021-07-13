@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 
 const Index = (props) => {
   const [click, setClick] = useState();
+  const handleReset = (val) => {
+    val ? setClick() : "";
+  };
   return (
     <>
       {click !== null ? (
@@ -26,9 +29,13 @@ const Index = (props) => {
       )}
 
       {click === true ? (
-        <EditPost author={props.author} currentUser={props.currentUser} />
+        <EditPost
+          Reset={handleReset}
+          author={props.author}
+          currentUser={props.currentUser}
+        />
       ) : click === false ? (
-        <Chat />
+        <Chat Reset={handleReset} />
       ) : (
         ""
       )}

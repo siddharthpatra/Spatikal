@@ -33,8 +33,12 @@ const EditPost = (props) => {
       {submit ? (
         <>
           <div>Thanks for submiting. Your suggestion has been captured.</div>
-          <button>Click here to submit another response</button>
-          <button>Click here to go back to the main menu</button>
+          <button onClick={() => setSubmit(false)}>
+            Click here to submit another response
+          </button>
+          <button onClick={() => props.Reset(true)}>
+            Click here to go back to the main menu
+          </button>
         </>
       ) : (
         <div>
@@ -79,7 +83,9 @@ const EditPost = (props) => {
               Submit
             </button>
           </form>
-          <button>Click here to go back to the main menu</button>
+          <button onClick={() => props.Reset(true)}>
+            Click here to go back to the main menu
+          </button>
         </div>
       )}
     </>
@@ -89,6 +95,7 @@ const EditPost = (props) => {
 EditPost.propTypes = {
   author: PropTypes.string.isRequired,
   currentUser: PropTypes.string.isRequired,
+  Reset: PropTypes.func.isRequired,
 };
 
 export default EditPost;
