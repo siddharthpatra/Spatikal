@@ -36,7 +36,7 @@ const EditPost = (props) => {
           <button onClick={() => setSubmit(false)}>
             Click here to submit another response
           </button>
-          <button onClick={() => props.Reset(true)}>
+          <button onClick={() => props.Reset()}>
             Click here to go back to the main menu
           </button>
         </>
@@ -83,7 +83,7 @@ const EditPost = (props) => {
               Submit
             </button>
           </form>
-          <button onClick={() => props.Reset(true)}>
+          <button onClick={() => props.Reset()}>
             Click here to go back to the main menu
           </button>
         </div>
