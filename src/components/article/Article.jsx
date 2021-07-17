@@ -132,12 +132,12 @@ const Article = (props) => {
             <div className="articleContent">{parse(article.content)}</div>
           </div>
           <>
-            <div className="suggestionButton">
+            <div className="suggestionButton" onClick={handleLoginCheck}>
               <p>
                 <span>Didn&#39;t like the content?</span>
                 <span>
                   <i>Feeling like adding some suggestions?</i>
-                  <span onClick={handleLoginCheck}>Please Click Here...!!</span>
+                  <span>Please Click Here...!!</span>
                 </span>
               </p>
             </div>

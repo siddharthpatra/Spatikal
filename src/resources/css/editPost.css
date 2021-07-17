@@ -1,0 +1,29 @@
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 54px;
+  right: 28px;
+  width: 280px;
+}
+.editPost-popup {
+  position: fixed;
+  bottom: 75px;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+.chat_container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+.close_button {
+  position: fixed;
+  right: 20px;
+  background-color: red;
+}
